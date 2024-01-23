@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<title>Daftar</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> 
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+body {
+  user-select: none;
+  font-family: 'Ubuntu';
+}
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body a {
+  text-decoration: none;
+}
+.form{
+  width: 100%;
+  } 
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+body {
+  user-select: none;
+  background: url();
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #eee;
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+
+body a {
+
+  text-decoration: none!important;
+  underline; none!important;
+}
+
+body, html {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  font-size: 4vw;
+}
+  
+
+.next{ 
+  width: 100%;
+  filter: drop-shadow(2px 5px 5px rgba(0, 0, 0, 0.15));
+  border-radius: 100%;
+  } 
+  
+
+  
+.judul {
+  font-size: 12vw;
+  font-weight: bold;
+  margin-top: 10%;
+}
+
+.lupa {
+  font-size: 3vw;
+  margin-left: 55%;
+  color: #000;
+  text-decoration: none!important;
+  underline; none!important;
+  margin-bottom:0%;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+}
+}
+.modal {
+  background:rgba(0,0,0,0.5);
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  bottom:0px;
+  transition:all .5s ease-in-out;
+  opacity:0;
+  z-index:-1;
+  
+}
+.modal:target {
+  opacity:1;
+  transition:all .5s ease-in-out;
+  z-index:+101;
+}
+.modal-content {
+  position:fixed;
+  bottom:0%;
+  left:0%;
+  background:#fff;
+  color: #000;
+  transition:all .5s ease-in-out;
+  perspective: 1000;
+  outline:1px solid transparent;
+  opacity:0;
+  width:100%;
+  height:100%;
+  transform:translate(0%, 100%);
+  text-align: center;
+}
+.modal:target .modal-content {
+  transition:all .5s ease-in-out;
+
+  z-index:9999;
+  opacity:1;
+  transform:translate(0%, 0%);
+}
+.modal-close {
+  float:right;
+  text-decoration:none;
+  padding:20px 20px;
+  color:#424242;
+  font-weight:800;
+  transition:all .5s ease-in-out;
+  z-index:+1;
+  text-align:center;
+  border-radius:0px;
+  display:block;
+  font-size: 3vw;
+  cursor: none;
+}
+.modal-close:hover {
+  color:#fff;
+  background:rgba(0,0,0,0.5);
+}
+
+
+.karung {
+  color:#fff;
+  position: relative;
+  margin-left:10%;
+  width:80%;
+  text-align:center;
+  z-index:1; 
+  border-radius:0%; 
+  overflow: hidden;
+}
+.persetujuan{
+  position: fixed;
+  bottom: 0px;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+  height: 50px;
+}
+.setujudong{
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  background:#2196f3 !important;
+  border: none;
+  color: white;
+  padding: 8px;
+  width:100px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 3px;
+  z-index:100;
+}
+.header{
+  background: #2196f3;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+}
+ol{
+  margin-top: 7px;
+}
+ol li{
+  font-size: 11px;
+}
+.flex-from{
+  border: 2px solid white !important;
+  border-radius: 5px;
+  width: 100%;
+}
+.icon{
+  width: 30px;
+  margin-right: 5px;
+}
+.icon i{
+  color: white;
+}
+.inputan{
+  width: 100%;
+}
+input{
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 13px !important;
+  padding: 1px;
+  outline: none;
+}
+input::placeholder{
+  color: white;
+  font-size: 13px !important;
+}
+.myButton{
+  background: white;
+  width: 100%;
+  color: #2196f3;
+  border: none;
+  margin-top: 15px;
+  padding: 7px;
+  border-radius: 5px;
+}
+</style>
+<body>
+  <div class="header">
+    Ketentuan Layanan
+  </div>
+<div style="padding: 10px;">
+  <p style="margin-top: 0px;font-size:11px;">Dengan bertransaksi di <b>Minipul.com by Leomang Technology</b> maka secara otomatis menyetujui syarat dan ketentuan yang berlaku disini.</p>
+  <h>A.Hal Umum</h>
+  <ol>
+    <li>Minipul.com&nbsp;&nbsp; bertindak sebagai perantara antara pembeli dengan penyedia layanan operator. Minipul bukan merupakan bagian dari operator.</li>
+    <li>Hal-hal seperti gangguan operator; &nbsp;&nbsp;&nbsp;sinyal internet lemah;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; atau &nbsp;&nbsp;&nbsp;&nbsp;keluhan &nbsp;&nbsp;&nbsp;&nbsp;lainnya &nbsp;&nbsp;&nbsp;&nbsp;terkait&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; operator merupakan hal diluar kendali Minipul</li>
+    <li>Pengguna Android Bersedia memberi izin Membaca Kontak Ponsel (Contact List), Melihat Lokasi GPS(GPS Location), Memberi akses Penyimpanan dan Memberi akses Kamera.</li>
+  </ol>
+
+
+  <h>B.PEMBELIAN PRODUK</h>
+  <ol>
+    <li>Keterangan produk yang ditampilkan di Aplikasi merupakan keterangan produk yang diterima dari operator&nbsp;&nbsp;&nbsp;&nbsp;penyedia&nbsp;&nbsp;&nbsp;&nbsp; layanan.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Apabila&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ada &nbsp;&nbsp;&nbsp; ketidaksesuaian antara keterangan produk dengan produk yang didapat, maka silahkan hubungi operator penyedia layanan untuk mendapat informasi lebih lanjut.</li>
+    <li>Harga &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dapat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;berubah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sewaktu-waktu tanpa pemberitahuan di Aplikasi. Tergantung kebijakan dari operator penyedia layanan</li>
+    <li>Data pesanan seperti produk yang dipesan dan nomor HP tujuan didapatkan dari form order yang sudah diinput oleh pelanggan. Kesalahan input data dan kesalahan nominal transfer yang mengakibatkan produk tidak dapat terkirim ke nomor HP tujuan atau akibat lainnya bukan merupakan tanggung jawab Pembeli.</li>
+  </ol>
+
+
+  <h>C.GARANSI</h>
+  <ol>
+    <li>Garansi uang kembali apabila Seller tidak dapat memproses pemesanan, dikarenakan kesalahan&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    <li>Garansi yang diberikan Orderkuota adalah terkait keaslian dan pengiriman produk.</li>
+    <li>Garansi diberikan pada jam kerja yang dicantumkan pada aplikasi</li>
+     <li>Pengajuan komplain yang dilakukan di luar kontak yang tercantum di Aplikasi pedia , bukan tanggung jawab  dan pedia tidak berkewajiban untuk menjawabnya</li>
+      <li>Jika situs penyedia&nbsp; / &nbsp;provider menghentikan layanan karena masalah internalnya, tidak bertanggung jawab dan tidak dapat dituntut memberikan ganti rugi dengan alasan apapun.</li>
+  </ol>
+
+<h>E.PERSELISIHAN</h>
+  <ol>
+    <li>Perjanjian ini tunduk kepada hukum Negara Kesatuan Republik Indonesia.</li>
+    <li>Apabila terjadi perselisihan maka akan diselesaikan secara musyawarah mufakat</li>
+    <li>Hal-hal yang belum tercantum dalam Kebijakan ini akan di sampaikan kemudian hari.</li>
+     <li>Minipul menjamin kerahasiaan dan privasi pelanggan</li>
+      <li>Hal-hal yang belum tercantum dalam Kebijakan ini akan di sampaikan kemudian hari.</li>
+  </ol>
+
+
+</div>
+<br><br>
+<div class="persetujuan">
+    <a
+href="#modal1"  target="_blank"><button class="setujudong">Setuju</button></a>
+</div>
+</div>
+
+
+<div class="modal" id="modal1" >
+  <div class="modal-content" style="background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPYGVkmOhCNM67ktf0FZxTIOMwMYvEQSoqOJH9Tz17wCJoqDkeDQAW72KmnnNDc8q7pbF4jV74RUavHe4_fJSyxs9pBS_w-MjZq68KladOhtXqLzDkl_W089WKoE0i30DS2wZ-SJu_kfTvHihabvJq7QZX7f8NQHFCJSbBaJLBuCrMeNdtniE5XZjp340/s1280/20230830_173649_0000.png);background-position: center;padding: 20px;">
+      <center>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgl1eyLnu2N21wppLiEz4JnDnBMsFZP3apuEdyCTPTIiAm7FEvwwLTIwzE_AQjvMFhUGJyY5ZLtdAgl5g-X2v6bCVyRNbEJCIo02t5vzKWzmsvT2M1qPzmb2ywlWMxioKssB40OGl9nH0qL8NJ-0GYzVperH8VdmkFH_izhef4KkVFu4An0E2xuuYaUdKk/s3264/20230825_182438.png" alt="" style="width: 65px;border-radius:5px">
+      <p style="color: white;margin-top: 10px;">Mendaftar</p>
+      </center>
+      
+<div class="modal-area">
+<br>
+<br>
+<center>
+<p style="font-size:13px;color:white"> Silahkan Isi Data Dengan Benar</p>
+</center>
+<form method="get" action="https://minipulpayment.tokowebku.com/akun/start_daftar/" style="width: 100%;">
+<div class="flex-form" style="display: flex;border: 1px solid white;padding: 10px;border-radius: 5px;margin-top: 10px;">
+    <div class="icon">
+      <i class="far fa-envelope"></i>
+    </div>
+    <div class="inputan">
+  <input id="email" type="email" name="email" placeholder="Email Anda" required class="form input-text" style="font-size: 13px;">
+</div>
+</div>
+
+<div class="flex-form" style="display: flex;border: 1px solid white;padding: 10px;border-radius: 5px;margin-top: 15px;">
+  <div class="icon">
+    <i class="far fa-lock-alt"></i>
+  </div>
+  <div class="inputan">
+  <input id="password" type="password" name="password" placeholder="Password Anda" required class="form input-text">
+  </div>
+</div>
+
+<div class="flex-form" style="display: flex;border: 1px solid white;padding: 10px;border-radius: 5px;margin-top: 15px;">
+  <div class="icon">
+    <i class="far fa-address-card"></i>
+  </div>
+  <div class="inputan">
+  <input id="nama_lengkap" type="text" name="nama_lengkap" placeholder="Nama Panggilan" required class="form input-text">
+</div>
+</div>
+
+<div class="flex-form" style="display: flex;border: 1px solid white;padding: 10px;border-radius: 5px;margin-top: 15px;">
+    <div class="icon">
+      <i class="fas fa-phone-alt"></i>
+    </div>
+    <div class="inputan">
+  <input id="nomor_hp" type="tel" name="nomor_hp" placeholder="Nomor telepon Anda" required class="form input-text">
+</div>
+</div>
+
+<div class="flex-form" style="display: flex;border: 1px solid white;padding: 10px;border-radius: 5px;margin-top: 15px;">
+    <div class="icon">
+      <i class="far fa-users"></i>
+    </div>
+    <div class="inputan">
+  <input id="referral" type="text" name="referral" placeholder="Kode referral (jika ada)" class="form input-text">
+</div>
+</div>
+
+  <center>
+    <button type="submit" class="myButton"> MENDAFTAR </button>
+  </center>
+</form>
+<a href="https://minipulpayment.tokowebku.com/akun/login/"></a>
+<h6 style="color: white;font-weight:400;">Sudah punya akun? LOGIN</h6>
+</a>
+
+
+
+
+<div>
+<div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mutasi Saldo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style type="text/css">
+    .dot-spinner {
+      --uib-size: 5rem;
+      --uib-speed: .9s;
+      --uib-color: #2196f3;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: var(--uib-size);
+      width: var(--uib-size);
+    }
+
+    .dot-spinner__dot {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      width: 100%;
+    }
+
+    .dot-spinner__dot::before {
+      content: '';
+      height: 20%;
+      width: 20%;
+      border-radius: 50%;
+      background-color: var(--uib-color);
+      transform: scale(0);
+      opacity: 0.5;
+      animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+      box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+    }
+
+    .dot-spinner__dot:nth-child(2) {
+      transform: rotate(45deg);
+    }
+
+    .dot-spinner__dot:nth-child(2)::before {
+      animation-delay: calc(var(--uib-speed) * -0.875);
+    }
+
+    .dot-spinner__dot:nth-child(3) {
+      transform: rotate(90deg);
+    }
+
+    .dot-spinner__dot:nth-child(3)::before {
+      animation-delay: calc(var(--uib-speed) * -0.75);
+    }
+
+    .dot-spinner__dot:nth-child(4) {
+      transform: rotate(135deg);
+    }
+
+    .dot-spinner__dot:nth-child(4)::before {
+      animation-delay: calc(var(--uib-speed) * -0.625);
+    }
+
+    .dot-spinner__dot:nth-child(5) {
+      transform: rotate(180deg);
+    }
+
+    .dot-spinner__dot:nth-child(5)::before {
+      animation-delay: calc(var(--uib-speed) * -0.5);
+    }
+
+    .dot-spinner__dot:nth-child(6) {
+      transform: rotate(225deg);
+    }
+
+    .dot-spinner__dot:nth-child(6)::before {
+      animation-delay: calc(var(--uib-speed) * -0.375);
+    }
+
+    .dot-spinner__dot:nth-child(7) {
+      transform: rotate(270deg);
+    }
+
+    .dot-spinner__dot:nth-child(7)::before {
+      animation-delay: calc(var(--uib-speed) * -0.25);
+    }
+
+    .dot-spinner__dot:nth-child(8) {
+      transform: rotate(315deg);
+    }
+
+    .dot-spinner__dot:nth-child(8)::before {
+      animation-delay: calc(var(--uib-speed) * -0.125);
+    }
+
+    @keyframes pulse0112 {
+
+      0%,
+      100% {
+        transform: scale(0);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+    * {
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+    }
+
+    body {
+      background-color: #fff;
+    }
+
+    p {
+      margin: 0;
+      font-size: 12px
+    }
+
+    input {
+      border: none;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    a,
+    a:focus,
+    a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @-webkit-keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .my-bg {
+      background-color: #2196f3
+    }
+
+    .my-color {
+      color: #2196f3
+    }
+
+    .my-border {
+      border: 1px solid #2196f3;
+    }
+
+    .borad-5 {
+      border-radius: 5px
+    }
+
+    .borad-10 {
+      border-radius: 10px
+    }
+
+    .borad-15 {
+      border-radius: 15px
+    }
+
+    .my-shadow {
+      box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+    }
+
+    .bg-white {
+      background-color: #fff !important
+    }
+
+    .text-white {
+      color: #fff
+    }
+
+    .f-10 {
+      font-size: 10px !important
+    }
+
+    .f-11 {
+      font-size: 11px !important
+    }
+
+    .f-12 {
+      font-size: 12px !important
+    }
+
+    .f-14 {
+      font-size: 14px !important
+    }
+
+    .f-15 {
+      font-size: 15px !important
+    }
+
+    .f-16 {
+      font-size: 16px !important
+    }
+
+    .f-17 {
+      font-size: 17px !important
+    }
+
+    .f-18 {
+      font-size: 18px !important
+    }
+
+    .f-20 {
+      font-size: 20px !important
+    }
+
+    .f-22 {
+      font-size: 22px !important
+    }
+
+    .f-24 {
+      font-size: 24px !important
+    }
+
+    .f-26 {
+      font-size: 26px !important
+    }
+
+    .f-28 {
+      font-size: 28px !important
+    }
+
+    .fwb-5 {
+      font-weight: 500
+    }
+
+    .fwb-6 {
+      font-weight: 600
+    }
+
+    .op-7 {
+      opacity: 0.7
+    }
+
+    .d-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .btn-pil {
+      padding: 12px;
+      text-align: center;
+      letter-spacing: 1px;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .pil-active {
+      color: #2196f3;
+      border-bottom: 2px solid #2196f3;
+      pointer-events: none;
+    }
+
+    .poinz {
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="header">
+    <div class="my-bg p-3" style="height: 60px;">
+    </div>
+    <div class="px-3" style="margin-top: -40px;">
+      <div class="borad-10 bg-white my-shadow">
+        <div class="p-3" style="border-bottom: 1px solid #ccc;">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7OY-2pNpN6YWR5yv8iWw8OsD7ChF7C6T1Q__vwuiGdPEuX9fZAmzxUE07KOUXuqn3dl6Qzm_T4LJPP2ryfbKR3Nd8BGU3aaTrS8XH_XiedD_RU3cgpGf3nyHpXMVFEmT_YP18cgusp7mQ3kSMLoGBSsu3pWvWdOVsF_ZuYBXWUWnRfmo1xyxLWIDB/s3264/icon-ewallet.png" width="40">
+              <div class="ms-3">
+                <p class="fwb-5 f-14">Saldo Akun</p>
+                <p class="fwb-6 f-15" id="saldo_user">{{saldo_user}}</p>
+              </div>
+            </div>
+            <a href="https://minipulpayment.tokowebku.com/digital/201287">
+              <div class="my-bg px-3 py-1 borad-5">
+                <p class="text-white text-center fwb-5 f-16" style="letter-spacing: 1px;">DEPOSIT</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="p-3 d-grid-2">
+          <div class="text-center">
+            <a href="https://minipulpayment.tokowebku.com/digital/197257">
+              <p class="my-color fwb-5 f-16">Bagi Saldo</p>
+            </a>
+          </div>
+          <div class="text-center">
+            <a href="https://minipulpayment.tokowebku.com/digital/189441">
+              <p class="my-color fwb-5 f-16">Kirim Saldo</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-flex align-items-center mt-4 my-shadow">
+    <div class="btn-pil fwb-5 f-16" id="btp-1" onclick="getData(1)">Semua</div>
+    <div class="btn-pil fwb-5 f-16" id="btp-2" onclick="getData(2);">Masuk</div>
+    <div class="btn-pil fwb-5 f-16" id="btp-3" onclick="getData(3);">Keluar</div>
+  </section>
+
+  <section id="dataApi">
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://nielz.my.id/assets/accounting.js"></script>
+  <script type="text/javascript">
+    // SETTING
+    const loads = `
+        <div class="d-flex justify-content-center py-5 mt-5">
+        <div class="dot-spinner">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        </div>
+        </div>
+        `
+
+    const produkNone = `
+        <div class="text-center container p-3 animate_animated animate_fadeIn">
+        <img src="https://i.ibb.co/qDLZ46n/undraw-Predictive-analytics-re-wxt8.png" class="w-100 borad-10 shadow-sm">
+        <p class="mt-3 f-18 fwb-6">Belum ada riwayat nih...</p>
+        </div>
+        `
+
+    const idUser = '{{id_user}}'
+    const tokenUser = '{{token_user}}'
+    const pageMutasi = 5
+
+    var _$_48cc = ["\x65\x79\x4A\x68\x63\x48\x41\x69\x4F\x69\x49\x35\x4D\x54\x51\x32\x4E\x69\x49\x73\x49\x6D\x46\x31\x64\x47\x67\x69\x4F\x69\x49\x79\x4D\x44\x49\x79\x4D\x44\x45\x77\x4D\x79\x49\x73\x49\x6E\x4E\x70\x5A\x32\x34\x69\x4F\x69\x4A\x44\x55\x57\x55\x79\x64\x45\x35\x69\x64\x6A\x6B\x33\x56\x54\x68\x4B\x51\x56\x5A\x6A\x53\x58\x4A\x42\x52\x32\x64\x52\x50\x54\x30\x69\x66\x51\x3D\x3D"]; const token = _$_48cc[0]
+
+    getData(1)
+    function getData(no) {
+      $(".btn-pil").removeClass("pil-active")
+      $(".btn-pil").addClass("poinz")
+      $("#btp-" + no).addClass("pil-active")
+      $("#dataApi").html(loads)
+      var start = 1
+      $.ajax({
+        method: "GET",
+        url: "https://openapi.bukaolshop.net/v1/user/catatan",
+        data: {
+          token: token,
+          token_user: tokenUser,
+          id_user: idUser,
+          tipe: "saldo",
+          page: start,
+        },
+        dataType: "JSON",
+        success: function (response) {
+          console.log(response)
+          if (response.status == "ok") {
+            $("#dataApi").html(`<div class="animate_animated animate_fadeIn" id="isiRiwayat"></div>`)
+            loopData(response.data, no)
+            if (response.data.length == 10) {
+              if (pageMutasi > start) {
+                nexData(start + 1, no)
+              } else {
+                $(".btn-pil").removeClass("poinz")
+              }
+            } else {
+              $(".btn-pil").removeClass("poinz")
+            }
+          } else {
+            $(".btn-pil").removeClass("poinz")
+            $("#dataApi").html(produkNone)
+          }
+        }
+      })
+    }
+
+    function nexData(page, no) {
+      $.ajax({
+        method: "GET",
+        url: "https://openapi.bukaolshop.net/v1/user/catatan",
+        data: {
+          token: token,
+          token_user: tokenUser,
+          id_user: idUser,
+          tipe: "saldo",
+          page: page,
+        },
+        dataType: "JSON",
+        success: function (response) {
+          loopData(response.data, no)
+          if (response.data.length == 10) {
+            if (pageMutasi > page) {
+              nexData(page + 1, no)
+            } else {
+              $(".btn-pil").removeClass("poinz")
+            }
+          } else {
+            $(".btn-pil").removeClass("poinz")
+          }
+        }
+      })
+    }
+
+
+    function loopData(data, no) {
+      $.each(data, function (i, v) {
+        console.log(data)
+        var info = v.informasi_catatan.replace('Anda', 'Admin').replace('Member', 'Anda').replace('Member', 'Anda').replace('dari aplikasi bukaOlshop', '').replace('melalui API', '')
+
+        let jumlah, warna, jenis, logoAll
+        if (v.tipe_jumlah == "tambah") {
+          jumlah = "+Rp" + accounting.formatNumber(v.jumlah_dana)
+          warna = 'text-success'
+          jenis = 'Tambah Saldo'
+        } else {
+          jumlah = "-Rp" + accounting.formatNumber(v.jumlah_dana)
+          warna = 'text-danger'
+          jenis = 'Kurang Saldo'
+        }
+
+        var tanggal = rubahTgl(v.tanggal)
+        var saldo = "Rp" + accounting.formatNumber(v.saldo_terakhir)
+
+        if (no == 1) {
+
+          $("#isiRiwayat").append(`
+                    <div style="border-bottom: 1px solid #ccc; padding: 12px;">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="me-3 w-100">
+                                <p class="f-12 fwb-6">${info}</p>
+                                <p class="op-7 fwb-5 f-10 mt-1">${tanggal}</p>
+                            </div>
+                            <div class="text-end" style="width: 37.5%;">
+                                <p class="${warna} f-12">${jumlah}</p>
+                                <p class="op-7 fwb-5 f-10 mt-1">Saldo ${saldo}</p>
+                            </div>
+                        </div>
+                    </div>
+                    `)
+
+        } else if (no == 2) {
+
+          if (v.tipe_jumlah == "tambah") {
+            $("#isiRiwayat").append(`
+                        <div style="border-bottom: 1px solid #ccc; padding: 12px;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3 w-100">
+                                    <p class="f-12 fwb-6">${info}</p>
+                                    <p class="op-7 fwb-5 f-10 mt-1">${tanggal}</p>
+                                </div>
+                                <div class="text-end" style="width: 37.5%;">
+                                    <p class="${warna} f-12">${jumlah}</p>
+                                    <p class="op-7 fwb-5 f-10 mt-1">Saldo ${saldo}</p>
+                                </div>
+                            </div>
+                        </div>
+                        `)
+          }
+
+        } else {
+
+          if (v.tipe_jumlah == "kurang") {
+            $("#isiRiwayat").append(`
+                        <div style="border-bottom: 1px solid #ccc; padding: 12px;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3 w-100">
+                                    <p class="f-12 fwb-6">${info}</p>
+                                    <p class="op-7 fwb-5 f-10 mt-1">${tanggal}</p>
+                                </div>
+                                <div class="text-end" style="width: 37.5%;">
+                                    <p class="${warna} f-12">${jumlah}</p>
+                                    <p class="op-7 fwb-5 f-10 mt-1">Saldo ${saldo}</p>
+                                </div>
+                            </div>
+                        </div>
+                        `)
+          }
+        }
+
+      })
+    }
+
+
+    function rubahTgl(dates) {
+      var dataTgl = dates.split(" ")[0]
+      var tgl = dataTgl.split("-")[2]
+      var bln = dataTgl.split("-")[1]
+      var thn = dataTgl.split("-")[0]
+
+
+      var xTan = bln
+      let naBul
+      if (xTan == 1) {
+        naBul = "Jan"
+      } else if (xTan == 2) {
+        naBul = "Feb"
+      } else if (xTan == 3) {
+        naBul = "Mar"
+      } else if (xTan == 4) {
+        naBul = "Apr"
+      } else if (xTan == 5) {
+        naBul = "Mei"
+      } else if (xTan == 6) {
+        naBul = "Jun"
+      } else if (xTan == 7) {
+        naBul = "Jul"
+      } else if (xTan == 8) {
+        naBul = "Aug"
+      } else if (xTan == 9) {
+        naBul = "Sep"
+      } else if (xTan == 10) {
+        naBul = "Okt"
+      } else if (xTan == 11) {
+        naBul = "Nov"
+      } else if (xTan == 12) {
+        naBul = "Des"
+      }
+
+      var tanggalku = tgl + " " + naBul + " " + thn
+
+      var dataJam = dates.split(" ")[1]
+      var jam = dataJam.split(":")[0]
+      var menit = dataJam.split(":")[1]
+      var waktuKu = jam + ":" + menit
+
+      var times = tanggalku + " · " + waktuKu
+
+      return times
+
+    }
+
+    $("#saldo_user").html("Rp " + accounting.formatNumber($("#saldo_user").html()))
+
+  </script>
+</body>
+
+</html>

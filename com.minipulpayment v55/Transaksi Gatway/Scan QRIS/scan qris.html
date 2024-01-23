@@ -1,0 +1,1420 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kembali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<style type="text/css">
+    /---------- Loader Elz Design ----------/
+
+    .loadingspinner {
+        --square: 26px;
+        --offset: 30px;
+        --duration: 2.4s;
+        --delay: 0.2s;
+        --timing-function: ease-in-out;
+        --in-duration: 0.4s;
+        --in-delay: 0.1s;
+        --in-timing-function: ease-out;
+        width: calc(3 * var(--offset) + var(--square));
+        height: calc(2 * var(--offset) + var(--square));
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        position: relative;
+    }
+
+    .loadingspinner div {
+        display: inline-block;
+        background: #42a5f5;
+        border: none;
+        border-radius: 5px;
+        width: var(--square);
+        height: var(--square);
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+        font-size: 6pt;
+        color: black;
+    }
+
+    .loadingspinner #square1 {
+        left: calc(0 * var(--offset));
+        top: calc(0 * var(--offset));
+        animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
+            squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square2 {
+        left: calc(0 * var(--offset));
+        top: calc(1 * var(--offset));
+        animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
+            squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square3 {
+        left: calc(1 * var(--offset));
+        top: calc(1 * var(--offset));
+        animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
+            squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square4 {
+        left: calc(2 * var(--offset));
+        top: calc(1 * var(--offset));
+        animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
+            squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square5 {
+        left: calc(3 * var(--offset));
+        top: calc(1 * var(--offset));
+        animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
+            squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    @keyframes square1 {
+        0% {
+            left: calc(0 * var(--offset));
+            top: calc(0 * var(--offset));
+        }
+
+        8.333% {
+            left: calc(0 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        100% {
+            left: calc(0 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+    }
+
+    @keyframes square2 {
+        0% {
+            left: calc(0 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        8.333% {
+            left: calc(0 * var(--offset));
+            top: calc(2 * var(--offset));
+        }
+
+        16.67% {
+            left: calc(1 * var(--offset));
+            top: calc(2 * var(--offset));
+        }
+
+        25.00% {
+            left: calc(1 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        83.33% {
+            left: calc(1 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        91.67% {
+            left: calc(1 * var(--offset));
+            top: calc(0 * var(--offset));
+        }
+
+        100% {
+            left: calc(0 * var(--offset));
+            top: calc(0 * var(--offset));
+        }
+    }
+
+    @keyframes square3 {
+
+        0%,
+        100% {
+            left: calc(1 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        16.67% {
+            left: calc(1 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        25.00% {
+            left: calc(1 * var(--offset));
+            top: calc(0 * var(--offset));
+        }
+
+        33.33% {
+            left: calc(2 * var(--offset));
+            top: calc(0 * var(--offset));
+        }
+
+        41.67% {
+            left: calc(2 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        66.67% {
+            left: calc(2 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        75.00% {
+            left: calc(2 * var(--offset));
+            top: calc(2 * var(--offset));
+        }
+
+        83.33% {
+            left: calc(1 * var(--offset));
+            top: calc(2 * var(--offset));
+        }
+
+        91.67% {
+            left: calc(1 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+    }
+
+    @keyframes square4 {
+        0% {
+            left: calc(2 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        33.33% {
+            left: calc(2 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        41.67% {
+            left: calc(2 * var(--offset));
+            top: calc(2 * var(--offset));
+        }
+
+        50.00% {
+            left: calc(3 * var(--offset));
+            top: calc(2 * var(--offset));
+        }
+
+        58.33% {
+            left: calc(3 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        100% {
+            left: calc(3 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+    }
+
+    @keyframes square5 {
+        0% {
+            left: calc(3 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        50.00% {
+            left: calc(3 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        58.33% {
+            left: calc(3 * var(--offset));
+            top: calc(0 * var(--offset));
+        }
+
+        66.67% {
+            left: calc(2 * var(--offset));
+            top: calc(0 * var(--offset));
+        }
+
+        75.00% {
+            left: calc(2 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+
+        100% {
+            left: calc(2 * var(--offset));
+            top: calc(1 * var(--offset));
+        }
+    }
+
+    @keyframes squarefadein {
+        0% {
+            transform: scale(0.75);
+            opacity: 0.0;
+        }
+
+        100% {
+            transform: scale(1.0);
+            opacity: 1.0;
+        }
+    }
+
+    /---------- End Loader ----------/
+
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+    * {
+        font-family: 'Poppins', sans-serif
+    }
+
+    body {
+        background-color: #EDF1FC;
+    }
+
+    p {
+        margin: 0;
+        font-size: 13px
+    }
+
+    input {
+        border: none;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+    }
+
+    a,
+    a:focus,
+    a:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .head {
+        background-color: #42a5f5;
+        height: 100px;
+        border-radius: 0 0 25px 25px
+    }
+
+    .p-head {
+        padding: 20px;
+        padding-top: 0;
+        margin-top: -85px
+    }
+
+    .bottom-bot {
+        padding: 20px;
+        padding-top: 0px
+    }
+
+    .bot-head {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+        text-align: center;
+        padding: 15px;
+        border-radius: 5px
+    }
+
+    .bot-head p {
+        font-weight: 600;
+        font-size: 16px
+    }
+
+    .h-bot {
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+        border-radius: 5px;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding-top: 15px;
+        -webkit-animation: fadeEffect 1s;
+        animation: fadeEffect 1s;
+    }
+
+    @-webkit-keyframes fadeEffect {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeEffect {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .tab {
+        width: 100%;
+        border-radius: 15px
+    }
+
+    .tab button {
+        background-color: transparent;
+        border: none;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 5px;
+        flex: 0 0 auto;
+        width: 50%;
+    }
+
+    .tab button.active {
+        border-bottom: 1px solid;
+        background-color: #42a5f5;
+        color: #fff;
+        border-radius: 5px;
+        -webkit-animation: fadeEffect 1s;
+        animation: fadeEffect 1s;
+    }
+
+    .qr-ku {
+        background-color: #fff;
+        padding: 50px 10px 10px 10px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+    }
+
+    .qr-ku img {
+        width: 75%
+    }
+
+    .menu-tf {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+    }
+
+    .contact-barcode {
+        padding: 10px;
+        width: auto;
+        background-color: #42a5f5;
+        border-radius: 5px
+    }
+
+    .contact-barcode img {
+        width: 35px
+    }
+
+    .form-inputs {
+        border: 1px solid #42a5f5;
+        padding: 15px;
+        border-radius: 5px;
+        width: 100%;
+        text-align: center;
+        font-weight: 600
+    }
+
+    .btn-lanjut {
+        background-color: #42a5f5;
+        border: 1px solid #42a5f5;
+        font-weight: 600;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        color: #fff;
+        margin-top: 20px;
+    }
+
+    .menu-rwyt {
+        margin-top: 35px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+    }
+
+    .judul-rwyt {
+        font-size: 16px;
+        font-weight: 600
+    }
+
+    .xrw {
+        line-height: 16px
+    }
+
+    .img-wyt {
+        padding: 5px;
+        border-radius: 50%;
+        background-color: #42a5f5
+    }
+
+    .boxrwt {
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+    }
+
+    .name-qr {
+        font-size: 20px;
+        font-weight: 600;
+        color: #42a5f5
+    }
+
+    .id-qr {
+        font-size: 18px;
+        font-weight: 600
+    }
+
+    .tf-name {
+        font-size: 12px;
+        font-weight: 600
+    }
+
+    .tgl-rwyt {
+        opacity: 0.7;
+        font-weight: 500;
+        font-size: 11px
+    }
+
+    .noms-rywt {
+        font-size: 15px;
+        color: #42a5f5;
+        font-weight: 500
+    }
+
+    .offcanvas-top {
+        height: 100% !important
+    }
+
+    .l-semua {
+        background-color: #42a5f5;
+        padding: 5px 15px;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 5px
+    }
+
+    .h-canv {
+        padding: 15px
+    }
+
+    .t-canv {
+        font-weight: 600;
+        font-size: 20px
+    }
+
+    .b-canv {
+        font-size: 16px;
+        font-weight: 600;
+        opacity: 0.7
+    }
+
+    .l-canv button {
+        border: none;
+        background-color: #42a5f5;
+        border-radius: 5px;
+        font-weight: 600;
+        color: #fff;
+        padding: 5px 15px;
+        font-size: 16px
+    }
+
+    .nom-canv {
+        padding: 15px;
+        padding-top: 0
+    }
+
+    .p-nom {
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 15px;
+    }
+
+    .h-nom {
+        font-size: 35px;
+        font-weight: 400
+    }
+
+    .num-canv {
+        padding: 15px;
+        margin-top: 7.5rem
+    }
+
+    .bg-nom button {
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 5px;
+        background-color: #EDF1FC;
+        border: 1px solid #42a5f5;
+        margin: 10px;
+    }
+
+    .bg-nom button:active {
+        background-color: #42a5f5;
+        color: #fff;
+
+    }
+
+    .bg-nom button:after {
+        background-color: #EDF1FC;
+        border: 1px solid #42a5f5;
+
+    }
+
+    .kir-canv {
+        padding: 10px
+    }
+
+    .but-kir {
+        width: 100%;
+        background-color: #42a5f5;
+        border-radius: 5px;
+        margin-top: 15px;
+        padding: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+    }
+
+    .offcanvas.offcanvas-bottom {
+        border: none;
+    }
+
+    .offcanvas-bottom {
+        height: 100% !important;
+    }
+
+    .box-bot-cv {
+        padding: 15px;
+    }
+
+    .btn-rw {
+        background-color: #EDF1FC;
+        border: 1px solid #42a5f5;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px;
+        width: 100%;
+        font-weight: 500
+    }
+
+    .active-rw {
+        background-color: #42a5f5;
+        color: #fff;
+        -webkit-animation: fadeEffect .5s;
+        animation: fadeEffect .5s;
+        pointer-events: none;
+
+    }
+
+    .produk-none {
+        padding: 15px;
+    }
+
+    .produk-none img {
+        width: 100%
+    }
+
+    .produk-none p {
+        font-size: 16px;
+        font-weight: 600
+    }
+
+    * {
+        user-select: none;
+    }
+
+
+    .scn {
+        font-size: 20px;
+        font-weight: 500;
+        background-color: #42a5f5;
+        padding: 5px 50px;
+        border-radius: 5px;
+        color: #fff;
+        margin-top: 30px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+
+    }
+
+    #fotPen {
+        border: 2px solid #42a5f5;
+        background-color: #42a5f5;
+        padding: 5px
+    }
+
+    .fotriw {
+        border: 2px solid #42a5f5;
+        background-color: #42a5f5;
+        padding: 5px;
+        border-radius: 50%
+    }
+
+    .card-riwayat {
+        border-bottom: 1px solid #ededed;
+        padding: 10px 0;
+    }
+
+    .r-jud {
+        font-size: 15px;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 125px
+    }
+
+    .t-jud {
+        opacity: 0.7
+    }
+
+    .t-rp {
+        background-color: #42a5f5;
+        border-radius: 15px;
+        padding: 5px 15px
+    }
+
+    .t-rp p {
+        font-weight: 500;
+        color: #fff
+    }
+
+    .containers {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        gap: 0.625em;
+        transform: translate(-50%, -50%);
+    }
+
+    .containers span {
+        border-radius: 50%;
+        height: 1.5em;
+        width: 1.5em;
+    }
+
+    .containers span::before {
+        content: "";
+        display: block;
+        border-radius: inherit;
+        height: inherit;
+        width: inherit;
+        background-color: inherit;
+        animation: ripple 1.8s ease-out infinite;
+        animation-delay: inherit;
+        z-index: -1;
+    }
+
+    .containers span:nth-of-type(1) {
+        background-color: #84cdfa;
+    }
+
+    .containers span:nth-of-type(2) {
+        background-color: #5ad1cd;
+        animation-delay: 0.2s;
+    }
+
+    .containers span:nth-of-type(3) {
+        background-color: #9b59b6;
+        animation-delay: 0.4s;
+    }
+
+    @keyframes ripple {
+        from {
+            opacity: 1;
+            transform: scale(0);
+        }
+
+        to {
+            opacity: 0;
+            transform: scale(3);
+        }
+    }
+
+    .loadingku {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 99999;
+        backdrop-filter: blur(5px);
+    }
+
+    .visib {
+        visibility: hidden;
+    }
+
+    .pointz {
+        pointer-events: none;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+    <div class="loadingku d-none" id="loadku">
+        <div class="containers">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <section class="header" style="position: relative; z-index: 0">
+        <div class="head"></div>
+        <div class="p-head">
+            <div class="bot-head">
+                <p>SCAN QRIS</p>
+            </div>
+
+            <div class="h-bot">
+                <div class="tab d-flex justify-content-between align-items-center">
+                    <button class="tablinks active" onclick="openCity(event, 'tab-1')" id="defaultOpen">Payment</button>
+                    <button class="tablinks" onclick="openCity(event, 'tab-2'); cekRiwayat()">History</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+        .for-box,
+        .box-btn {
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+            border-radius: 5px;
+            padding: 1rem;
+        }
+    </style>
+
+    <section class="bottom-bot">
+
+        <div id="tab-1" class="tabcontent">
+            <div class="qr-ku text-center">
+                <img style="width: 200px;" onclick="getScan()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_spqqYjEkrbILOWuoGbFmeOjK2IzipRV2cz2i1RwWxJELPkGzhox_4fkPaCXWnjTXyOc&usqp=CAU">
+                <div class="d-flex justify-content-center">
+                    <div class="scn" onclick="getScan()"><b>SCAN</b></div>
+                </div>
+            </div>
+        </div>
+        <!-- BTN 1 -->
+
+        <div id="tab-2" class="tabcontent">
+            <div class="menu-rwyt mt-0">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="judul-rwyt">Riwayat Transfer Kamu</p>
+                </div>
+
+                <div id="boxRiwayat" class="mt-2">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <style type="text/css">
+
+    </style>
+
+    <div class="offcanvas offcanvas-top" tabindex="-1" id="Id2" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-body">
+            <div class="d-flex justify-content-between align-items-center h-canv">
+                <div class="d-flex justify-content-start align-items-center">
+                    <div>
+                        <img src="https://i.postimg.cc/J7gKVcjy/online.png" id="fotPen" width="55"
+                            class="rounded-circle">
+                    </div>
+                    <div class="ms-3 bg-canv">
+                        <p class="t-canv" id="naPen"></p>
+                        <p class="b-canv" id="idPen"></p>
+                    </div>
+                </div>
+                <div class="l-canv">
+                    <button data-bs-dismiss="offcanvas" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+                </div>
+            </div>
+
+            <div class="nom-canv">
+                <p class="p-nom">Nominal Transfer</p>
+                <p class="text-danger" id="admku"></p>
+                <div class="d-flex align-item-center">
+                    <p class="h-nom">Rp</p>
+                    <input type="text" id="nomTf" class="w-100 h-nom" value="0" readonly>
+                </div>
+            </div>
+
+            <div class="num-canv" id="noms">
+                <div class="justify-content-between align-items-center d-flex bg-nom">
+                    <button onclick="valNum('1')">1</button>
+                    <button onclick="valNum('2')">2</button>
+                    <button onclick="valNum('3')">3</button>
+                </div>
+                <div class="justify-content-between align-items-center d-flex bg-nom">
+                    <button onclick="valNum('4')">4</button>
+                    <button onclick="valNum('5')">5</button>
+                    <button onclick="valNum('6')">6</button>
+                </div>
+                <div class="justify-content-between align-items-center d-flex bg-nom">
+                    <button onclick="valNum('7')">7</button>
+                    <button onclick="valNum('8')">8</button>
+                    <button onclick="valNum('9')">9</button>
+                </div>
+                <div class="justify-content-between align-items-center d-flex bg-nom">
+                    <button onclick="valNum('0')">0</button>
+                    <button onclick="valNum('000')" id="btz">000</button>
+                    <button onclick="valNum('-1')"><i class="fa-solid fa-delete-left"></i></button>
+                </div>
+            </div>
+            <div class="kir-canv">
+                <button class="but-kir" onclick="kirimData()" id="kir-dat">Kirim Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+        .j-detail {
+            font-weight: 600;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .list-riwayat {
+            padding: 12.5px 0;
+            border-bottom: 2px dotted #ededed
+        }
+
+        .ind {
+            opacity: 0.7;
+            font-weight: 500
+        }
+
+        .vals {
+            font-weight: 500
+        }
+
+        .bg-tutup {
+            background-color: #42a5f5;
+            padding: 10px;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+            margin-top: 30px;
+            border-radius: 5px;
+            font-weight: 500
+        }
+
+        .bg-tutup p {
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 1px
+        }
+    </style>
+
+    <div class="offcanvas offcanvas-bottom h-100" tabindex="-1" id="Id3" aria-labelledby="offcanvasTopLabel"
+        style="background-color: #EDF1FC">
+        <div class="offcanvas-body p-15">
+
+            <div class="menu-rwyt mt-2">
+                <p class="j-detail">Detail Transaksi</p>
+            </div>
+
+
+            <div class="menu-rwyt" style="margin-top: 20px">
+
+                <div class="list-riwayat">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="ind">Status</p>
+                        <p class="vals t-rp text-white px-4" style="letter-spacing: 1px">SUKSES</p>
+                    </div>
+                </div>
+
+                <div class="list-riwayat">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="ind">ID Trx</p>
+                        <p class="vals" id="trx">ST-030839-22</p>
+                    </div>
+                </div>
+                <div class="list-riwayat">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="ind">Tanggal</p>
+                        <p class="vals" id="tgl">ST-030839-22</p>
+                    </div>
+                </div>
+                <div class="list-riwayat">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="ind">Reff ID</p>
+                        <p class="vals" id="ref">ST-030839-22</p>
+                    </div>
+                </div>
+
+                <div class="list-riwayat">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="ind">Nama Merchant</p>
+                        <p class="vals" id="merc">ST-030839-22</p>
+                    </div>
+                </div>
+
+                <div class="list-riwayat">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="ind">Lokasi Merchant</p>
+                        <p class="vals" id="loc">ST-030839-22</p>
+                    </div>
+                </div>
+
+                <div class="list-riwayat">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="ind">Jumlah</p>
+                        <p class="vals" id="jml">ST-030839-22</p>
+                    </div>
+                </div>
+
+                <div class="list-riwayat" style="border-bottom: 1px solid rgba(0, 0, 0, 0.25)">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="ind">Biaya Admin</p>
+                        <p class="vals" id="adm">ST-030839-22</p>
+                    </div>
+                </div>
+
+                <div class="list-riwayat" style="border-bottom: 0">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p class="fw-bold">Total</p>
+                        <p class="fw-bold" id="total">ST-030839-22</p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="bg-tutup" data-bs-dismiss="offcanvas" aria-label="Close">
+                <p>TUTUP</p>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <input type="hidden" id="qrisku" class="{{hasil_scan}}" onchange="getQris()">
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://nielz.my.id/assets/accounting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+
+        //SETTING
+
+        var minimTf = 1000
+        var maxTf = 100000
+        var biayaAdmin = 500
+        var aktivasi = "minipulpayment"
+        var myId = 1
+        var urlToko = "https://minipulpayment.tokowebku.com"
+
+        if (biayaAdmin == 0) {
+            $("#admku").html()
+        } else {
+            $("#admku").html("Admin Rp" + accounting.formatNumber(biayaAdmin))
+        }
+
+        var idUser = "{{id_user}}"
+        var namaUser = "{{nama_user}}"
+        var emailUser = "{{email_user}}"
+        var saldoUser = parseInt("{{saldo_user}}")
+
+
+
+
+        // load
+        const load = `<div id="for-ld2" class="d-flex justify-content-center align-items-center text-center">
+  <div class="spinner-border" role="status" style="width: 24px; height:24px">
+  <span class="visually-hidden">Loading...</span>
+  </div>
+  </div>`
+
+        var loads = `<div id="loads-2" class="loading">
+  <div class="loadingspinner">
+  <div id="square1"></div>
+  <div id="square2"></div>
+  <div id="square3"></div>
+  <div id="square4"></div>
+  <div id="square5"></div>
+  </div>
+  </div>`
+
+        var produkNone = `<div class="text-center container produk-none animate_animated animate_fadeIn">
+  <img src="https://i.ibb.co/VwtjssF/digital-marketing.webp">
+  <p class="mt-3">Belum ada riwayat transfer nih...</p>
+  </div>`
+
+        var baseUrl = 'https://nielz.my.id/qris-minipul'
+
+        cekRiwayat()
+        function cekRiwayat() {
+            $.ajax({
+                method: "GET",
+                url: baseUrl + "/api/riwayat.php",
+                data: {
+                    "user": idUser,
+                    "email": emailUser,
+                },
+                dataType: "JSON",
+                beforeSend: function () {
+                    $("#boxRiwayat").html(loads)
+                },
+                success: function (response) {
+                    console.log(response)
+                    if (response.data.length != 0) {
+                        $("#boxRiwayat").html(`<div class="animate_animated animate_fadeIn" id="dataRwyt"></div>`)
+                        loopRiwayat(response.data)
+                    } else {
+                        $("#boxRiwayat").html(produkNone)
+                    }
+                }
+
+            })
+
+        }
+
+
+        function loopRiwayat(data) {
+            $("#dataRwyt").html()
+            $.each(data, function (i, v) {
+                var dataTgl = v.waktu.split(" ")[0]
+                var tgl = dataTgl.split("-")[2]
+                var bln = dataTgl.split("-")[1]
+                var thn = dataTgl.split("-")[0]
+
+
+                var xTan = bln
+                let naBul
+                if (xTan == 1) {
+                    naBul = "Jan"
+                } else if (xTan == 2) {
+                    naBul = "Feb"
+                } else if (xTan == 3) {
+                    naBul = "Mar"
+                } else if (xTan == 4) {
+                    naBul = "Apr"
+                } else if (xTan == 5) {
+                    naBul = "May"
+                } else if (xTan == 6) {
+                    naBul = "Jun"
+                } else if (xTan == 7) {
+                    naBul = "Jul"
+                } else if (xTan == 8) {
+                    naBul = "Aug"
+                } else if (xTan == 9) {
+                    naBul = "Sep"
+                } else if (xTan == 10) {
+                    naBul = "Oct"
+                } else if (xTan == 11) {
+                    naBul = "Nov"
+                } else if (xTan == 12) {
+                    naBul = "Dec"
+                }
+
+                var tanggalku = tgl + " " + naBul + " " + thn
+
+
+                var dataJam = v.waktu.split(" ")[1]
+                var jam = dataJam.split(":")[0]
+                var menit = dataJam.split(":")[1]
+                var waktuKu = jam + ":" + menit
+
+                var times = tanggalku + " · " + waktuKu
+
+                $("#dataRwyt").append(`
+       <div class="card-riwayat" onclick="getDetail('${v.id_transaksi}', '${times}', '${v.serial}', '${v.merchant_penerima}', '${v.merchant_tempat}', '${v.jumlah}', '${v.admin}', '${v.total}')" data-bs-toggle="offcanvas" data-bs-target="#Id3" aria-controls="Id3" >
+       <div class="d-flex justify-content-between align-items-center">
+       <div class="d-flex align-items-center">
+       <img src="https://i.postimg.cc/J7gKVcjy/online.png" class="fotriw" width="45" class="rounded-circle">
+
+       <div style="margin-left: 15px">
+       <p class="r-jud">${v.merchant_penerima}</p>
+       <p class="t-jud">${tanggalku} · ${waktuKu}</p>
+       </div>
+       </div>
+       <div class="d-flex">
+       <div class="t-rp">
+       <p>Rp${accounting.formatNumber(v.jumlah)}</p>
+       </div>
+       </div>
+       </div>
+       </div>
+       `)
+            })
+        }
+
+        function getDetail(id, tgl, ref, nama, tempat, jml, adm, total) {
+            $("#trx").html(id)
+            $("#tgl").html(tgl)
+            $("#ref").html(ref)
+            $("#merc").html(nama)
+            $("#loc").html(tempat)
+            $("#jml").html("Rp" + accounting.formatNumber(jml))
+            $("#adm").html("Rp" + accounting.formatNumber(adm))
+            $("#total").html("Rp" + accounting.formatNumber(total))
+        }
+
+        function getScan() {
+            window.location.href = urlToko + "/scan_qr"
+        }
+
+        function kirimData() {
+            var jml = accounting.unformat($("#nomTf").val())
+            var merchant = $("#naPen").html()
+
+            let textAdm
+            if (biayaAdmin == 0) {
+                textAdm = ""
+            } else {
+                textAdm = " & Admin Rp" + accounting.formatNumber(biayaAdmin)
+            }
+
+            if (jml < minimTf) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Minimal Transfer Rp' + accounting.formatNumber(minimTf),
+                    text: 'Silahkan Cek Kembali',
+                    confirmButtonText: 'Kembali'
+
+                })
+            } else {
+                if (jml > maxTf) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Maximal Transfer Rp' + accounting.formatNumber(maxTf),
+                        text: 'Silahkan Cek Kembali',
+                        confirmButtonText: 'Kembali'
+
+                    })
+                } else {
+                    if (jml > saldoUser + biayaAdmin) {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Saldo Anda Tidak Cukup',
+                            text: 'Silahkan Cek Saldo Anda',
+                            confirmButtonText: 'Kembali'
+
+                        })
+                    } else {
+                        Swal.fire({
+                            title: 'Apakah Kamu Yakin?',
+                            text: "Ingin Transfer Ke " + merchant + " Sebesar Rp" + accounting.formatNumber(jml) + textAdm,
+                            icon: 'warning',
+                            showClass: {
+                                popup: 'animate_animated animate_fadeInDown'
+                            },
+                            showCancelButton: true,
+                            confirmButtonColor: '#42a5f5',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Transfer Sekarang',
+                            cancelButtonText: 'Batalkan',
+                            reverseButtons: true
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                goTransfer(jml)
+                            }
+                        })
+
+                    }
+                }
+
+            }
+        }
+
+
+        function goTransfer(jml) {
+            var qris = $("#qrisku").val()
+            // var qris = "00020101021126670016COM.NOBUBANK.WWW01189360050300000879140214647291290602420303UKE51440014ID.CO.QRIS.WWW0215ID20232592073140303UKE5204481253033605802ID5921GALIH STORE OK10780416010BOJONEGORO61056216262070703A0163049A6E"
+
+            $.ajax({
+                method: "GET",
+                url: baseUrl + "/api/qrispay.php",
+                data: {
+                    "id": myId,
+                    "key": aktivasi,
+                    "qris": qris,
+                    "nama": namaUser,
+                    "user": idUser,
+                    "email": emailUser,
+                    "jumlah": jml,
+                    "admin": biayaAdmin
+                },
+                dataType: "JSON",
+                beforeSend: function () {
+                    $("#loadku").removeClass("d-none")
+                },
+                success: function (response) {
+                    $("#loadku").addClass("d-none")
+                    console.log(response)
+                    if (response.success == true) {
+                        var nama = response.data.merchant_penerima
+                        var total = response.data.jumlah
+                        closeCanvas(nama, total)
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Gagal Transfer',
+                            text: 'Silahkan Hubungi Admin',
+                            confirmButtonText: 'Kembali'
+
+                        })
+                    }
+                }
+
+            })
+
+        }
+
+
+        function closeCanvas(name, jml) {
+            var myOffcanvas = document.getElementById('Id2')
+            let openedCanvas = bootstrap.Offcanvas.getInstance(myOffcanvas);
+            openedCanvas.hide();
+            $("#nomTf").val("0")
+            Swal.fire({
+                title: 'Yeay!',
+                icon: 'success',
+                text: 'Kamu Berhasil Transfer Ke ' + name + ' Sebesar Rp' + accounting.formatNumber(jml),
+                confirmButtonText: 'Kembali'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = urlToko + "/refresh_saldo"
+                }
+            })
+        }
+
+        // getQris()
+        function getQris() {
+            var qris = $("#qrisku").val()
+            // var qris = "00020101021126670016COM.NOBUBANK.WWW01189360050300000879140214647291290602420303UKE51440014ID.CO.QRIS.WWW0215ID20232592073140303UKE5204481253033605802ID5921GALIH STORE OK10780416010BOJONEGORO61056216262070703A0163049A6E"
+            var a = qris.split("ID59")[1]
+            var b = a.slice(2)
+            var nama = b.split("60")[0]
+
+            var c = b.split("60")[1]
+            var d = c.slice(2)
+            var lok = d.split("61")
+
+            let lokasi
+
+            if (lok.length == 1) {
+                lokasi = ""
+            } else {
+                lokasi = lok[0]
+            }
+
+            let number
+
+            var no1 = qris.split("303360540")[1]
+            if (no1 != undefined) {
+                var no2 = no1.slice(1)
+                var pt = no1.substr(0, 1)
+                var no3 = no2.substr(0, pt)
+                number = no3
+            } else {
+                number = ''
+            }
+
+
+            if (lokasi == "") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'QRIS Tidak Valid',
+                    text: 'Tidak Bisa Transfer Ke QRIS Tersebut',
+                })
+            } else {
+
+                if (number == '') {
+                    var myOffcanvas = document.getElementById('Id2')
+                    var bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas)
+                    bsOffcanvas.show();
+                    $("#naPen").html(nama)
+                    $("#idPen").html(lokasi)
+                    $("#noms").removeClass('visib')
+                } else {
+                    $("#nomTf").val(accounting.formatNumber(number))
+                    var myOffcanvas = document.getElementById('Id2')
+                    var bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas)
+                    bsOffcanvas.show();
+                    $("#naPen").html(nama)
+                    $("#idPen").html(lokasi)
+                    $("#noms").addClass('visib')
+                }
+            }
+        }
+
+
+        // KALKULASI
+        function valNum(id) {
+
+            if (id == "-1") {
+                var x = $("#nomTf").val()
+                var y = $("#nomTf").val().length + parseInt(id)
+                var z = x.substr(0, y)
+                $("#nomTf").val(accounting.formatNumber(z))
+            } else {
+                console.log($("#nomTf").val().length)
+                if ($("#nomTf").val().length <= 12) {
+                    if (id == '000') {
+                        if ($("#nomTf").val().length == 10) {
+                            id = "00"
+                        } else if ($("#nomTf").val().length == 11) {
+                            id = "0"
+                        }
+                    }
+                    var x = $("#nomTf").val()
+                    var y = x + id
+                    var z = accounting.formatNumber(y)
+                    $("#nomTf").val(z)
+                }
+            }
+        }
+
+
+        //OPEN CITY
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        // defaultOpen
+        document.getElementById("defaultOpen").click();
+
+    </script>
+</body>
+
+</html>

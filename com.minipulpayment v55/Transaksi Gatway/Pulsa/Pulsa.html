@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kembali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+    <style type="text/css">
+        /* ELZ LOAD */
+        .dot-spinner {
+            --uib-size: 5rem;
+            --uib-speed: .9s;
+            --uib-color: #2196f3;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: var(--uib-size);
+            width: var(--uib-size);
+        }
+
+        .dot-spinner__dot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            width: 100%;
+        }
+
+        .dot-spinner__dot::before {
+            content: '';
+            height: 20%;
+            width: 20%;
+            border-radius: 50%;
+            background-color: var(--uib-color);
+            transform: scale(0);
+            opacity: 0.5;
+            animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+        }
+
+        .dot-spinner__dot:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .dot-spinner__dot:nth-child(2)::before {
+            animation-delay: calc(var(--uib-speed) * -0.875);
+        }
+
+        .dot-spinner__dot:nth-child(3) {
+            transform: rotate(90deg);
+        }
+
+        .dot-spinner__dot:nth-child(3)::before {
+            animation-delay: calc(var(--uib-speed) * -0.75);
+        }
+
+        .dot-spinner__dot:nth-child(4) {
+            transform: rotate(135deg);
+        }
+
+        .dot-spinner__dot:nth-child(4)::before {
+            animation-delay: calc(var(--uib-speed) * -0.625);
+        }
+
+        .dot-spinner__dot:nth-child(5) {
+            transform: rotate(180deg);
+        }
+
+        .dot-spinner__dot:nth-child(5)::before {
+            animation-delay: calc(var(--uib-speed) * -0.5);
+        }
+
+        .dot-spinner__dot:nth-child(6) {
+            transform: rotate(225deg);
+        }
+
+        .dot-spinner__dot:nth-child(6)::before {
+            animation-delay: calc(var(--uib-speed) * -0.375);
+        }
+
+        .dot-spinner__dot:nth-child(7) {
+            transform: rotate(270deg);
+        }
+
+        .dot-spinner__dot:nth-child(7)::before {
+            animation-delay: calc(var(--uib-speed) * -0.25);
+        }
+
+        .dot-spinner__dot:nth-child(8) {
+            transform: rotate(315deg);
+        }
+
+        .dot-spinner__dot:nth-child(8)::before {
+            animation-delay: calc(var(--uib-speed) * -0.125);
+        }
+
+        @keyframes pulse0112 {
+
+            0%,
+            100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ELZ BASIC */
+        * {
+            font-family: 'Nunito', sans-serif;
+            user-select: none;
+        }
+
+        body {
+            background-color: #EDF1FC;
+        }
+
+        p {
+            margin: 0;
+            font-size: 12px
+        }
+
+        input {
+            border: none;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        a,
+        a:focus,
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .my-bg {
+            background-color: #2196f3
+        }
+
+        .my-color {
+            color: #2196f3
+        }
+
+        .my-border {
+            border: 1px solid #2196f3;
+        }
+
+        .my-2-border {
+            border: 2px solid #2196f3;
+        }
+
+        .sec-border {
+            border: 1px solid #cccccc;
+        }
+
+        .sec-2-border {
+            border: 2px solid #cccccc;
+        }
+
+        .borad-5 {
+            border-radius: 5px
+        }
+
+        .borad-10 {
+            border-radius: 10px
+        }
+
+        .borad-15 {
+            border-radius: 15px
+        }
+
+        .my-shadow {
+            box-shadow: rgba(0, 0, 0, 0.15) 1px;
+        }
+
+        .bg-white {
+            background-color: #fff !important
+        }
+
+        .text-white {
+            color: #fff
+        }
+
+        .f-11 {
+            font-size: 11px !important
+        }
+
+        .f-12 {
+            font-size: 12px !important
+        }
+
+        .f-14 {
+            font-size: 14px !important
+        }
+
+        .f-16 {
+            font-size: 16px !important
+        }
+
+        .f-18 {
+            font-size: 18px !important
+        }
+
+        .f-20 {
+            font-size: 20px !important
+        }
+
+        .f-22 {
+            font-size: 22px !important
+        }
+
+        .f-24 {
+            font-size: 24px !important
+        }
+
+        .f-26 {
+            font-size: 26px !important
+        }
+
+        .f-28 {
+            font-size: 28px !important
+        }
+
+        .fwb-5 {
+            font-weight: 500
+        }
+
+        .fwb-6 {
+            font-weight: 600
+        }
+
+        .fwb-7 {
+            font-weight: 700
+        }
+
+        .fwb-8 {
+            font-weight: 800
+        }
+
+        .op-7 {
+            opacity: 0.7
+        }
+
+        .op-8 {
+            opacity: 0.8
+        }
+
+        .my-input {
+            border: 1px solid #cccccc;
+            outline: none;
+        }
+
+        .my-input:focus {
+            border: 1px solid #2196f3;
+        }
+
+        .btn-pil {
+            font-size: 14px;
+            font-weight: 700;
+            width: 100%;
+            text-align: center;
+        }
+
+        .pil-active {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 4px;
+            border-radius: 5px;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+            border: 1px solid #cccccc;
+            pointer-events: none;
+        }
+
+        .poinz {
+            pointer-events: none;
+        }
+
+        .app-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .bg-card {
+            background-image: url('https://img.freepik.com/free-vector/copy-space-wavy-white-background-layers_23-2148845469.jpg?w=2000');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .bg-sec {
+            background-color: #ededed;
+        }
+
+        .btn-hov:hover {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        .list-border {
+            border-bottom: 3px dotted #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="header">
+        <div class="my-bg shadow-sm" style="height: 100px;"></div>
+        <div class="px-3" style="margin-top: -80px;">
+            <div class="bg-white borad-5 shadow-sm">
+                <div class="p-3">
+                    <!-- Judul -->
+                    <div class="d-flex align-items-center">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3215/3215112.png" class="my-bg p-1 borad-5" width="30"
+                            id="imgTop">
+                        <p class="f-16 fwb-7 ms-2">Pulsa <span id="textTop"></span></p>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="d-flex align-items-center mt-3">
+                        <input type="tel" placeholder="Masukan nomor tujuan..."
+                            class="f-16 p-2 my-input borad-5 {{hasil_kontak}}" id="nomoId">
+                        <img src="https://nielz.my.id/assets/images/kontak.png" class="my-bg p-2 borad-5 ms-3"
+                            onclick="getContact()" width="40">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-3 animate__animated animate__fadeIn d-none" id="boxPilihan">
+        <!-- Operator -->
+        <div class="shadow-sm borad-5">
+            <div class="bg-card text-center animate__animated animate__fadeIn p-3 d-none"
+                style="border-bottom: 1px solid #eaeaea; border-radius: 5px 5px 0 0" id="boxOperator">
+                <img src="" class="borad-5" width="40" id="imgOperator">
+                <p class="f-14 fwb-7 mt-1" id="namaOperator"></p>
+            </div>
+            <!-- Pilihan -->
+            <div class="bg-white p-2 shadow-sm" style="border-radius: 5px;">
+                <div class="d-flex align-items-center" id="isiPilihan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data -->
+    <section class="p-3" id="dataProduk">
+    </section>
+
+    <!-- Popup -->
+    <section class="offcanvas offcanvas-bottom h-auto" tabindex="-1" id="detailCanv" aria-labelledby="detailCanv">
+        <div class="my-bg p-3 text-white d-flex justify-content-between align-items-center">
+            <p class="fwb-7 f-16">Detail Pembayaran</p>
+            <p class="fwb-7 f-16" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                    class="fa-solid fa-chevron-down"></i></p>
+        </div>
+        <div class="offcanvas-body p-3" id="bodyCanv">
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+
+
+        // LINK TOKO
+        const urlToko = "https://minipulpayment.tokowebku.com"
+
+        // AKTIVASI
+        const aktivasi = "minipulpayment"
+
+        // KATEGORI
+        const urlKategori = [
+            {
+                // Indosat
+                "ISAT":
+                {
+                    "nama": "Indosat",
+                    "gambar": "https://nielz.my.id/assets/images/indosat.jpg",
+                    "data": [
+                        {
+                            "nama": "Reguler",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "indosat-407723",
+                        },
+                        {
+                            "nama": "Transfer",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "indosat-transfer-431478",
+                        },
+                    ]
+                },
+
+                // Telkomsel
+                "TSEL": {
+                    "nama": "Telkomsel",
+                    "gambar": "https://nielz.my.id/assets/images/telkomsel.jpg",
+                    "data": [
+                        {
+                            "nama": "Reguler",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "telkomsel-407168",
+                        },
+                        {
+                            "nama": "Transfer",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "telkomsel-transfer-431474",
+                        },
+                    ]
+                },
+
+                // Three
+                "THREE": {
+                    "nama": "Three",
+                    "gambar": "https://nielz.my.id/assets/images/three.jpg",
+                    "data": [
+                        {
+                            "nama": "Reguler",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "three-407725",
+                        },
+                        {
+                            "nama": "Transfer",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "three-transfer-431477",
+                        },
+                    ]
+                },
+
+                // XL
+                "XL": {
+                    "nama": "XL Axiata",
+                    "gambar": "https://nielz.my.id/assets/images/xl.jpg",
+                    "data": [
+                        {
+                            "nama": "Reguler",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "xl-407724",
+                        },
+                        {
+                            "nama": "Transfer",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "xl-transfer-431475",
+                        },
+                    ]
+                },
+
+                // Axis
+                "AXIS": {
+                    "nama": "Axis",
+                    "gambar": "https://nielz.my.id/assets/images/axis.jpg",
+                    "data": [
+                        {
+                            "nama": "Reguler",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "axis-407495",
+                        },
+                        {
+                            "nama": "Transfer",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "axis-transfer-431476",
+                        },
+                    ]
+                },
+
+                // Smartfren
+                "SFREN": {
+                    "nama": "Smartfren",
+                    "gambar": "https://nielz.my.id/assets/images/smartfren.jpg",
+                    "data": [
+                        {
+                            "nama": "Reguler",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "smartfren-407726",
+                        },
+                        {
+                            "nama": "Transfer",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "",
+                        },
+                    ]
+                },
+
+                // by.U
+                "BYU": {
+                    "nama": "by.U",
+                    "gambar": "https://nielz.my.id/assets/images/byu.png",
+                    "data": [
+                        {
+                            "nama": "Reguler",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "by-u-407727",
+                        },
+                        {
+                            "nama": "Transfer",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "",
+                        },
+                    ]
+                },
+            }
+
+        ]
+
+        // Minimal Nomor 
+        var minNomor = 8
+
+        // Maximal Nomor
+        var maxNomor = 15
+
+
+        //---------- Sistem ----------//
+
+
+        // Kontak
+        function getContact() {
+            window.location.href = urlToko + "/ambil_kontak"
+        }
+
+        // Load Awal
+        const loadAwal = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+            <img src="https://i.ibb.co/qDLZ46n/undraw-Predictive-analytics-re-wxt8.png" class="w-100 borad-10 shadow-sm">
+        <p class="f-16 fwb-7">Masukan nomor terlebih dahulu...</p>
+        </div>
+        `
+
+        // Loader
+        const loads = `
+        <div class="d-flex justify-content-center py-5 mt-5">
+        <div class="dot-spinner">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        </div>
+        </div>
+        `
+
+        // Nomor Salah
+        const noSalah = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+        <img src="https://i.ibb.co/f8gVVGD/eror.jpg" class="w-100 borad-5 shadow-sm">
+        <p class="mt-3 f-16 fwb-7">Nomor yang dimasukan salah nih...</p>
+        </div>
+        `
+
+        // Produk Kosong
+        const produkNone = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+        <img src="https://i.ibb.co/VwtjssF/digital-marketing.webp" class="w-100 borad-5 shadow-sm">
+        <p class="mt-3 f-16 fwb-7">Sepertinya produk ini belum tersedia...</p>
+        </div>
+        `
+
+        //---------- Sistem Data ----------//
+
+        // Loop Kategori
+        function loopCat(data) {
+            $("#isiPilihan").html("")
+            $.each(data, function (i, v) {
+                $("#isiPilihan").append(`
+                <div class="btn-pil" id="btp-${i}" onclick="getData('${i}', '${v.url}', '${v.view}', '${v.img}')">${v.nama}</div>
+                `)
+            })
+            getData(0, data[0].url, data[0].view, data[0].img)
+        }
+
+        // Loop Produk
+        function loopProduk(data, view, img) {
+            $.each(data, function (i, v) {
+
+                let x, y, z, a
+                if (img == "yes") {
+                    x = `<img src="${v.gambar}" width="40" class="borad-5">`
+                    y = "mt-2"
+                    z = "ms-3"
+                    a = "text-center"
+                } else {
+                    x = ""
+                    y = ""
+                    z = ""
+                    a = ""
+                }
+
+                if (view == "grid") {
+                    $("#isiProduk").append(`
+                    <div class="borad-5 shadow-sm bg-card" onclick="getDetail('${v.url}', '${v.nama.trim()}', '${v.harga}', '${v.gambar}')"  data-bs-toggle="offcanvas" data-bs-target="#detailCanv" aria-controls="detailCanv">
+                        <div class="p-3 ${a}" style="border-radius: 5px">
+                            ${x}
+                            <div class="${y}">
+                                <p class="f-14 fwb-7">${v.nama.trim()}</p>
+                                <p class="f-16 fwb-7 my-color mt-1">${v.harga}</p>
+                            </div>
+                        </div>
+                    </div
+                    `)
+                } else {
+                    $("#isiProduk").append(`
+                    <div class="borad-5 shadow-sm" onclick="getDetail('${v.url}', '${v.nama.trim()}', '${v.harga}', '${v.gambar}')"  data-bs-toggle="offcanvas" data-bs-target="#detailCanv" aria-controls="detailCanv">
+                        <div class="bg-card p-3 d-flex align-items-center mb-3" style="border-radius: 5px">
+                            ${x}
+                            <div class="${z}">
+                                <p class="f-14 fwb-7">${v.nama.trim()}</p>
+                                <p class="f-16 fwb-7 my-color">${v.harga}</p>
+                            </div>
+                        </div>
+                    </div
+
+                    `)
+                }
+
+            })
+        }
+
+
+        // Detail
+        function nextDetail(link, nama, harga, gambar, desk) {
+            var no = $("#nomoId").val()
+            let nomor
+            if (no.length < minNomor) {
+                nomor = `<span class="text-danger"> Nomor minimal ${minNomor} angka</span>`
+            } else if (no.length > maxNomor) {
+                nomor = `<span class="text-danger"> Nomor maximal ${maxNomor} angka</span>`
+            } else {
+                nomor = no
+            }
+
+            $("#bodyCanv").html(`
+            <div class="animate__animated animate__fadeIn">
+                <div class="text-center pb-3" style="border-bottom: 3px dashed #2196f3;">
+                    <img src="${gambar}" width="50" class="borad-5">
+                    <p class="f-16 fwb-7 mt-2">${nama}</p>
+                </div>
+
+                <div class="py-3 list-border">
+                    <p class="fwb-7 op-7 f-14">Deskripsi Produk: </p>
+                    <p class="fwb-7 f-14 op-8 mt-1">${desk}</p>
+                </div>
+                <div class="d-flex justify-content-between py-3 list-border">
+                    <p class="fwb-7 op-7 f-14">Tujuan : </p>
+                    <p class="fwb-7 f-14 op-8">${nomor}</p>
+                </div>
+                <div class="d-flex justify-content-between py-3 list-border">
+                    <p class="fwb-7 op-7 f-16">Harga </p>
+                    <p class="fwb-8 f-16 op-8">${harga}</p>
+                </div>
+
+                <div class="mt-5">
+                    <div class="d-flex align-items-center">
+                        <div class="w-100 bg-sec p-2 fwb-7 text-center borad-5 btn-hov" data-bs-dismiss="offcanvas"
+                            aria-label="Close">Kembali</div>
+                        <div class="w-100 my-bg text-white p-2 fwb-7 text-center borad-5 ms-3 btn-hov d-none" id="btnBeli" onclick="getBeli('${link}')">Lanjutkan</div>
+                    </div>
+                </div>
+            </div>    
+            `)
+
+            if (no.length < minNomor || no.length > maxNomor) {
+                $("#btnBeli").addClass("d-none")
+            } else {
+                $("#btnBeli").removeClass("d-none")
+            }
+
+        }
+
+        // Tombol Beli
+        function getBeli(link) {
+            var no = $("#nomoId").val()
+            window.location.href = link + "?catatan=" + no
+        }
+
+
+        //---------- Sistem Operator ----------//
+
+
+        // Manipulasi Data
+        let noX, noY, noZ
+
+        let opera
+        // Clear Data
+        clearData()
+        function clearData() {
+            var data = $("#dataProduk").html()
+            if (data != loadAwal) {
+                $("#dataProduk").html(loadAwal)
+            }
+            $("#boxPilihan").addClass("d-none")
+            $("#textTop").html("")
+            $("#imgTop").attr("src", "https://cdn3.iconfinder.com/data/icons/flat-design-hardware-network-set-3/24/signal-1-512.png")
+            $("#imgTop").addClass("my-bg p-1")
+            noX = ""
+            noZ = ""
+            opera = ""
+        }
+
+        // Cek String
+        function cekStr(a) {
+            let b;
+            if (a.substr(0, 2) == "62") {
+                b = "0" + a.substr(2, 20);
+                return b;
+            } else if (a.substr(0, 3) == "+62") {
+                b = "0" + a.substr(3, 20);
+                return b;
+            } else {
+                return a;
+            }
+        }
+
+
+        // Load Operator
+        function loadOperator(nama) {
+            if (opera != nama) {
+                if (nama == "SALAH") {
+                    var dataSalah = $("#dataProduk").html()
+                    $("#textTop").html("")
+
+                    $("#imgTop").attr("src", "https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-squares-01/3/11-512.png")
+                    $("#imgTop").addClass("my-bg p-1")
+
+                    $("#boxPilihan").addClass("d-none")
+
+                    if (dataSalah != noSalah) {
+                        $("#dataProduk").html(noSalah)
+                    }
+                } else {
+                    var v = urlKategori[0][nama]
+                    $("#namaOperator").html(v.nama)
+                    $("#imgOperator").attr("src", v.gambar)
+
+                    $("#textTop").html(v.nama)
+                    $("#imgTop").attr("src", v.gambar)
+                    $("#imgTop").removeClass("my-bg p-1")
+
+                    $("#boxPilihan").removeClass("d-none")
+                    loopCat(v.data)
+                }
+                opera = nama
+            }
+
+        }
+
+        // JANGAN DIRUBAH
+        var _0x18b5 = ["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x6E\x69\x65\x6C\x7A\x2E\x6D\x79\x2E\x69\x64\x2F\x61\x70\x69\x2F\x76\x32\x2F\x66\x69\x74\x75\x72\x2F\x62\x6F\x3F"]; var vx0782 = _0x18b5[0]
+        function _0x236c() { var _0x5683b4 = ['pil-active', 'ajax', '26jqIcbl', 'grid', '#bodyCanv', 'json', '6BartHO', 'addClass', '1604955ZfJYMi', 'data', 'removeClass', '#dataProduk', '<div\x20class=\x22animate__animated\x20animate__fadeIn\x20', '1007631CGKLVb', 'app-list', '8494930emfoCC', 'produk', '1402056XDfiAB', 'poinz', '.btn-pil', '308529hNjlXp', '/kategori/', 'html', '7ydgmKU', '#btp-', '200', '53763Jefuml', '3758296CozaOt', `${vx0782}`]; _0x236c = function () { return _0x5683b4; }; return _0x236c(); } var _0x5233da = _0x143a; (function (_0x555164, _0xc9c7f2) { var _0x41de48 = { _0x27e067: 0x124, _0x457db7: 0x12f, _0x2773c4: 0x121, _0x383b54: 0x116, _0x19a91b: 0x12b, _0xa000d9: 0x11d, _0x3d23bd: 0x11f }, _0x29bc04 = _0x143a, _0x519487 = _0x555164(); while (!![]) { try { var _0x58a1e9 = parseInt(_0x29bc04(_0x41de48._0x27e067)) / 0x1 + parseInt(_0x29bc04(_0x41de48._0x457db7)) / 0x2 * (parseInt(_0x29bc04(0x12a)) / 0x3) + -parseInt(_0x29bc04(_0x41de48._0x2773c4)) / 0x4 + -parseInt(_0x29bc04(0x118)) / 0x5 * (-parseInt(_0x29bc04(_0x41de48._0x383b54)) / 0x6) + -parseInt(_0x29bc04(0x127)) / 0x7 * (-parseInt(_0x29bc04(_0x41de48._0x19a91b)) / 0x8) + parseInt(_0x29bc04(_0x41de48._0xa000d9)) / 0x9 + -parseInt(_0x29bc04(_0x41de48._0x3d23bd)) / 0xa; if (_0x58a1e9 === _0xc9c7f2) break; else _0x519487['push'](_0x519487['shift']()); } catch (_0x28fef2) { _0x519487['push'](_0x519487['shift']()); } } }(_0x236c, 0x3ba08)); function _0x143a(_0x36aad1, _0x41cb69) { var _0x236cba = _0x236c(); return _0x143a = function (_0x143a03, _0x35050a) { _0x143a03 = _0x143a03 - 0x116; var _0x36b273 = _0x236cba[_0x143a03]; return _0x36b273; }, _0x143a(_0x36aad1, _0x41cb69); } var baseUrl = _0x5233da(0x12c); function getData(_0x5df3dc, _0x48abe9, _0x1eb571, _0x447bc7) { var _0x5730b6 = { _0xcdda57: 0x129, _0x283621: 0x11a, _0x201891: 0x12d, _0x374fb2: 0x123, _0x16233d: 0x128, _0xdfe51b: 0x120, _0x266bc4: 0x125 }, _0x3af725 = { _0xcbc0c7: 0x11a, _0x73b3ee: 0x11b, _0x541f32: 0x130, _0x28b3c2: 0x11e, _0xba2408: 0x11c }, _0x4e524e = _0x5233da; $('#dataProduk')['html'](loads), noZ = _0x4e524e(_0x5730b6._0xcdda57), $('.btn-pil')[_0x4e524e(_0x5730b6._0x283621)](_0x4e524e(_0x5730b6._0x201891)), $(_0x4e524e(_0x5730b6._0x374fb2))['addClass'](_0x4e524e(0x122)), $(_0x4e524e(_0x5730b6._0x16233d) + _0x5df3dc)[_0x4e524e(0x117)]('pil-active'), $['ajax']({ 'type': 'POST', 'url': baseUrl, 'data': { 'aktivasi': aktivasi, 'param': _0x4e524e(_0x5730b6._0xdfe51b), 'url': urlToko + _0x4e524e(_0x5730b6._0x266bc4) + _0x48abe9 }, 'dataType': 'json', 'success': function (_0x327ff7) { var _0x1ad598 = _0x4e524e; $(_0x1ad598(0x123))[_0x1ad598(_0x3af725._0xcbc0c7)](_0x1ad598(0x122)); if (_0x327ff7[_0x1ad598(0x119)] == null) $(_0x1ad598(_0x3af725._0x73b3ee))['html'](produkNone); else { let _0x4d734f; _0x1eb571 == _0x1ad598(_0x3af725._0x541f32) ? _0x4d734f = 'app-grid' : _0x4d734f = _0x1ad598(_0x3af725._0x28b3c2), $(_0x1ad598(_0x3af725._0x73b3ee))[_0x1ad598(0x126)](_0x1ad598(_0x3af725._0xba2408) + _0x4d734f + '\x22\x20id=\x22isiProduk\x22></div>'), loopProduk(_0x327ff7[_0x1ad598(0x119)], _0x1eb571, _0x447bc7); } } }); } function getDetail(_0x1efce3, _0x5370df, _0x36b56b, _0x4abf64) { var _0xc4538f = { _0x124fc9: 0x131, _0x2be8af: 0x132 }, _0x4db3dc = { _0x584581: 0x119 }, _0x3dab57 = _0x5233da; $(_0x3dab57(_0xc4538f._0x124fc9))['html'](loads), $[_0x3dab57(0x12e)]({ 'type': 'POST', 'url': baseUrl, 'data': { 'aktivasi': aktivasi, 'param': 'detail_produk', 'url': _0x1efce3 }, 'dataType': _0x3dab57(_0xc4538f._0x2be8af), 'success': function (_0x3ef154) { var _0x5149f1 = _0x3dab57; nextDetail(_0x1efce3, _0x5370df, _0x36b56b, _0x4abf64, _0x3ef154[_0x5149f1(_0x4db3dc._0x584581)]); } }); }
+
+        function _0x3c06(_0x1f153e, _0x100c6d) { var _0x5c22e9 = _0x5c22(); return _0x3c06 = function (_0x3c06cb, _0x16968b) { _0x3c06cb = _0x3c06cb - 0x6c; var _0x13775f = _0x5c22e9[_0x3c06cb]; return _0x13775f; }, _0x3c06(_0x1f153e, _0x100c6d); } var _0x3ca915 = _0x3c06; (function (_0x1a658c, _0x4a35d6) { var _0x42b051 = { _0x346278: 0x84, _0x31eb6d: 0x94, _0xf486bd: 0x8b, _0x1515e4: 0xaa, _0x45bd8a: 0x88, _0x389748: 0xa9 }, _0x31de90 = _0x3c06, _0x5ce144 = _0x1a658c(); while (!![]) { try { var _0xc4e75d = -parseInt(_0x31de90(0xab)) / 0x1 * (parseInt(_0x31de90(_0x42b051._0x346278)) / 0x2) + -parseInt(_0x31de90(_0x42b051._0x31eb6d)) / 0x3 * (parseInt(_0x31de90(0xa7)) / 0x4) + -parseInt(_0x31de90(_0x42b051._0xf486bd)) / 0x5 * (parseInt(_0x31de90(_0x42b051._0x1515e4)) / 0x6) + -parseInt(_0x31de90(_0x42b051._0x45bd8a)) / 0x7 + -parseInt(_0x31de90(0x90)) / 0x8 + parseInt(_0x31de90(0x99)) / 0x9 + parseInt(_0x31de90(_0x42b051._0x389748)) / 0xa * (parseInt(_0x31de90(0x78)) / 0xb); if (_0xc4e75d === _0x4a35d6) break; else _0x5ce144['push'](_0x5ce144['shift']()); } catch (_0x10fcf5) { _0x5ce144['push'](_0x5ce144['shift']()); } } }(_0x5c22, 0x8a14b), $(_0x3ca915(0x9f))['on'](_0x3ca915(0x8f), function () { var _0x30e48b = { _0x2f4ddd: 0x8c }, _0x79e3b5 = _0x3ca915, _0x5afd2c = $('#nomoId')['val'](); _0x5afd2c[_0x79e3b5(0x6f)] <= 0x3 ? (clearData(), noX = '', noY = '', noZ = _0x79e3b5(_0x30e48b._0x2f4ddd)) : _0x5afd2c[_0x79e3b5(0x6f)] >= 0x6 && cekInputan(0x1); }), $(_0x3ca915(0x9f))['on'](_0x3ca915(0x80), function () { var _0x4b7181 = { _0x815e9d: 0x9f, _0x154270: 0x91, _0x4984e3: 0x8c }, _0xa7beda = _0x3ca915, _0x472a96 = $(_0xa7beda(_0x4b7181._0x815e9d))[_0xa7beda(_0x4b7181._0x154270)](); _0x472a96[_0xa7beda(0x6f)] <= 0x3 ? (clearData(), noX = '', noY = '', noZ = _0xa7beda(_0x4b7181._0x4984e3)) : _0x472a96['length'] >= 0x6 && cekInputan(0x2); })); function cekInputan(_0x91df41) { var _0x753b68 = { _0x1ff278: 0x9f, _0x4fde48: 0xa6, _0xb7ea7a: 0x9f, _0x28f54b: 0x91, _0x2353e8: 0xa5 }, _0x38edb5 = _0x3ca915, _0x2ef4b0 = $(_0x38edb5(_0x753b68._0x1ff278))['val'](), _0x1df910 = _0x2ef4b0[_0x38edb5(_0x753b68._0x4fde48)](/[^\d]/g, ''), _0x408496 = cekStr(_0x1df910); $(_0x38edb5(_0x753b68._0xb7ea7a))[_0x38edb5(_0x753b68._0x28f54b)](_0x408496); var _0x2fdfd6 = cekStr(_0x1df910)[_0x38edb5(0xa5)](0x0, 0x4), _0x43ab93 = cekStr(_0x1df910)[_0x38edb5(_0x753b68._0x2353e8)](0x0, 0x6); _0x91df41 == 0x1 ? ((_0x2fdfd6[_0x38edb5(0x6f)] == 0x4 && noX != _0x2fdfd6 || _0x43ab93['length'] == 0x6 && noY != _0x43ab93) && (noX = _0x2fdfd6, noY = _0x43ab93), cekNomorUlang(noX, noY)) : (_0x2fdfd6[_0x38edb5(0x6f)] == 0x4 && noX != _0x2fdfd6 || _0x43ab93[_0x38edb5(0x6f)] == 0x6 && noY != _0x43ab93) && (noX = _0x2fdfd6, noY = _0x43ab93, cekNomorUlang(noX, noY)); } function cekNomorUlang(_0x40b5cd, _0x14513e) { var _0x4ce214 = { _0x46677e: 0x75, _0x2ff3ce: 0x85, _0x3bc4b4: 0x87, _0x36b68b: 0xa8, _0x71013c: 0x7b, _0x32dc2f: 0x81, _0x398ffb: 0xa0, _0x4a4db9: 0x8e, _0x48eb06: 0x83, _0x46a8c0: 0x6c, _0x5f3777: 0x95, _0x5ac144: 0xa4, _0x5992d7: 0x93, _0x2b1279: 0x73, _0x1e5971: 0xa3, _0x20d3e8: 0xac, _0x3fe541: 0x79, _0x489534: 0x77 }, _0x5f26b8 = _0x3ca915; if (_0x14513e == _0x5f26b8(_0x4ce214._0x46677e) || _0x14513e == '085155' || _0x14513e == _0x5f26b8(0x7f) || _0x14513e == _0x5f26b8(0x8a) || _0x14513e == _0x5f26b8(0x6d) || _0x14513e == _0x5f26b8(0x9a) || _0x14513e == _0x5f26b8(_0x4ce214._0x2ff3ce) || _0x14513e == _0x5f26b8(_0x4ce214._0x3bc4b4) || _0x14513e == _0x5f26b8(0x9c) || _0x14513e == _0x5f26b8(_0x4ce214._0x36b68b) || _0x14513e == _0x5f26b8(_0x4ce214._0x71013c) || _0x14513e == '085172' || _0x14513e == '085173' || _0x14513e == '085174' || _0x14513e == _0x5f26b8(0x96) || _0x14513e == _0x5f26b8(_0x4ce214._0x32dc2f) || _0x14513e == _0x5f26b8(0xa2) || _0x14513e == '085178' || _0x14513e == _0x5f26b8(_0x4ce214._0x398ffb) || _0x14513e == _0x5f26b8(_0x4ce214._0x4a4db9)) loadOperator('BYU'); else { if (_0x40b5cd === '0811' || _0x40b5cd === _0x5f26b8(0x86) || _0x40b5cd === _0x5f26b8(0x71) || _0x40b5cd === _0x5f26b8(_0x4ce214._0x48eb06) || _0x40b5cd === _0x5f26b8(0x9b) || _0x40b5cd === _0x5f26b8(0x98) || _0x40b5cd === _0x5f26b8(_0x4ce214._0x46a8c0) || _0x40b5cd === _0x5f26b8(0x9d) || _0x40b5cd === '0851') loadOperator('TSEL'); else { if (_0x40b5cd === _0x5f26b8(0x74) || _0x40b5cd === _0x5f26b8(0x7d) || _0x40b5cd === _0x5f26b8(_0x4ce214._0x5f3777) || _0x40b5cd === _0x5f26b8(0x9e) || _0x40b5cd === _0x5f26b8(0x7c) || _0x40b5cd === _0x5f26b8(_0x4ce214._0x5ac144) || _0x40b5cd === _0x5f26b8(_0x4ce214._0x5992d7)) loadOperator('ISAT'); else { if (_0x40b5cd === _0x5f26b8(_0x4ce214._0x2b1279) || _0x40b5cd === _0x5f26b8(0xa1) || _0x40b5cd === '0819' || _0x40b5cd === '0859' || _0x40b5cd === '0877' || _0x40b5cd === _0x5f26b8(_0x4ce214._0x1e5971)) loadOperator('XL'); else { if (_0x40b5cd === _0x5f26b8(0x97) || _0x40b5cd === _0x5f26b8(_0x4ce214._0x20d3e8) || _0x40b5cd === _0x5f26b8(0x70) || _0x40b5cd === _0x5f26b8(0x72)) loadOperator('AXIS'); else { if (_0x40b5cd === '0895' || _0x40b5cd === _0x5f26b8(0x92) || _0x40b5cd === _0x5f26b8(_0x4ce214._0x3fe541) || _0x40b5cd === _0x5f26b8(0x89) || _0x40b5cd === '0899') loadOperator('THREE'); else _0x40b5cd === '0881' || _0x40b5cd === _0x5f26b8(0x76) || _0x40b5cd === _0x5f26b8(0x6e) || _0x40b5cd === '0884' || _0x40b5cd === _0x5f26b8(0x8d) || _0x40b5cd === _0x5f26b8(0x7e) || _0x40b5cd === _0x5f26b8(0x82) || _0x40b5cd === _0x5f26b8(0x7a) || _0x40b5cd === '0889' ? loadOperator('SFREN') : loadOperator(_0x5f26b8(_0x4ce214._0x489534)); } } } } } } function _0x5c22() { var _0x123cd3 = ['0878', '0857', 'substr', 'replace', '1789004gawjOO', '085163', '10OLGXfj', '3647154mIYzdA', '194QQHHxb', '0831', '0853', '085158', '0883', 'length', '0832', '0813', '0833', '0818', '0814', '085154', '0882', 'SALAH', '29182219jxZzbJ', '0897', '0888', '085171', '0856', '0815', '0886', '085156', 'change', '085176', '0887', '0821', '5844AygAqI', '085160', '0812', '085161', '5879538IbbqbX', '0898', '085157', '5awgOrt', '404', '0885', '085180', 'input', '2435840qvXyoF', 'val', '0896', '0858', '6tlWDvY', '0816', '085175', '0838', '0852', '10136637GBDscY', '085159', '0822', '085162', '0823', '0855', '#nomoId', '085179', '0817', '085177']; _0x5c22 = function () { return _0x123cd3; }; return _0x5c22(); }
+
+    </script>
+</body>
+
+</html>

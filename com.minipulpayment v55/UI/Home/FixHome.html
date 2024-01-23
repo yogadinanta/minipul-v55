@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style type="text/css" media="all">
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+      a{
+  text-decoration: none;
+  color: inherit;
+}
+a:hover{
+  color: inherit;
+  background-color: inherit;
+}
+
+.header{
+  width: 100%;
+  height: 4rem;
+  background-color: #2196f3;
+  display: fixed;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+}
+.row-hrader{
+  width: 50%;
+  height: 4rem;
+  padding: 0.5rem;
+  float: left;
+}
+.row-hrader img{
+  width: 100%;
+  height: 3rem;
+}
+.header-notif{
+   width: 50%;
+  height: 4rem;
+  padding: 0.5rem;
+  float: left;
+  text-align: right;
+}
+.header-notif img{
+  width: 3rem;
+  height: 3rem;
+}
+.profil_bg{
+  width: 100%;
+  height: auto;
+  background-color:#2196f3 ;
+  padding-bottom: 6rem;
+}
+
+.jarak_profil{
+  width: 100%;
+  height: 4.5rem;
+  background-color: #2196f3;
+}
+.row_profil{
+  width: 50%;
+  height: auto;
+  float: left;
+}
+.img_profil{
+  width: 30%;
+  height: auto;
+  padding-left: 0.5rem;
+  float: left;
+  margin-right: 0.3;
+}
+.img_profil img{
+  width: 100%;
+  height: auto;
+  border-radius: 50px;
+}
+.profil{
+  width: 65%;
+  height: auto;
+  margin-left: 0.5rem;
+  padding: 0.5;
+  float: left;
+}
+.profil h1{
+  font-size: 0.9rem;
+  color: white;
+  font-weight: normal;
+  opacity: 0.8;
+}
+.profil h2{
+  font-size: 1rem;
+  font-weight: normal;
+  color: white;
+}
+.text_saldo{
+  width: 100%;
+  height: auto;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+.text_saldo h1{
+  font-size: 0.9rem;
+  color: white;
+  opacity: 0.7;
+}
+.text_saldo h2{
+  font-size: 1.2rem;
+  color: white;
+  opacity: 0.9;
+}
+
+
+.menu_head{
+  width: 100%;
+  height: auto;
+  margin-top: -5rem;
+  clear: both;
+  background-color: white;
+  border-top-left-radius: 300%;
+  border-top-right-radius: 300%;
+}
+.bg_menu_head{
+  width: 90%;
+  background-color: white;
+  margin-left: 5%;
+  border-radius: 10px;
+  padding: 0.2rem;
+  box-shadow: #f5f5f5 0px 1px 1px 1px;
+}
+.menu{
+  width: 45%;
+  height: 4.5rem;
+  float: left;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-right: 1px solid rgb(215,215,215);
+}
+.menu_img{
+  width: 20%;
+  text-align: center;
+  float: left;
+  height: 100%;
+  margin-right: 0.4rem;
+}
+.menu_img img{
+  width: 80%;
+  height: auto;
+  border-radius: 50px;
+  margin-top: 1rem;
+}
+
+.menu_text{
+  width: 70%;
+  text-align: center;
+  float: left;
+  padding-top: 0.5;
+  text-align: left;
+}
+.menu_text h1{
+  font-size: 1rem;
+  opacity: 0.9;
+}
+.menu_text p{
+  font-size: 0.6rem;
+  text-align: left;
+  opacity: 0.7;
+}
+.menu_notif{
+  width: 10%;
+  float: left;
+  text-align: center;
+  padding: 0.3rem;
+}
+.menu_notif img{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 1.3rem;
+  border-radius: 50px;
+}
+.bk-menu{
+  border-bottom: 1.5px solid rgb(215,215,215);
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.bg_pil_menu{
+  width: 100%;
+  height: auto;
+}
+.pil_menu{
+  width: 25%;
+  height: auto;
+  float: left;
+  text-align: center;
+}
+.pil-img {
+  width: 100%;
+  height: auto;
+  padding: 0.2rem;
+}
+.pil-img img{
+  width: 30%;
+  height: auto;
+  border-radius: 10px;
+}
+.text_pil{
+  width: 100%;
+  height: auto;
+}
+.text_pil h1{
+  font-size: 0.8rem;
+  font-weight: normal;
+  opacity: 0.8;
+}
+.bg_menu{
+  border-radius: 0px;
+  width: 100%;
+  height: auto;
+  padding-top: 1rem;
+}
+.menu-menu{
+  width: 25%;
+  float: left;
+  height: auto;
+  text-align: center;
+  padding: 0.5rem;
+}
+.menu-menu img{
+  width: 70%;
+  border-radius: 10px;
+  margin-bottom: 0.4rem;
+}
+.menu-menu h1{
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+.bg_foot{
+  width: 100%;
+  height: auto;
+}
+.card_tex{
+  width: 50%;
+  float: left;
+  height: auto;
+  padding: 0.5rem;
+}
+.card_tex h1{
+  font-size: 1.1rem;
+}
+.img_conten{
+  width: 90%;
+  height: 150px;
+  background-color: white;
+}
+.img-slide img{
+  width: 100%;
+  height: auto;
+}
+.text_slide{
+  width: 100%;
+  height: 100%;
+  padding-top: 10rem;
+  background-color: white;
+}
+.slider_konten_img{
+  width: 95%;
+  margin-left: 2.5%;
+  height: auto;
+  padding: 0.5rem;
+  box-shadow: rgb(201,201,201) 0px 1px 3px 1px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  border-radius: 50px;
+  
+}
+.slider_konten_img img{
+  width: 100%;
+  height: 220px;
+  border-top-left-radius: 50px;
+  border-top-right-radius : 50px;
+}
+.text_slide{
+  width: 95%;
+  height: auto;
+  padding: 0.5rem;
+  padding-top: 0.5rem;
+  margin-left: 2.5%;
+}
+.text_slide h1{
+  font-size: 3rem;
+  opacity: 0.8;
+  padding-top: 1.1rem;
+}
+.text_slide p{
+  font-size: 2rem;
+  opacity: 0.7;
+  padding-bottom: 0.8rem;
+}
+
+#offcanvasBottom{
+  height: 95%;
+}
+
+#offcanvasBottom1{
+  height: 50%;
+}
+#offcanvasBottom2{
+  height: 65%;
+}
+#offcanvasBottom3{
+  height: 65%;
+}
+
+.bg_topup{
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(228,228,228);
+  border-radius: 10px;
+  padding: 0.1rem;
+}
+.img_topup{
+  width: 20%;
+  float: left;
+  text-align: center;
+  height: 100%;
+  padding-top: 0.7rem;
+}
+.img_topup img{
+  width: 90%;
+  height: auto;
+  border-radius: 50px;
+}
+.text_topup{
+  width: 80%;
+  height: 100%;
+  float: left;
+  padding: 0.5rem;
+  padding-top: 0.7;
+  padding-bottom: 0;
+}
+.text_topup h1{
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+.text_topup hr{
+  margin: 0.2rem;
+}
+.text_topup p{
+  margin-top: 0.1rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+
+.up_bg{
+  width: 100%;
+  height: auto;
+}
+.up_img{
+  width: 90%;
+  margin-left: 5%;
+}
+.up_img img{
+  width: 100%;
+  height: 10rem;
+}
+.text_up{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.text_up h1{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.text_up p{
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+.btn_up{
+  width: 100%;
+  height: auto;
+}
+.btn_up button {
+  width: 100%;
+  height: auto;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  background-color: #2196f3;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  outline: none;
+}
+.offcanvas_bg_menu{
+  width: 100%;
+  height: auto;
+}
+.offcanvas_bg_menu h2{
+  font-size: 1.3rem;
+}
+.menu-offcan{
+  text-align: center;
+  width: 25%;
+  float: left;
+}
+.menu-offcan img{
+  width: 60%;
+  height: auto;
+  border-right: 50px;
+  border-radius: 50px;
+  margin-bottom: 0.3rem;
+}
+.menu-offcan h1{
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+.input_menu_text {
+  width: 100%;
+  height: auto;
+  margin-top: -1rem;
+}
+.offcanvas_bg_menu h2{
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+
+.input_menu_text input{
+  padding: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.7;
+  border: 1px solid rgb(229,229,229);
+  width: 100%;
+  border-radius: 50px;
+}
+    </style>
+    <style type="text/css" media="all">
+      /* SLIDER MENU */
+        .jssorl-009-spin img { 
+             animation-name: jssorl-009-spin;
+             animation-duration: 1.6s; 
+             animation-iteration-count:infinite;
+             animation-timing-function: linear;
+            }
+            @keyframes jssorl-009-spin {
+            from {
+            transform: rotate(0deg); 
+            } to { 
+            transform: rotate(360deg); 
+            }}	 		
+            .img-slide { 	
+            border-radius: 2rem; 		
+            box-shadow: 0px 1px 5px rgba(0,0,0,0.0);
+            }
+  .jsO{
+         position:relative;
+         margin:0;
+         margin-top:-5.5rem;
+         margin-bottom:-2.5rem;
+         width:55rem;
+         height:35rem;
+         overflow:hidden;
+         visibility:hidden;
+       }
+       .js1{
+         position:absolute;
+         width:10rem;
+         height:10rem;
+         text-align:center;
+         background-color:rgba(0,0,0,0.7);
+       }
+       .js2{
+         cursor:default;
+         position:relative;
+         width:55rem;
+         height:45rem;
+         overflow:hidden;
+       }
+        
+       #alertWarning{
+display:none;
+        padding-top: 0.5rem;
+        border-radius: 10PX;
+        
+            font-size: 12px;
+            z-index: 10;
+        }
+        #alertWarning h1{
+            font-size: 20px;
+            position: absolute;
+            margin-top: -16%;
+            margin-left: 88%;
+            color: red;
+            z-index: 10;
+        }
+        .link_info{
+          padding-left: 8px;
+            font-size: 12px;
+            color: #2196f3;
+        }
+    </style>
+    <script type="text/javascript"> 
+    window.jssor_1_slider_initt = function() { var jssor_1_options = { $AutoPlay: 1, $SlideWidth: 750, $SlideHeight: 450, $SlideSpacing: 10 }; var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options); 
+    /#region responsive code begin/ 
+    var MAX_WIDTH = 1200; function ScaleSlider() {
+      var containerElement = jssor_1_slider.$Elmt.parentNode; var containerWidth = containerElement.clientWidth; if (containerWidth) {
+        var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth); jssor_1_slider.$ScaleWidth(expectedWidth);
+        } else { window.setTimeout(ScaleSlider, 30);
+        } } 
+        ScaleSlider(); $Jssor$.$AddEvent(window, "load", ScaleSlider); $Jssor$.$AddEvent(window, "resize", ScaleSlider); $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);}; 
+        function clearData(e) {
+    document.getElementById('alertWarning').style.display = "none";
+  }
+  
+    </script>
+<link rel="stylesheet" href="menu.css" type="text/css" media="all" />
+    <title>Home</title>
+  </head>
+  <body>
+  <section class="header">
+    <div class="row-hrader">
+    	<a href="https://minipul.com/">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvPjCIuyZ0s5hFlsjA9Vdt_lzKC0jBIvofj96Z5F6PMW3d13vcIxjDBFLr59Y18e6P_XuWHZLKKtrjfWCggVQ3GBhVkbz4fwli5McdRN6amryAeh-vBOIjEcv7tnnX1m7N51jnWwJ0PFlGbafL7ME9pRCeRZCQlw-j1OCz_g6uRBcJ_ZSFTQEQ0THd/s3264/20220328_131141.jpg" alt="" />
+    </div>
+    <div class="header-notif">
+    	  <a href="https://minipulpayment.tokowebku.com/digital/205586">
+      <img src="https://bukaolshop.s3-id-jkt-1.kilatstorage.id/92608/908955188p.jpg" alt="" />
+    </div>
+        </a>
+  </section>
+  
+  
+  <section class="profil_bg">
+    <div class="jarak_profil"> </div>
+    <div class="row_profil">
+      <div class="img_profil">
+      <img src=" {{foto_profil}} " class="img-profil">
+    </div>
+    <div class="profil">
+      <a href="https://minipulpayment.tokowebku.com/digital/223063">
+      <h1>Status - {{nama_membership}}</h1>
+      </a>
+      <h2>{{nama_user}}</h2>
+    </div>
+    </div>
+    <div class="row_profil">
+    <div class="text_saldo">
+      <h1>Saldo Minipul</h1>
+      <div id="saldo_user_bo" onclick="saldo1()" class="saldo-user esaku-effect">
+        <a href="https://minipulpayment.tokowebku.com/refresh_saldo">
+      <h2 class="bi bi-arrow-counterclockwise" id="ubahRupiah">Rp{{saldo_user}} </h2>
+    </a>
+    </div>
+    </div>
+    <div style="clear:both;">
+      
+    </div>
+  </section>
+  
+  <section class="menu_head">
+    <div class="bg_menu_head">
+      <div class="bk-menu">
+       <div class="menu">
+        <div class="menu_img">
+          <img src="https://bukaolshop.s3-id-jkt-1.kilatstorage.id/92608/738251013c.jpg" alt="" />
+        </div>
+        <div class="menu_text">
+        	<a href="https://minipulpayment.tokowebku.com/akun//?page=topup">
+          <h1>Konfirmasi</h1>
+          <p>Konfirmasi pembayaran scan QRIS di sini</p>
+        </div>
+      </div>
+      </a>
+      <div class="menu">
+        <div class="menu_img">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6BpU9knpNVrYVlSB90DZ-5MfdFQ8k88YuplHrwUvyTt0ZZwCo2MYLJBbHLObJlGKBQifNSZASxACQHIlrYaHhRtOl1BopUk_9GfGiA-Ga-oFnoCznQxXKWpvV2Ibwbd9GxfEtjOcGpC1kZ6l8qMXZRWqYvBE76lOYCEZ21zM9n18TrPbKIYcvXuzegQ/s3264/20230414_151512.png" alt="" />
+        </div>
+        <div class="menu_text">
+       <a href="https://minipulpayment.tokowebku.com/digital/201287">
+   <h1>ORIS Ajaib</h1>
+          <p>QRIS otomatis saldo langsung masuk</p>
+        </div>
+        </a>
+      </div>
+      <a href="https://minipulpayment.tokowebku.com/akun/?page=notifikasi">
+      <div class="menu_notif">
+        <img src="https://i.pinimg.com/originals/7d/f3/1e/7df31e490de5c1773242a0303f8e29b5.gif" alt="" />
+      </div>
+      <div style="clear:both;">
+      
+    </div>
+      </div>
+      <div class="bg_pil_menu">
+        <div class="pil_menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom1" aria-controls="offcanvasBottom">
+          <a href="#">
+          <div class="pil-img">
+            <img src="https://bukaolshop.s3-id-jkt-1.kilatstorage.id/92608/778184946f.jpg" alt="" />
+          </div>
+          <div class="text_pil">
+            <h1>Isi Saldo</h1>
+          </div>
+        </a>
+        </div>
+        <!-- <div class="pil_menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom2" aria-controls="offcanvasBottom"> -->
+        <div class="pil_menu" data-bs-toggle="offcanvas">
+          <a href="https://minipulpayment.tokowebku.com/akun/?page=riwayat_topup">
+          <div class="pil-img">
+            <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/512x512/nav_refresh.png" alt="" />
+          </div>
+          <div class="text_pil">
+            <h1>Mutasi</h1>
+          </div>
+        </a>
+        </div>
+        <div class="pil_menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom3" aria-controls="offcanvasBottom">
+          <a href="#">
+          <div class="pil-img">
+            <img src="data:image/png;base64,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" alt="" />
+          </div>
+          <div class="text_pil">
+            <h1>{{nama_membership}}</h1>
+          </div>
+        </a>
+        </div>
+        <!--  <div class="pil_menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom4"  -->
+        <div class="pil_menu" data-bs-toggle="offcanvas">
+          <a href="https://minipulpayment.tokowebku.com/digital/189202">
+          <div class="pil-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORbUL2fjyy3vL-kbrFA53aKrVyjJaeXX8vEaUTdY&s" alt="" />
+          </div>
+          <div class="text_pil">
+            <h1>Profil</h1>
+            <h1></h1>
+          </div>
+        </a>
+        </div>
+      </div>
+      <div style="clear:both;">
+    </div>
+    </div>
+    <div style="clear:both;">
+    </div>
+  </section>
+  <br>
+  <!-- BAGIAN INFORMASI -->
+  <div id="alertWarning" class="alert alert-warning" role="alert"><b>MINIPUL TALK>>  </b>  
+ Hai, {{nama_user}}, Kamu ikut lomba 17 agustus gak? ikut aja, kamu pasti juara 1 lomba pura-pura kuat aja :) #Semangat <a class="link_info" href="#"></a>
+    <h1 onclick="clearData()">×</h1>
+     </div>
+  <!-- class asli bg_menu  -->
+  <section class="bgmenu">
+    <a href="https://minipulpayment.tokowebku.com/digital/189556">
+      <div class="menu-menu">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhk9qg4N8PXPBW2EkJ2w9i0oem7TzWAvDhRJfoK-jZ34c_bo-kQ-tCcFh1pfT3KjzFH_MTG8mg3o7qFXLPg2PnA6SUbuhRXNjyaYlypXlxMOJyQ0idCNZjZMy3Ql2pQCyyemVGGiTDQmTXyWZ8t-YxxK6V_q7yISI6Wc0zlKDQl_q-DxrAYJ5G2WlrR/s3264/20230320_173137.png" alt="" />
+      <h1>Pulsa</h1>
+    </div>
+    </a>
+    <a href="https://minipulpayment.tokowebku.com/digital/189558">
+      <div class="menu-menu">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiks1hs5AxN7sEraB6l6rhAiMh9Vs-fvsYo27VzLDPu1dxHGv3PE7lTtvyhoDt5Xf4zjGSqKg7Y10eUl4RgpFT_1NDGux100AwU4CcN8WqxP43rrGWjw7JNUU_ErG6y7bXbgWD__IYNebPLDdHUruFFjrL1v1DoI8mFmLkhrUjfbID-YqICb4Qb5E0z/s3264/icon-pln.png" alt="" />
+      <h1>PLN</h1>
+    </div>
+    </a>
+    <a href="https://minipulpayment.tokowebku.com/digital/230804">
+      <div class="menu-menu">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7OY-2pNpN6YWR5yv8iWw8OsD7ChF7C6T1Q__vwuiGdPEuX9fZAmzxUE07KOUXuqn3dl6Qzm_T4LJPP2ryfbKR3Nd8BGU3aaTrS8XH_XiedD_RU3cgpGf3nyHpXMVFEmT_YP18cgusp7mQ3kSMLoGBSsu3pWvWdOVsF_ZuYBXWUWnRfmo1xyxLWIDB/s3264/icon-ewallet.png" alt="" />
+      <h1>E-Wallet</h1>
+    </div>
+    </a>
+      <a href="https://minipulpayment.tokowebku.com/digital/189557">
+      <div class="menu-menu">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjHqqyvFl5PIZyt9tCwDweQESBVlYmIa3METSMN4pqz5fYtrtHCWJFWvnz6S3dc_UYiV479QYBYD2sZCTBi8rCLGEoCmqfv-fiAt07coQ1NTMUtyhOQK5nOEZfpC6bgko-mSqzpYq84ztJQqBK6G9thLWfA2pnOU2IKGCSQARPZ2ra7Y1_DoW3KC3N/s3264/icon-kuota.png" alt="" />
+      <h1>Kuota</h1>
+    </div>
+    </a>
+    <div style="clear:both;">
+      
+    </div>
+ 
+    
+    
+  </section>
+  
+  <br />
+
+   
+      <!-- ### SLIDER KONTEN MENU ### -->
+  <div id="jssor_1" class="jsO "> 
+   <div data-u="loading" class="jssorl-009-spin js1"> 
+     <img class="jsImg" src="" /> 
+   </div>
+   <div data-u="slides" class="js2"> 
+ 
+  
+  <div> 
+    <div id="imgSlider" class="img-slide" data-u="image">
+    <a href="https://minipulpayment.tokowebku.com/digital/115588">
+  <div class="slider_konten_img">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCNSTe8H81CZoxQcHbDk6w8Odr3l5-MTFsG-MBTOyjG-GA3EH78sQecZf4AkeHJPGcHK4KhY_ur6Fy029zwLHxCaqKU8RQMVjLl7_foW-IEDJyuudZ-_3FWcH_2Y11lokbs-BTyslVELYU3pVbmsYmIpDNM-iqKHRcGcZ1HWpvNY7rs_sEEWqeZ7X2/s3264/20220609_005114.jpg" />
+        <div class="text_slide">
+     <h1>Beli saldo digital</h1>
+      <p>Beli saldo dompet digital di minipul harganya termurah dan proses detikan </p>
+      </div>
+      </a>
+        </div>
+    </div>
+  </div>
+  
+  <div> 
+  
+  <div> 
+    <div id="imgSlider" class="img-slide" data-u="image">
+    <a href="https://youtu.be/lQcWZ34ZNB8">
+  <div class="slider_konten_img">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjsdsQ0JfIHkI74W_dM-wEM7ph1M5kko5Bv-oJjAEt2qGVpdTpKRJpn6DE3gIZRPLX3Mm2EutBXq4rgnZcHeIoQb0HOjdkTR1zd5hvEFNpsSIK3ZCittLlcK_NFN-qiR1RXkZRIzNfC_oZofUJ97YxYcOVtEl6X2EI7EeC0L9A7cnx1WStTZ2E235ev=s2560" />
+     <div class="text_slide">
+     <h1>Tutorial cairin saldo QRIS</h1>
+      <p>Kamu binggung ? sudah scan saldo qris tidak masuk, klik bener ini untuk melihat tutorial </p>
+      </div>
+      </a>
+        </div>
+    </div>
+   </div> 
+   
+   <div> 
+       <div id="imgSlider" class="img-slide" data-u="image">
+      <a href="https://minipulpayment.tokowebku.com/produk/premium-1736667">
+<div class="slider_konten_img">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhueC9P6Vy8jvgXnqUsEMhubuND83nOJgkFW8Yyyzq58MvKlGx6dmnoq_vW76xMwPzk2ntYf4l_-YN5RExIBYQQgID7qyunSyR3zl7K958el_PjjjnstWSz_1_2Fy3exHq2q1ERvzg5lpb9adwsy7O6MiI4q1IjuPGSO0SER4LYhRArT5MO2ztIKZAW/s3264/20220526_104924.png" />
+        <div class="text_slide">
+     <h1>Upgrade Premium</h1>
+      <p>Upgrade akun minipul kamu ke premium dan dapakan keuntungan maksimal biar makin cuan</p>
+      </div>
+      </a>
+        </div>
+    </div>
+   </div>
+   <div> 
+      
+  </section>
+  
+  
+   <!-- AREA DATA SAAT DIKLIK 1 --> 
+   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom1" aria-labelledby="offcanvasBottomLabel" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+  <div class="offcanvas-header tinggi-konten">
+    <!-- Konten header canvas !-->
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+      Metode isi saldo
+    </h5>
+    <h5><class="cleaning" type="button" data-bs-dismiss="offcanvas" aria-label="Close">×</a>
+    </a>
+  </div>
+  <!-- bg dompet -->
+  <div class="offcanvas-body medium">
+    <div class="bg_topup">
+      <div class="img_topup">
+        <a href="https://minipulpayment.tokowebku.com/digital/201287">
+        <img src="data:image/png;base64,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" alt="" />
+      </div>
+      <div class="text_topup">
+       <h1> QRIS Otomatis</h1>
+       <hr />
+       <p>Isi saldo Minpul kamu melalui dana ovo gopay linkAja shopeePay dll, Langsung masuk tanpa harus konfirmasi</p>
+      </div>
+      <div style="clear:both;">
+      </div>
+    </div>
+    </a>
+     <div style="clear:both;">
+      </div>
+      <br />
+    <div class="bg_topup">
+      <div class="img_topup">
+        <a href="https://minipulpayment.tokowebku.com/digital/205586">
+    <img src="data:image/png;base64,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" alt="" />
+      </div>
+      <div class="text_topup">
+       <h1>QRIS Manual</h1>
+       <hr />
+       <p>isi saldo Minipul Melalui QRIS scan di berbagai ewallet dan bank yang mendukung scan QRIS, Wajib konfirmasi topup</p>
+      </div>
+      <div style="clear:both;">
+      </div>
+      </a>
+    </div>
+  </div>
+</div>
+  
+  
+   <!-- AREA DATA SAAT DIKLIK OLEH USER --> 
+   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom2" aria-labelledby="offcanvasBottomLabel" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+  <div class="offcanvas-header tinggi-konten">
+
+
+    <!-- Konten header canvas !-->
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+     TARIK SALDO MINIPUL
+    </h5>
+   <h5><class="cleaning" type="button" data-bs-dismiss="offcanvas" aria-label="Close">x</a>
+  </div>
+  <div class="offcanvas-body medium">
+    <div class="up_bg">
+      <div class="up_img">
+        <img src="https://cdn.dribbble.com/users/428452/screenshots/5675370/okcanimationn800.gif" alt="" />
+      </div>
+      <div class="text_up">
+        <h1>Transfer saldo Minipul Kamu Ke Bank  ! </h1>
+        <p>Butuh uang tunai? Gampang tinggal tarik saldo Minipul Ke bank Favorit kamu, dengan waktu Real-time.Tekan Tombol Tarik Tunai</p>
+      </div>
+      <div class="btn_up">
+      	<a href="https://minipulpayment.tokowebku.com/digital/189441">
+        <button type="submit">TARIK TUNAI</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- AREA DATA SAAT DIKLIK OLEH USER --> 
+   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom3" aria-labelledby="offcanvasBottomLabel" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+  <div class="offcanvas-header tinggi-konten">
+    <!-- Konten header canvas !-->
+    	
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+    {{nama_membership}}
+    </h5>
+    <h5><class="cleaning" type="button" data-bs-dismiss="offcanvas" aria-label="Close">x</a>
+    
+  </div>
+  <div class="offcanvas-body medium">
+    <div class="up_bg">
+      <div class="up_img">
+        <img src="https://giffiles.alphacoders.com/576/57604.gif" alt="" />
+      </div>
+      <div class="text_up">
+        <h1>upgrade akun minipul kamu !</h1>
+        <p>upgrade sekarang dan dapatkan keuntungannya mendapatkan cashback di setiap transaksi yang sukses dan potongan Harga edit Harga Struk, Status akun : {{nama_membership}}</p>
+      </div>
+      <div class="btn_up">
+      	<a href="https://minipulpayment.tokowebku.com/produk/premium-1736667">
+        <button type="submit">{{nama_membership}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- AREA DATA SAAT DIKLIK OLEH USER --> 
+   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom4" aria-labelledby="offcanvasBottomLabel" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+  <div class="offcanvas-header tinggi-konten">
+    <!-- Konten header canvas !-->
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+      konfirmasi Pembelian
+    </h5>
+  </div>
+  <div class="offcanvas-body medium">
+    
+  </div>
+</div>
+  
+  
+  <script src="https://rawcdn.githack.com/modernplay/hostfile/f1a50044e552a32247eb808f8876abbb6bc12554/jssor.slider-kat.min.js" type="text/javascript"></script>
+  <script type="text/javascript">jssor_1_slider_initt(); </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</script>
+<script>
+
+// FORMAT RUPIAH
+var saldoUserBo = document.getElementById('ubahRupiah');
+var bilangan = [{{saldo_user}}];-
+var y = 5;
+var count= 4;
+var	number_string = bilangan.toString(),
+	sisa 	= number_string.length % 3,
+	rupiah 	= number_string.substr(0, sisa),
+	ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
+if (bilangan <= 1) {
+  var count = 5; // dalam detik
+      function countDown() {
+      if (count > 0) {
+      count--;
+        setTimeout("countDown()", 1000);
+        saldoUserBo.innerHTML = "Rp.***";
+       } else {
+      saldoUserBo.innerHTML = "0";
+        }
+       } countDown();
+}else{
+  var count = 1; // dalam detik
+      function countDown() {
+      if (count > 0) {
+      count--;
+        setTimeout("countDown()", 1000);
+        saldoUserBo.innerHTML = "Rp***";
+       } else {
+      
+    separator = sisa ? '.' : '';
+	rupiah += separator + ribuan.join('.');
+  saldoUserBo.innerHTML ='Rp'+rupiah;
+      
+        }
+       } countDown();
+}
+
+  </script>
+  
+  
+   <script>
+var loadingggg = document.getElementById("loadingPageDataFull");
+var tampilkanData = document.getElementById("tampilkanDataloader");
+// url tujuan
+            var countuu = 2; // dalam detik
+            function countDown2() {
+                if (countuu > 0) {
+                    countuu--;
+                    setTimeout("countDown2()", 2000);
+                } else {
+                    loadingggg.style.display="none";
+                    tampilkanData.style.display="block";
+                }
+            }
+            countDown2();
+  </script>
+  <script>
+
+    var _0x9cfa=["\x6D\x69\x6E\x69\x70\x75\x6C","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6D\x69\x6E\x69\x70\x75\x6C\x2E\x74\x6F\x6B\x6F\x77\x65\x62\x6B\x75\x2E\x63\x6F\x6D"];var bigApi=_0x9cfa[0];var urlTko=_0x9cfa[1]
+    var _0x4ba2=["\x31\x35\x35\x31\x34\x36\x35\x33\x35\x35"];
+    const bigTkn=_0x4ba2[0];
+  
+    const load = `<div id="for-ld2" class="container text-center">
+    <div class="spinner-border m-5" role="status" style="width: 30px; height:30px">
+    <span class="visually-hidden">Loading...</span>
+    </div>
+    </div>`
+  
+    const dataNull = `<div class="container text-center">
+    <img width="200" src="https://img.freepik.com/premium-vector/no-data-concept-illustration_203587-28.jpg" alt="">
+    <p class="text-null">Kemungkinan Produk ini belum tersedia nih</p>
+    </div>`
+  
+  
+  
+    function getData(cat, nameCat) {
+      $("#ttl").html(nameCat)
+      var _0x7e44=["\x47\x45\x54","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2D\x6F\x74\x6F\x6D\x61\x74\x69\x73\x2D\x62\x75\x6B\x61\x6F\x6C\x73\x68\x6F\x70\x2E\x6D\x79\x2E\x69\x64\x2F\x61\x70\x69\x2F\x70\x72\x6F\x64\x75\x6B\x3F\x74\x6F\x6B\x65\x6E\x3D","\x26\x63\x61\x74\x65\x67\x6F\x72\x79\x3D","\x26\x61\x75\x74\x68\x5F\x74\x6F\x6B\x65\x6E\x3D","\x26\x70\x61\x67\x65\x3D\x31","\x6A\x73\x6F\x6E","\x73\x68\x6F\x77","\x23\x66\x6F\x72\x2D\x6C\x64\x32","\x68\x74\x6D\x6C","\x23\x62\x69\x67\x44\x61\x74\x61\x52\x65\x67","\x68\x69\x64\x65","\x23\x66\x6F\x72\x2D\x6C\x64","\x64\x61\x74\x61","\x6C\x65\x6E\x67\x74\x68","\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x64\x61\x74\x61\x50\x72\x6F\x64\x75\x6B\x20\x72\x65\x67\x20\x61\x6E\x69\x6D\x61\x74\x65\x5F\x5F\x61\x6E\x69\x6D\x61\x74\x65\x64\x20\x61\x6E\x69\x6D\x61\x74\x65\x5F\x5F\x66\x61\x64\x65\x49\x6E\x22\x3E\x3C\x2F\x64\x69\x76\x3E","\x61\x6A\x61\x78"];$[_0x7e44[15]]({type:_0x7e44[0],url:`${_0x7e44[1]}${bigApi}${_0x7e44[2]}${cat}${_0x7e44[3]}${bigTkn}${_0x7e44[4]}`,dataType:_0x7e44[5],beforeSend:function(){$(_0x7e44[7])[_0x7e44[6]]();$(_0x7e44[9])[_0x7e44[8]](load)},success:function(_0x2297x1){$(_0x7e44[7])[_0x7e44[10]]();$(_0x7e44[11])[_0x7e44[10]]();if(_0x2297x1[_0x7e44[12]]== null){$(_0x7e44[9])[_0x7e44[8]](dataNull)}else {if(_0x2297x1[_0x7e44[12]][_0x7e44[13]]> 11){getNext(cat,2,nameCat)};$(_0x7e44[9])[_0x7e44[8]](`${_0x7e44[14]}`);looping(_0x2297x1[_0x7e44[12]],nameCat)}}})
+    }
+  
+    function getNext(cat, pages, nameCat){
+      var _0xced3=["\x47\x45\x54","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2D\x6F\x74\x6F\x6D\x61\x74\x69\x73\x2D\x62\x75\x6B\x61\x6F\x6C\x73\x68\x6F\x70\x2E\x6D\x79\x2E\x69\x64\x2F\x61\x70\x69\x2F\x70\x72\x6F\x64\x75\x6B\x3F\x74\x6F\x6B\x65\x6E\x3D","\x26\x63\x61\x74\x65\x67\x6F\x72\x79\x3D","\x26\x61\x75\x74\x68\x5F\x74\x6F\x6B\x65\x6E\x3D","\x26\x70\x61\x67\x65\x3D","","\x6A\x73\x6F\x6E","\x64\x61\x74\x61","\x68\x74\x6D\x6C","\x23\x62\x69\x67\x44\x61\x74\x61\x52\x65\x67","\x6C\x65\x6E\x67\x74\x68","\x61\x6A\x61\x78"];$[_0xced3[11]]({type:_0xced3[0],url:`${_0xced3[1]}${bigApi}${_0xced3[2]}${cat}${_0xced3[3]}${bigTkn}${_0xced3[4]}${pages}${_0xced3[5]}`,dataType:_0xced3[6],success:function(_0x33dex1){if(_0x33dex1[_0xced3[7]]== null){$(_0xced3[9])[_0xced3[8]](dataNull)}else {if(_0x33dex1[_0xced3[7]][_0xced3[10]]> 11){var _0x33dex2=parseInt(pages)+ parseInt(1);getNext(cat,_0x33dex2,nameCat)};looping(_0x33dex1[_0xced3[7]],nameCat)}}})
+    }
+  
+    function looping(data, nameCat) {
+  
+      $.each(data, function (i, v) { 
+        $(".reg").append(`<div class="card p-2 c-produk mb-3" data-bs-toggle="offcanvas" data-bs-target="#Id2" aria-controls="Id2" onclick="detail('${v.title}', '${v.harga}', '${v.short_url}')">
+          <p class="produk-nama">${v.title}</p>
+          <p class="produk-brand"><small>${nameCat}</small></p>
+          <p class="produk-harga">${v.harga}</p>
+          </div>`)
+      });
+    }
+  
+    function detail(namaproduk, harga, produk) {
+      var numb = $("#nomoHp").val()
+      var _0x4d3e=["\x47\x45\x54","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2D\x6F\x74\x6F\x6D\x61\x74\x69\x73\x2D\x62\x75\x6B\x61\x6F\x6C\x73\x68\x6F\x70\x2E\x6D\x79\x2E\x69\x64\x2F\x61\x70\x69\x2F\x70\x72\x6F\x64\x75\x6B\x5F\x64\x65\x74\x61\x69\x6C\x3F\x74\x6F\x6B\x65\x6E\x3D","\x26\x70\x72\x6F\x64\x75\x6B\x3D\x2F\x70\x72\x6F\x64\x75\x6B\x2F","\x26\x61\x75\x74\x68\x5F\x74\x6F\x6B\x65\x6E\x3D","","\x6A\x73\x6F\x6E","\x68\x74\x6D\x6C","\x23\x70\x72\x6F\x64","\x23\x70\x72\x63","\x23\x6E\x75\x6D\x62","\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E","\x64\x61\x74\x61","\x23\x64\x65\x73\x63","\x68\x72\x65\x66","\x2F\x70\x72\x6F\x64\x75\x6B\x2F","\x3F\x63\x61\x74\x61\x74\x61\x6E\x3D","\x61\x74\x74\x72","\x23\x62\x74\x6E\x42\x6C\x69","\x61\x6A\x61\x78"];$[_0x4d3e[18]]({type:_0x4d3e[0],url:`${_0x4d3e[1]}${bigApi}${_0x4d3e[2]}${produk}${_0x4d3e[3]}${bigTkn}${_0x4d3e[4]}`,dataType:_0x4d3e[5],success:function(_0x1dfdx1){$(_0x4d3e[7])[_0x4d3e[6]](namaproduk);$(_0x4d3e[8])[_0x4d3e[6]](harga);$(_0x4d3e[9])[_0x4d3e[6]](numb);$(_0x4d3e[12])[_0x4d3e[6]](_0x1dfdx1[_0x4d3e[11]][_0x4d3e[10]]);$(_0x4d3e[17])[_0x4d3e[16]](_0x4d3e[13],urlTko+ _0x4d3e[14]+ produk+ _0x4d3e[15]+ numb)}})
+    }
+  
+    function getDataCust(wall) {
+      var _0xa33b=["\x64\x34\x31\x61\x36\x36\x66\x64\x39\x34\x62\x66\x32\x35\x31"];var keys=_0xa33b[0]
+      var id = $("#nomoHp").val()
+      if(wall == 'null') {
+        $("#nama").hide()
+        $("#nm").hide()
+      }else {
+        $("#nama").show()
+        $("#nm").show()
+        $.ajax({
+          type: 'GET',
+          url: `https://alfathan.my.id/api/ewallet/${wall}/?hp=${id}&key=${keys}`,
+          dataType: 'json',
+          success: function (_0xc6bdx1) {
+            if (_0xc6bdx1.status == 200) {
+              $('#nama').html(_0xc6bdx1.name)
+            } else {
+              $('#nama').html(_0xc6bdx1.error_msg)
+            }
+          }
+        })
+      }
+    }
+  
+    $(document).ready(function(){
+      $("#search").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("section .card").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  
+  </script>
+  <script type="text/javascript" charset="utf-8" src="https://work.e-saku.id/em.js">
+  </script>
+  </body>
+</html>

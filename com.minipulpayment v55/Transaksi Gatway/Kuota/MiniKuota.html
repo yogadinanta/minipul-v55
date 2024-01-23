@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title id="ttl">MiniKuota | Minipul
+	</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+	<style>
+		@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+		.bg-head {
+			background: #2196F3;
+			height: 100px;
+		}
+		.inp-nomor {
+			border-radius: 5px;
+			margin-top: -70px;
+			border: none;
+			box-shadow: 1px 2px 5px rgba(10, 10, 10, 0.137);
+		}
+		.lab {
+			z-index: 1;
+			border: 1px solid white;
+			width: 60px;
+			font-size: 10px;
+			display: flex;
+			justify-content: center;
+			margin-left: 10px;
+			background-color: white;
+			font-weight: 550;
+			color: #2196F3;
+		}
+		.form-lb {
+			margin-top: -10px;
+			font-size: 13px;
+			padding: 10px;
+			font-weight: 500;
+			background-color: transparent;
+		}
+		.form-lb:focus {
+			box-shadow: none;
+			border: 0.1px solid #2196F3;
+			background-color: transparent;
+		}
+		::placeholder {
+			font-size: 13px;
+			font-weight: 450;
+		}
+		.fsrc {
+			color: #000;
+		}
+		.produk-nama {
+			margin-bottom: 0;
+			font-size: 13px;
+			font-weight: 500;
+			opacity: 0.9;
+		}
+		.produk-brand {
+			margin-bottom: 0;
+			font-size: 12px;
+			opacity: 0.7;
+			margin-top: -3px;
+		}
+		.produk-harga {
+			margin-bottom: 0;
+			font-size: 13px;
+			font-weight: 500;
+			color: #2196F3;
+		}
+		.c-produk {
+			border: none;
+			box-shadow: 0px 1px 1px 1.2px rgba(10, 10, 10, 0.075);
+		}
+		.btn-select {
+			border: 1px solid #2196F3;
+			color: #2196F3;
+			border-radius: 15px;
+			width: 100%;
+			background-color: white;
+			font-size: 12px;
+			transition: 300ms all;
+		}
+		.btn-select-act {
+			background-color: #2196F3;
+			color: white;
+		}
+		.for-load {
+			color: red;
+			font-size: 12px;
+			font-style: italic;
+		}
+		.text-null {
+			font-weight: 600;
+			opacity: 0.7;
+			font-size: 13px;
+		}
+		.rc {
+			margin-bottom: 0;
+			color: white;
+			font-size: 13px;
+			font-weight: 600;
+		}
+		.bg-canvas {
+			background-color: #2196F3;
+			color: white;
+			border-top-left-radius: 10px ;
+			border-top-right-radius: 10px ;
+		}
+		.offcanvas-bottom {
+			height: auto !important;
+			border-top-left-radius: 10px ;
+			border-top-right-radius: 10px ;
+		}
+
+		.indx {
+			font-size: 12px;
+			font-weight: 500;
+			opacity: 0.7;
+			margin-bottom: 0px;
+		}
+		.val {
+			font-size: 13px;
+			font-weight: 500;
+			margin-bottom: 0px;
+		}
+		.dashed{
+			border-top: 1px dashed #8c8b8b;
+		}
+		.bo {
+			box-shadow: 1px 1px 3px #8c8b8b;
+		}
+		.desc {
+			font-size: 12px;
+			opacity: 0.7;
+		}
+
+		.btn-beli {
+			background-color: #2196F3;
+			border: #2196F3;
+			color: white;
+			border-radius: 5px;
+			font-size: 13px; 
+			text-transform: uppercase;
+		}
+		.btn-batal {
+			background-color: #808080;
+			border: #808080;
+			color: white;
+			border-radius: 5px;
+			font-size: 13px; 
+			text-transform: uppercase;
+		}
+
+		#search:focus {
+			box-shadow: none;
+			border: 0.1px solid #2196F3;
+		}
+		.c-hijau {
+			color: #2196F3;
+			margin-top: -35px;
+			margin-bottom: 15px;
+			width: 10px;
+			margin-left: 90%;
+			position: relative;
+		}
+		*{
+			user-select: none ;
+		}
+		.dropdown-menu {
+			overflow: auto;
+			width: 200px !important;
+			border: none;
+			box-shadow: 1px 4px 10px rgba(14, 14, 14, 0.11);
+		}
+		::-webkit-scrollbar{
+			width: 1px;
+		}
+	</style>
+
+	<div class="bg-head"></div>
+	<div class="container">
+		<div class="card inp-nomor p-3">
+			<label for="nomoHp" class="lab">Nomor HP</label>
+
+			<input class="form-control form-lb {{hasil_kontak}}" placeholder="Masukan Nomor Tujuan" id="nomoHp" type="tel"/>
+			<label for="nomoHp"></label>
+			<div class="text-end c-hijau">
+				<a href="https://minipulpayment.tokowebku.com/ambil_kontak" style="color: #2196F3;">
+					<i for="nomoHp" class="bi bi-person-lines-fill me-2"></i>
+				</a>
+			</div>
+
+			<div id="foralert">
+
+			</div>
+
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+	<div class="container mt-3">
+		<div class="d-flex justify-content-between">
+			<p>Pilihan Produk</p>
+			<div class="d-block">
+				<div class="d-flex">
+					<p class="fsrc me-3" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne"><i class="bi bi-search"></i></p>
+					<div class="dropdown">
+						<p class="fsrc" data-bs-toggle="dropdown" aria-expanded="false"><i></i> <button class="btn btn-warning btn-sm">Pilih Provider</button></p>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+							<li onclick="getData('kouta-tri-408002', '  Kuota TRI'); getDataCust('Kouta TRI')"><a class="dropdown-item" href="#" >Kuota TRI</a></li>
+                            <li onclick="getData('kouta-indosat-408003', '  Kuota Indosat'); getDataCust('Kouta Indosat')"><a class="dropdown-item" href="#">Kuota Indosat</a></li>
+                            <li onclick="getData('kouta-telkomsel-408004', '  Kuota Telkomsel'); getDataCust('Kouta Telkomsel')"><a class="dropdown-item" href="#">Kuota Telkomsel</a></li>
+                            <li onclick="getData('kouta-axis-408005', '  Kuota Axis'); getDataCust('Kouta Axis')"><a class="dropdown-item" href="#">Kuota Axis</a></li>
+                            <li onclick="getData('kouta-smartfren-408006', '  Kuota Smartfren'); getDataCust('isaku')"><a class="dropdown-item" href="#">Kuota Smartfren</a></li>
+                            <li onclick="getData('kouta-binzet-408007', ' Kuota Binzet'); getDataCust('Kouta Binzet')"><a class="dropdown-item" href="#">Kuota Binzet</a></li>
+                            <li onclick="getData('kouta-by-u-408008', ' Kuota By.u'); getDataCust('Kouta By.u')"><a class="dropdown-item" href="#">Kouta By.u</a></li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="accordion accordion-flush" id="accordionFlushExample">
+			<div class="accordion-item">
+				<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+					<div class="accordion-body">
+						<input type="search" class="form-control" placeholder="Cari Produk" style="box-shadow: none;" id="search">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr style="margin-top: 0px; opacity: 0.1;" />
+
+		<section id="bigDataReg">
+
+		</section>
+
+	</div>
+
+
+	<div class="offcanvas offcanvas-bottom" data-bs-backdrop="static" tabindex="-1" id="Id2" aria-labelledby="staticBackdropLabel">
+		<div class="bg-canvas d-flex justify-content-between px-3 py-2">
+			<div class="d-block">
+				<div class="d-flex">
+					<i class="bi bi-list-ul me-2"></i>
+					<p class="rc">Rincian </p>
+				</div>
+			</div>
+			<i class="bi bi-caret-down-fill" data-bs-dismiss="offcanvas" aria-label="Close" ></i>
+		</div>
+		<div class="offcanvas-body">
+
+			<div class="d-flex justify-content-between">
+				<p class="indx me-5">Produk</p>
+				<p class="val text-end" id="prod">Loading...</p>
+			</div>
+			<hr class="dashed">
+
+			<div class="d-flex justify-content-between">
+				<p class="indx me-5">Harga</p>
+				<p class="val" id="prc">Loading...</p>
+			</div>
+			<hr class="dashed">
+
+			<div class="d-flex justify-content-between">
+				<p class="indx">Nomor HP</p>
+				<p class="val" id="numb">Loading...</p>
+			</div>
+
+			
+
+			<hr class="bo">
+
+			<p class="indx">Deskripsi Produk</p>
+			<p class="desc mt-3" id="desc">Loading...</p>
+
+			<div class="d-flex justify-content-between">
+				<button class="btn-batal px-3 py-1 w-100 me-3" data-bs-dismiss="offcanvas" aria-label="Close" >Batalkan</button>
+
+				<a id="btnBli" class="btn-beli px-3 py-1 w-100 text-center" style="text-decoration: none; color:white">Beli Sekarang</a>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+	<script>
+
+		const bigApi = 'minipulpayment'
+		const urlTko = "https://minipulpayment.tokowebku.com"
+
+    var baseUrl = "https://api.nielz.my.id/api/v2/fitur/bo?" 
+		
+
+		const load = `<div id="for-ld2" class="container text-center">
+		<div class="spinner-border m-5" role="status" style="width: 30px; height:30px">
+		<span class="visually-hidden">Loading...</span>
+		</div>
+		</div>`
+
+		const dataNull = `<div class="container text-center">
+		<img width="200" src="https://img.freepik.com/premium-vector/no-data-concept-illustration_203587-28.jpg" alt="">
+		<p class="text-null">Kemungkinan Produk ini belum tersedia nih</p>
+		</div>`
+
+
+
+		function getData(cat, nameCat) {
+
+			$("#ttl").html(nameCat)
+			$.ajax({
+				type: "POST",
+				url: baseUrl,
+				data: {
+					aktivasi: bigApi,
+					param: 'produk',
+					url: `${urlTko}/kategori/${cat}`,
+
+				},
+				dataType: "JSON",
+				success: function (response) {
+					$("#for-ld2").hide()
+					$("#for-ld").hide()
+
+					if(response.data == null) {
+						$("#bigDataReg").html(dataNull)
+					}else {
+						$("#bigDataReg").html(`<div class="dataProduk reg animate__animated animate__fadeIn"></div>`)
+						looping(response.data, nameCat)
+					}
+				}
+			});
+		}
+
+
+		function looping(data, nameCat) {
+
+			$.each(data, function (i, v) { 
+				$(".reg").append(`<div class="card p-2 c-produk mb-3" data-bs-toggle="offcanvas" data-bs-target="#Id2" aria-controls="Id2" onclick="detail('${v.nama}', '${v.harga}', '${v.url}')">
+					<p class="produk-nama">${v.nama}</p>
+					<p class="produk-brand"><small>${nameCat}</small></p>
+					<p class="produk-harga">${v.harga}</p>
+					</div>`)
+			});
+		}
+
+		function detail(namaproduk, harga, produk) {
+			var numb = $("#nomoHp").val()
+			var numb2 = numb.replace("#", "%23")
+			$.ajax({
+				type: "POST",
+				url: baseUrl,
+				data: {
+					aktivasi: bigApi,
+					param: 'detail_produk',
+					url: produk,
+
+				},
+				dataType: "JSON",
+				success: function (response) {
+					$("#prod").html(namaproduk)
+					$("#prc").html(harga)
+					$("#numb").html(numb)
+					$("#desc").html(response.data)
+					$("#btnBli").attr("href", produk+"?catatan="+numb2)
+				}
+			});
+		}
+
+		function getDataCust(wall) {
+			var _0xa33b=["\x64\x34\x31\x61\x36\x36\x66\x64\x39\x34\x62\x66\x32\x35\x31"];var keys=_0xa33b[0]
+			var id = $("#nomoHp").val()
+			if(wall == 'null') {
+				$("#nama").hide()
+				$("#nm").hide()
+			}else {
+				$("#nama").show()
+				$("#nm").show()
+				$.ajax({
+					type: 'GET',
+					url: `https://alfathan.my.id/api/ewallet/${wall}/?hp=${id}&key=${keys}`,
+					dataType: 'json',
+					success: function (_0xc6bdx1) {
+						if (_0xc6bdx1.status == 200) {
+							$('#nama').html(_0xc6bdx1.name)
+						} else {
+							$('#nama').html(_0xc6bdx1.error_msg)
+						}
+					}
+				})
+			}
+		}
+
+		$(document).ready(function(){
+			$("#search").on("keyup", function() {
+				var value = $(this).val().toLowerCase();
+				$("section .card").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
+
+	</script>
+
+</body>
+</html>

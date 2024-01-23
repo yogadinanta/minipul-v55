@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+   <style>
+body {
+  padding-bottom: 80px;
+}
+
+.name {
+  font-size: 14px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.brand {
+  font-size: 12px;
+}
+
+hr {
+  height: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #cdcdcd;
+}
+
+.title-de {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.detail {
+  font-size: 15px;
+  position: relative;
+}
+
+.detail p {
+  margin: 0;
+}
+
+.detail-sub {
+  right: 0;
+  position: absolute;
+}
+
+.btn-buy {
+  width: 100%;
+  z-index: 10;
+  bottom: 0;
+  padding: 10px 15px;
+  background: white;
+}
+
+.btn-buy button {
+  width: 100%;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+  border-radius: 13px;
+  background: #30c06d;
+}
+
+      .subwrap {
+        box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+        border-radius: 16px;
+        padding: 12px;
+        height: 180px;
+      }
+
+      iframe {
+        max-height: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="carouselExampleDark" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="{{gambar_produk_1}}" class="d-block w-100" alt="minipul.com">
+    </div>
+    <div class="carousel-item">
+      <img src="{{gambar_produk_2}}" class="d-block w-100" alt="minipul.com">
+    </div>
+    <div class="carousel-item">
+      <img src="{{gambar_produk_3}}" class="d-block w-100" alt="minipul.com">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="main p-4">
+  <p class="price">{{judul_produk}}</p>
+  <h5 class="price"  id="saldo_user">Rp{{harga_produk}}</h5>
+  
+  <hr>
+  
+  <h5 class="title-de">Detail produk</h5>
+  <div class="d-flex detail">
+    <p>Stok</p>
+    <p class="detail-sub">{{stok_produk}}</p>
+  </div>
+  <div class="d-flex detail">
+    <p>Kategori</p>
+    <p class="detail-sub">{{nama_kategori}}</p>
+  </div>
+  
+  <hr>
+  
+  <h5 class="title-de">Deskripsi</h5>
+  <p>{{deskripsi_panjang}}</p>
+</div>
+
+<div class="position-fixed btn-buy">
+  <button onclick="window.location.href='https://minipulpayment.tokowebku.com/produk/beli'"><i class="fa-solid fa-cart-shopping"></i>   Beli Sekarang</button>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+<!-- Letakkan script dibagian paling bawah halaman -->
+<script type="text/javascript">
+    function rubah(angka){
+    var reverse = angka.toString().split('').reverse().join(''),
+    ribuan = reverse.match(/\d{1,3}/g);
+    ribuan = ribuan.join('.').split('').reverse().join('');
+    return "Rp"+ribuan;
+    }
+    document.getElementById("saldo_user").innerText=rubah(document.getElementById("saldo_user").textContent);
+    </script>       
+  </body>
+</html>

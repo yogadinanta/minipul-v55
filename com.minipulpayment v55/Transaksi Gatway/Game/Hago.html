@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kembali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+    <style type="text/css">
+        /* ELZ LOAD */
+        .dot-spinner {
+            --uib-size: 5rem;
+            --uib-speed: .9s;
+            --uib-color: #2196F3;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: var(--uib-size);
+            width: var(--uib-size);
+        }
+
+        .dot-spinner__dot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            width: 100%;
+        }
+
+        .dot-spinner__dot::before {
+            content: '';
+            height: 20%;
+            width: 20%;
+            border-radius: 50%;
+            background-color: var(--uib-color);
+            transform: scale(0);
+            opacity: 0.5;
+            animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+        }
+
+        .dot-spinner__dot:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .dot-spinner__dot:nth-child(2)::before {
+            animation-delay: calc(var(--uib-speed) * -0.875);
+        }
+
+        .dot-spinner__dot:nth-child(3) {
+            transform: rotate(90deg);
+        }
+
+        .dot-spinner__dot:nth-child(3)::before {
+            animation-delay: calc(var(--uib-speed) * -0.75);
+        }
+
+        .dot-spinner__dot:nth-child(4) {
+            transform: rotate(135deg);
+        }
+
+        .dot-spinner__dot:nth-child(4)::before {
+            animation-delay: calc(var(--uib-speed) * -0.625);
+        }
+
+        .dot-spinner__dot:nth-child(5) {
+            transform: rotate(180deg);
+        }
+
+        .dot-spinner__dot:nth-child(5)::before {
+            animation-delay: calc(var(--uib-speed) * -0.5);
+        }
+
+        .dot-spinner__dot:nth-child(6) {
+            transform: rotate(225deg);
+        }
+
+        .dot-spinner__dot:nth-child(6)::before {
+            animation-delay: calc(var(--uib-speed) * -0.375);
+        }
+
+        .dot-spinner__dot:nth-child(7) {
+            transform: rotate(270deg);
+        }
+
+        .dot-spinner__dot:nth-child(7)::before {
+            animation-delay: calc(var(--uib-speed) * -0.25);
+        }
+
+        .dot-spinner__dot:nth-child(8) {
+            transform: rotate(315deg);
+        }
+
+        .dot-spinner__dot:nth-child(8)::before {
+            animation-delay: calc(var(--uib-speed) * -0.125);
+        }
+
+        @keyframes pulse0112 {
+
+            0%,
+            100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ELZ BASIC */
+        * {
+            font-family: 'Nunito', sans-serif;
+            user-select: none;
+        }
+
+        body {
+            background-color: #EDF1FC;
+        }
+
+        p {
+            margin: 0;
+            font-size: 12px
+        }
+
+        input {
+            border: none;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        a,
+        a:focus,
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .my-bg {
+            background-color: #2196F3
+        }
+
+        .my-color {
+            color: #2196F3
+        }
+
+        .my-border {
+            border: 1px solid #2196F3;
+        }
+
+        .my-2-border {
+            border: 2px solid #2196F3;
+        }
+
+        .sec-border {
+            border: 1px solid #cccccc;
+        }
+
+        .sec-2-border {
+            border: 2px solid #cccccc;
+        }
+
+        .borad-5 {
+            border-radius: 5px
+        }
+
+        .borad-10 {
+            border-radius: 10px
+        }
+
+        .borad-15 {
+            border-radius: 15px
+        }
+
+        .my-shadow {
+            box-shadow: rgba(0, 0, 0, 0.15) 1px;
+        }
+
+        .bg-white {
+            background-color: #fff !important
+        }
+
+        .text-white {
+            color: #fff
+        }
+
+        .f-11 {
+            font-size: 11px !important
+        }
+
+        .f-12 {
+            font-size: 12px !important
+        }
+
+        .f-14 {
+            font-size: 14px !important
+        }
+
+        .f-16 {
+            font-size: 16px !important
+        }
+
+        .f-18 {
+            font-size: 18px !important
+        }
+
+        .f-20 {
+            font-size: 20px !important
+        }
+
+        .f-22 {
+            font-size: 22px !important
+        }
+
+        .f-24 {
+            font-size: 24px !important
+        }
+
+        .f-26 {
+            font-size: 26px !important
+        }
+
+        .f-28 {
+            font-size: 28px !important
+        }
+
+        .fwb-5 {
+            font-weight: 500
+        }
+
+        .fwb-6 {
+            font-weight: 600
+        }
+
+        .fwb-7 {
+            font-weight: 700
+        }
+
+        .fwb-8 {
+            font-weight: 800
+        }
+
+        .op-7 {
+            opacity: 0.7
+        }
+
+        .op-8 {
+            opacity: 0.8
+        }
+
+        .my-input {
+            border: 1px solid #cccccc;
+            outline: none;
+        }
+
+        .my-input:focus {
+            border: 1px solid #2196F3;
+        }
+
+        .btn-pil {
+            font-size: 14px;
+            font-weight: 700;
+            width: 100%;
+            text-align: center;
+        }
+
+        .pil-active {
+            background-color: #2196F3;
+            color: #fff;
+            padding: 4px;
+            border-radius: 5px;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+            border: 1px solid #cccccc;
+            pointer-events: none;
+        }
+
+        .poinz {
+            pointer-events: none;
+        }
+
+        .app-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .bg-card {
+            background-image: url('https://img.freepik.com/free-vector/copy-space-wavy-white-background-layers_23-2148845469.jpg?w=2000');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .bg-sec {
+            background-color: #ededed;
+        }
+
+        .btn-hov:hover {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        .list-border {
+            border-bottom: 3px dotted #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="header">
+        <div class="my-bg shadow-sm" style="height: 100px;"></div>
+        <div class="px-3" style="margin-top: -80px;">
+            <div class="bg-white borad-5 shadow-sm">
+                <div class="p-3">
+                    <!-- Judul -->
+                    <div class="d-flex align-items-center">
+                        <img src="" class="my-bg borad-5" width="35" id="imgOperator">
+                        <p class="f-16 fwb-7 ms-2" id="namaOperator"></p>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="d-flex align-items-center mt-3">
+                        <input type="number" placeholder="ID User..." class="f-16 p-2 my-input borad-5" id="nomoId">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-3 animate__animated animate__fadeIn" id="boxPilihan">
+        <!-- Pilihan -->
+        <div class="bg-white p-2 borad-5 shadow-sm">
+            <div class="d-flex align-items-center" id="isiPilihan">
+            </div>
+        </div>
+        <!-- Alert -->
+        <div class="mt-3 alert alert-danger shadow-sm borad-5 mb-0 animate__animated animate__fadeIn d-none"
+            id="boxAlert">
+            <p class="text-danger f-14 fwb-6">Kategori ini belum support cek nama, silahkan berhati-hati dalam
+                mengisi nomor tujuan</p>
+        </div>
+    </section>
+
+    <!-- Data -->
+    <section class="p-3" id="dataProduk">
+    </section>
+
+    <!-- Popup -->
+    <section class="offcanvas offcanvas-bottom h-auto" tabindex="-1" id="detailCanv" aria-labelledby="detailCanv">
+        <div class="my-bg p-3 text-white d-flex justify-content-between align-items-center">
+            <p class="fwb-7 f-16">Detail Pembayaran</p>
+            <p class="fwb-7 f-16" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                    class="fa-solid fa-chevron-down"></i></p>
+        </div>
+        <div class="offcanvas-body p-3" id="bodyCanv">
+
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+
+
+       
+        // LINK TOKO
+        const urlToko = "https://minipulpayment.tokowebku.com"
+
+        // AKTIVASI
+        const aktivasi = "minipulpayment"
+
+        // KATEGORI
+        const urlKategori = [
+            {
+                "nama": "HAGO",
+                "gambar": "https://play-lh.googleusercontent.com/X2WMHHw_y9TO1wvJaEAFtsUvYtPdHrUdreSMqxMom1OTJN6QB0y4HSsiHjLoiiQGJms",
+                "cekId": "hago",
+                "data": [
+                    {
+                        "nama": "Diamond",
+                        "view": "list",
+                        "img": "yes",
+                        "url": "hago-490447",
+                    },
+                   
+                ]
+            },
+        ]
+
+
+        //---------- Sistem ----------//
+
+
+        // Kontak
+        function getContact() {
+            window.location.href = urlToko + "/ambil_kontak"
+        }
+
+        // Load Awal
+        const loadAwal = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+        <p class="f-16 fwb-7">Masukan nomor terlebih dahulu...</p>
+        </div>
+        `
+
+        // Loader
+        const loads = `
+        <div class="d-flex justify-content-center py-5 mt-5">
+        <div class="dot-spinner">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        </div>
+        </div>
+        `
+
+        // Nomor Salah
+        const noSalah = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+        <img src="https://i.ibb.co/f8gVVGD/eror.jpg" class="w-100 borad-5 shadow-sm">
+        <p class="mt-3 f-16 fwb-7">Nomor yang dimasukan salah nih...</p>
+        </div>
+        `
+
+        // Produk Kosong
+        const produkNone = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+        <img src="https://i.ibb.co/VwtjssF/digital-marketing.webp" class="w-100 borad-5 shadow-sm">
+        <p class="mt-3 f-16 fwb-7">Sepertinya produk ini belum tersedia...</p>
+        </div>
+        `
+
+        //---------- Sistem Data ----------//
+
+        // Loop Kategori
+        function loopCat(data, cekId) {
+            $("#isiPilihan").html("")
+            $.each(data, function (i, v) {
+                $("#isiPilihan").append(`
+                <div class="btn-pil" id="btp-${i}" onclick="getData('${i}', '${v.url}', '${v.view}', '${v.img}', '${cekId}')">${v.nama}</div>
+                `)
+            })
+            getData(0, data[0].url, data[0].view, data[0].img, cekId)
+        }
+
+
+
+        // Loop Produk
+        function loopProduk(data, view, img, cekId) {
+            $.each(data, function (i, v) {
+
+                let x, y, z, a
+                if (img == "yes") {
+                    x = `<img src="${v.gambar}" width="40" class="borad-5">`
+                    y = "mt-2"
+                    z = "ms-3"
+                    a = "text-center"
+                } else {
+                    x = ""
+                    y = ""
+                    z = ""
+                    a = ""
+                }
+
+                if (view == "grid") {
+                    $("#isiProduk").append(`
+                    <div class="borad-5 shadow-sm bg-card" onclick="getDetail('${v.url}', '${v.nama.trim()}', '${v.harga}', '${v.gambar}', '${cekId}')"  data-bs-toggle="offcanvas" data-bs-target="#detailCanv" aria-controls="detailCanv">
+                        <div class="p-3 ${a}" style="border-radius: 5px">
+                            ${x}
+                            <div class="${y}">
+                                <p class="f-14 fwb-7">${v.nama.trim()}</p>
+                                <p class="f-16 fwb-7 my-color mt-1">${v.harga}</p>
+                            </div>
+                        </div>
+                    </div
+                    `)
+                } else {
+                    $("#isiProduk").append(`
+                    <div class="borad-5 shadow-sm" onclick="getDetail('${v.url}', '${v.nama.trim()}', '${v.harga}', '${v.gambar}', '${cekId}')"  data-bs-toggle="offcanvas" data-bs-target="#detailCanv" aria-controls="detailCanv">
+                        <div class="bg-card p-3 d-flex align-items-center mb-3" style="border-radius: 5px">
+                            ${x}
+                            <div class="${z}">
+                                <p class="f-14 fwb-7">${v.nama.trim()}</p>
+                                <p class="f-16 fwb-7 my-color">${v.harga}</p>
+                            </div>
+                        </div>
+                    </div
+
+                    `)
+                }
+
+            })
+        }
+
+
+
+
+        // Cek Pengguna
+        function cekPengguna(link, nama, harga, gambar, desk, cekId) {
+            var no = $("#nomoId").val().replace("#", "%23")
+            var _0x1ec9 = ["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6E\x69\x65\x6C\x7A\x2E\x6D\x79\x2E\x69\x64\x2F\x76\x61\x6C\x69\x64\x61\x74\x69\x6F\x6E\x2F\x61\x70\x69\x2F\x67\x61\x6D\x65\x2F", "\x2F"]; var urlz = `${_0x1ec9[0]}${cekId}${_0x1ec9[1]}`
+            var _0x81b0 = ["\x38\x32\x37\x32\x62\x35\x38\x32\x30\x37\x61\x37\x33\x64\x39"]; var zenkey = _0x81b0[0]
+            $.ajax({
+                type: 'GET',
+                url: urlz,
+                data: {
+                    key: zenkey,
+                    id: no,
+                },
+                dataType: "json",
+                success: function (response) {
+                    let nick, i
+                    if (response.hasOwnProperty('error_msg')) {
+                        nick = `
+                        <div class="d-flex justify-content-between py-3 list-border">
+                            <p class="fwb-7 op-7 f-14">Nama : </p>
+                            <p class="fwb-7 f-14 op-8 my-color">${response.error_msg}</p>
+                        </div>
+                        `
+                        i = 0
+                    } else {
+                        nick = `
+                        <div class="d-flex justify-content-between py-3 list-border">
+                            <p class="fwb-7 op-7 f-14">Nama : </p>
+                            <p class="fwb-7 f-14 op-8 my-color">${response.nickname}</p>
+                        </div>
+                        `
+                        i = 1
+                    }
+                    nextDetail(link, nama, harga, gambar, desk, nick, i)
+                }
+            })
+
+        }
+
+        // Detail
+        function nextDetail(link, nama, harga, gambar, desk, nick, code) {
+            var no = $("#nomoId").val()
+            let nomor
+            if (no == "") {
+                nomor = `<span class="text-danger">Masukan ID User</span>`
+            } else {
+                nomor = no
+            }
+
+            $("#bodyCanv").html(`
+            <div class="animate__animated animate__fadeIn">
+                <div class="text-center pb-3" style="border-bottom: 3px dashed #2196F3;">
+                    <img src="${gambar}" width="50" class="borad-5">
+                    <p class="f-16 fwb-7 mt-2">${nama}</p>
+                </div>
+
+                <div class="py-3 list-border">
+                    <p class="fwb-7 op-7 f-14">Deskripsi Produk: </p>
+                    <p class="fwb-7 f-14 op-8 mt-1">${desk}</p>
+                </div>
+                <div class="d-flex justify-content-between py-3 list-border">
+                    <p class="fwb-7 op-7 f-14">Tujuan : </p>
+                    <p class="fwb-7 f-14 op-8">${nomor}</p>
+                </div>
+                ${nick}
+                <div class="d-flex justify-content-between py-3 list-border">
+                    <p class="fwb-7 op-7 f-16">Harga </p>
+                    <p class="fwb-8 f-16 op-8">${harga}</p>
+                </div>
+                <div class="mt-5">
+                    <div class="d-flex align-items-center">
+                        <div class="w-100 bg-sec p-2 fwb-7 text-center borad-5 btn-hov" data-bs-dismiss="offcanvas"
+                            aria-label="Close">Kembali</div>
+                        <div class="w-100 my-bg text-white p-2 fwb-7 text-center borad-5 ms-3 btn-hov d-none" id="btnBeli" onclick="getBeli('${link}')">Lanjutkan</div>
+                    </div>
+                </div>
+            </div>    
+            `)
+
+            if (no == "" || code == 0) {
+                $("#btnBeli").addClass("d-none")
+            } else {
+                $("#btnBeli").removeClass("d-none")
+            }
+
+        }
+
+        // Tombol Beli
+        function getBeli(link) {
+            var no = $("#nomoId").val().replace("#", "%23")
+            window.location.href = link + "?catatan=" + no
+        }
+
+        // JANGAN DIRUBAH
+        var _0x18b5 = ["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x6E\x69\x65\x6C\x7A\x2E\x6D\x79\x2E\x69\x64\x2F\x61\x70\x69\x2F\x76\x32\x2F\x66\x69\x74\x75\x72\x2F\x62\x6F\x3F"]; var vx0782 = _0x18b5[0]
+        function _0x3270(_0x2867e7, _0x1274e5) { var _0x24c0da = _0x24c0(); return _0x3270 = function (_0x32708a, _0x2bf049) { _0x32708a = _0x32708a - 0x66; var _0x5e587b = _0x24c0da[_0x32708a]; return _0x5e587b; }, _0x3270(_0x2867e7, _0x1274e5); } var _0x2631c3 = _0x3270; (function (_0x258847, _0x20aefe) { var _0x1ef21f = { _0x23bb5b: 0x73, _0x228cad: 0x72, _0x3e7a44: 0x7d, _0x35bfa1: 0x70, _0x4e873e: 0x6f, _0x4f5bba: 0x83 }, _0x539589 = _0x3270, _0x5f4415 = _0x258847(); while (!![]) { try { var _0x39e7ff = parseInt(_0x539589(0x78)) / 0x1 + -parseInt(_0x539589(_0x1ef21f._0x23bb5b)) / 0x2 * (-parseInt(_0x539589(0x6e)) / 0x3) + parseInt(_0x539589(_0x1ef21f._0x228cad)) / 0x4 * (-parseInt(_0x539589(_0x1ef21f._0x3e7a44)) / 0x5) + parseInt(_0x539589(_0x1ef21f._0x35bfa1)) / 0x6 + -parseInt(_0x539589(_0x1ef21f._0x4e873e)) / 0x7 + -parseInt(_0x539589(_0x1ef21f._0x4f5bba)) / 0x8 + -parseInt(_0x539589(0x74)) / 0x9 * (parseInt(_0x539589(0x75)) / 0xa); if (_0x39e7ff === _0x20aefe) break; else _0x5f4415['push'](_0x5f4415['shift']()); } catch (_0x5225f1) { _0x5f4415['push'](_0x5f4415['shift']()); } } }(_0x24c0, 0xb1a44)); var baseUrl = _0x2631c3(0x7e); function getData(_0x2b2d22, _0x5ed6e6, _0x315c23, _0x42fa48, _0x11d7ee) { var _0x5bdb97 = { _0x38135b: 0x7c, _0x2714d5: 0x71, _0x297fe4: 0x7a, _0x31183f: 0x67, _0x195a6b: 0x6d, _0x4bb109: 0x6a, _0x2394c6: 0x7b, _0x47f292: 0x7f }, _0x1a9eff = { _0x19a357: 0x81, _0xd59e60: 0x68, _0x4d36b7: 0x77, _0xd05013: 0x7c, _0x2c630e: 0x66 }, _0x116e11 = _0x2631c3; $(_0x116e11(_0x5bdb97._0x38135b))[_0x116e11(0x69)](loads), noZ = _0x116e11(0x6c), $(_0x116e11(_0x5bdb97._0x2714d5))[_0x116e11(0x77)](_0x116e11(_0x5bdb97._0x297fe4)), $(_0x116e11(0x71))[_0x116e11(0x82)](_0x116e11(_0x5bdb97._0x31183f)), $(_0x116e11(0x6b) + _0x2b2d22)['addClass'](_0x116e11(_0x5bdb97._0x297fe4)), $[_0x116e11(_0x5bdb97._0x195a6b)]({ 'type': _0x116e11(_0x5bdb97._0x4bb109), 'url': baseUrl, 'data': { 'aktivasi': aktivasi, 'param': _0x116e11(_0x5bdb97._0x2394c6), 'url': urlToko + '/kategori/' + _0x5ed6e6 }, 'dataType': _0x116e11(_0x5bdb97._0x47f292), 'success': function (_0x3e00c1) { var _0x4da2d2 = _0x116e11; _0x11d7ee == '#' || _0x11d7ee == '' ? $(_0x4da2d2(_0x1a9eff._0x19a357))[_0x4da2d2(0x77)](_0x4da2d2(_0x1a9eff._0xd59e60)) : $(_0x4da2d2(_0x1a9eff._0x19a357))[_0x4da2d2(0x82)](_0x4da2d2(0x68)); $(_0x4da2d2(0x71))[_0x4da2d2(_0x1a9eff._0x4d36b7)](_0x4da2d2(0x67)); if (_0x3e00c1['data'] == null) $(_0x4da2d2(_0x1a9eff._0xd05013))[_0x4da2d2(0x69)](produkNone); else { let _0x370485; _0x315c23 == _0x4da2d2(0x76) ? _0x370485 = 'app-grid' : _0x370485 = 'app-list', $(_0x4da2d2(0x7c))['html']('<div\x20class=\x22animate__animated\x20animate__fadeIn\x20' + _0x370485 + _0x4da2d2(_0x1a9eff._0x2c630e)), loopProduk(_0x3e00c1['data'], _0x315c23, _0x42fa48, _0x11d7ee); } } }); } function getDetail(_0x4a097e, _0x2fb20c, _0x5b69c5, _0x1274fd, _0xe85c8b) { var _0x26a1ec = { _0xcc979: 0x84, _0x326577: 0x69, _0x2af91e: 0x6d, _0x78faa9: 0x79 }, _0xe976a4 = _0x2631c3; $(_0xe976a4(_0x26a1ec._0xcc979))[_0xe976a4(_0x26a1ec._0x326577)](loads), $[_0xe976a4(_0x26a1ec._0x2af91e)]({ 'type': _0xe976a4(0x6a), 'url': baseUrl, 'data': { 'aktivasi': aktivasi, 'param': _0xe976a4(_0x26a1ec._0x78faa9), 'url': _0x4a097e }, 'dataType': 'json', 'success': function (_0x19911f) { var _0x6ee03b = _0xe976a4; _0xe85c8b == '#' || _0xe85c8b == '' ? nextDetail(_0x4a097e, _0x2fb20c, _0x5b69c5, _0x1274fd, _0x19911f['data'], '', 0x1) : cekPengguna(_0x4a097e, _0x2fb20c, _0x5b69c5, _0x1274fd, _0x19911f[_0x6ee03b(0x80)], _0xe85c8b); } }); } function _0x24c0() { var _0x1deef9 = ['1234786rSlGSf', '5862663hEZIcX', '10yBpWTC', 'grid', 'removeClass', '410768kbMYmf', 'detail_produk', 'pil-active', 'produk', '#dataProduk', '6445KfKrJn', `${vx0782}`, 'json', 'data', '#boxAlert', 'addClass', '7569336ymNbOw', '#bodyCanv', '\x22\x20id=\x22isiProduk\x22></div>', 'poinz', 'd-none', 'html', 'POST', '#btp-', '200', 'ajax', '6YYowtP', '627480zHsXTh', '6417702ONShRT', '.btn-pil', '932CBhNWZ']; _0x24c0 = function () { return _0x1deef9; }; return _0x24c0(); }
+
+        // Cek Tipe
+        cekType(urlKategori[0])
+        function cekType(v) {
+            $("#imgOperator").attr("src", v.gambar)
+            $("#namaOperator").html(v.nama)
+            loopCat(v.data, v.cekId)
+        }
+
+    </script>
+</body>
+
+</html>

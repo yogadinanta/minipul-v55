@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QRIS MERCHANT</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+.popup {
+  position: fixed;
+  display: none;
+  width: 90%;
+  height: auto;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 1;
+  border: 1px solid black;
+  text-align: center;
+  padding: 20px;
+  border-radius:10px;
+  border-color:white;
+  box-shadow: 0px 2px 8px -3px rgba(0,0,0,0.5);
+}
+
+.popup img {
+  width: 100%;
+  height: 420px;
+  margin-bottom: 20px;
+  border-radius:10px;
+  font-size:8px;
+}
+#syarat-ketentuan {
+position:relative;
+}
+
+
+
+.close-button {
+  background-color: #42A5F5;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width:97%;
+
+}
+        .header-codingasik{
+            background: #42A5F5;
+            height: 50px;
+            top: 0;
+            margin-top: 0px;
+            padding: 10px;
+        }
+        .box-Codingasik{
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        }
+        .box-Codingasik img{
+            width: 100px;
+
+        }
+        body{
+            background: aliceblue;
+        }
+#popup__qr {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: 300ms ease-in-out;
+    position: fixed;
+    inset: 0;
+    transform: scale(0);
+    opacity: 0;
+    transition: 300ms ease-in-out;
+}
+#popup__qr.popup__qr__show {
+    transform: scale(1);
+    opacity: 1;
+}
+.gambar-qr {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 1px 0 0;
+    z-index: 1000;
+}
+.wrap__popup__qr {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+}
+.sub__popup__qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title__popup__qr {
+    margin: 0;
+    color: #242424;
+}
+.nama{
+    margin-top: 15px;
+    font-weight: bold;
+}
+.close__popup__qr {
+    margin: 0 0 0;
+    background-color: #42A5F5;
+    width: 100%;
+    padding: 8px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 0 0 10px 10px;
+}   
+.box-Codingasik h6{
+    font-weight: 400;
+    font-size: 11px;
+}
+.box-Codingasik p{
+    font-size: 14px;
+    color: grey;
+    margin-bottom: 0px;
+}
+.box-Codingasik h3{
+    font-size: 16px;
+    font-weight: bold;
+}
+.box-codingasik-mini{
+    background: white;
+    padding: 10px;
+    display: flex;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.image img{
+    width: 45px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.text{
+    width: 100%;
+}
+.text p{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 14px;
+    color: black;
+}
+.text h5{
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 0px;
+}
+.arrow i{
+    margin-right: 10px;
+    color: black;
+    font-size: 15px;
+    margin-top: 12px;
+}
+a{
+    text-decoration: none;
+}
+.text-privacy{
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.text-privacy p{
+    font-size: 13px;
+}
+.codingasik-name-qr{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:5px;
+}
+</style>
+</head>
+<!-- Pringatan! -->
+<body onload="showPopup()">
+<div class="popup">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2av3041b127FahO8AL4imKWuqWU-H72b4l1kh5Z8SHTgYIC_9tR55te0wSy5zjcF8IyoSnHxQoV2U7R7JKGF_Lx8ghzrqS-o6yldMKjClqdUTjB5_SWzLELRoRPduvu5kr2kFzZjp7WYc0YHVCwYtOVhx9GcpoJq1kFfRCx2E4X_hp9QKbTb8fjkGhiI/s1920/20230730_232817_0000.png" alt="Gambar Pop Up">
+  <input type="checkbox" id="syarat-ketentuan"> Saya setuju dengan <a href="LINK SYARAT DAN KETENTUAN" style="text-decoration:none;"> syarat dan ketentuan</a> yang berlaku<br>
+  <button class="close-button" onclick="closePopup()">Setuju</button>
+</div>
+
+<script>
+function showPopup() {
+  document.querySelector(".popup").style.display = "block";
+}
+
+function closePopup() {
+  document.querySelector(".popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+
+    </style>
+  </head>
+  <body>
+</html>
+
+<div class="header-codingasik">
+
+    <div class="box-Codingasik">
+        <center>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-WBs0dMMA9BC2aene4vorbKruz1HZJcKleDRkWvNuC8rZQc5eh7njnjgFT5KuW4UVPZohLVf0eJlYI3LezFxSmmcWw8Vvv0p3GOYil1IaJaOqGb_x01snXMdOCZvzQaV8h1bkMYfyXV1ttA8joYuK2RchkYkYkREc87oKceBoGZBx_BIgzUG-nfNAwQ/s581/IMG_20230430_011618.jpgg" alt="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <h6>Klik Untuk Memperbesar</h6>
+        </center>
+        <p>Saldo Minipul</p>
+        <h3 id="saldo_user">Rp.{{saldo_user}}</h3>
+    </div>
+
+
+<!-- KONFIRMASI OTOMATRISL -->
+<a href="https://minipulpayment.tokowebku.com/digital/201287">
+<div class="box-codingasik-mini">
+    <div class="image">
+        <img
+     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6BpU9knpNVrYVlSB90DZ-5MfdFQ8k88YuplHrwUvyTt0ZZwCo2MYLJBbHLObJlGKBQifNSZASxACQHIlrYaHhRtOl1BopUk_9GfGiA-Ga-oFnoCznQxXKWpvV2Ibwbd9GxfEtjOcGpC1kZ6l8qMXZRWqYvBE76lOYCEZ21zM9n18TrPbKIYcvXuzegQ/s3264/20230414_151512.png" 
+alt="">
+    </div>
+    <div class="text" style="width: 100%;">
+        <h5>QRIS Ajaib</h5>
+        <p>Tanpa harus konfirmasi saldo langsung masuk, Realtime open 24 jam 0℅ Biaya admin qris</p>
+    </div>
+    <div class="arrow">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+</div>
+
+<!-- QRIS MANUALS -->
+<a href="https://minipulpayment.tokowebku.com/akun/?page=topup">
+    <div class="box-codingasik-mini">
+        <div class="image">
+            <img
+         src="https://i.ibb.co/THjFGdL/money-transfer.pnger.png" 
+    alt="">
+        </div>
+        <div class="text" style="width: 100%;">
+            <h5>Konfirmasi Pembayaran</h5>
+            <p>Wajib konfirmasi jika telah melakukan Transfer/Pembayaran ke Qris Minipul</p>
+        </div>
+        <div class="arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        
+    </div>
+    <!-- BAGI SALDO KE SESAMA PENGGUNA -->
+<a href="https://minipulpayment.tokowebku.com/digital/197257">
+    <div class="box-codingasik-mini">
+        <div class="image">
+            <img
+         src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh7sDExuELSy1PkJ5I7aNxHi-XdE7VQrfc4jhis0sOOcdQUItxoIVtk80TEj_Hrj0mdh6PlkYqnb9azT3KK9ZvCAfXJaiS7-A_Sf13ZLZ7nsSLWHBIMLRd3bpf43OI2gqizYYqm6B3BwnaX2MR8AyQWfuuzW6T4cknZw_DdI-vKyeMxv0leg6lZU35X/s3264/20230430_072503.png" 
+    alt="">
+        </div>
+        <div class="text" style="width: 100%;">
+            <h5>Bagi Saldo</h5>
+            <p>Bagi saldo ke sesama pengguna minipul, cepat hanya hitungan detik</p>
+        </div>
+        <div class="arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        
+    </div>
+
+</a>
+<a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+    <div class="box-codingasik-mini">
+        <div class="image">
+            <img
+            src="https://i.ibb.co/dc7GWYq/security.png" alt="">
+        </div>
+        <div class="text" style="width: 100%;">
+            <h5>Syarat & Ketentuan</h5>
+            <p>Berlaku untuk Mitra</p>
+        </div>
+        <div class="arrow">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </div>
+    </a>
+
+
+
+<!--SYARAT DAN KETENTUAN-->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="width: 100%;background: aliceblue;">
+    <div class="offcanvas-header" style="background-color: #42A5F5;">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white;font-size:15px">Syarat & Ketentuan</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" style="background: aliceblue;">
+      <div class="text-privacy">
+        <p>
+            1. Pengenalan
+            1.1 Fitur Merchant QRIS   minipulpayment bertujuan agar agen/pengguna  dapat menerima pembayaran Uang Elektronik dan dapat memudahkan dalam topup saldo  payment.
+        </p>
+        <p>
+            1.2 Uang Elektronik diantara lain DANA, OVO, Gopay, Link Aja, ShopeePay, SpeedCash dan untuk Bank antara lain BCA, Permata, Cimb Niaga, Sinarmas, BTPN / Jenius, BRI Syariah, Mandiri Syariah, Maybank.
+        </p>
+        <p>
+            1.3 Daftar Uang Elektronik dan Bank yang tersebut diatas dapat bertambah dari waktu ke waktu sesuai dengan perkembangan dan kebijakan Asosiasi QRIS.
+        </p>
+        <p>
+            2. Kebijakan Qris
+2.1 Syarat dan Ketentuan  QRIS   minipulpayment ini tunduk dan diatur serta dilaksanakan sesuai dengan hukum Republik Indonesia.
+
+        </p>
+        <p>
+            2.2 Apabila terjadi perselisihan dalam pelaksanaan Syarat dan Ketentuan QRIS   minipulpayment, maka setuju untuk menyelesaikan perselisihan tersebut melalui jalan musyawarah untuk mufakat.
+        </p>
+        <p>
+            3. Pembayaran dan Transaksi QRIS
+            3.1 Apabila   minipulpayment menganggap ada kesalahan dalam transaksi pembayaran,   minipulpayment dapat sewaktu-waktu melakukan koreksi (mendebet atau mengkredit) 
+        </p>
+        <p>
+            3.2 pelanggan /agen akan menyelesaikan setiap keluhan pengguna/pelanggan atas koreksi/klaim/refund sehubungan dengan transaksi pembayaran tersebut secara langsung dengan pengguna/pelanggan.
+
+        </p>
+        <p>
+            3.3 setiap pembayaran Qris Tidak menggunakan Verifikasi ktp ketika topup saldo Di minipulpayment untuk memudahkan member topupsaldo.
+
+        </p>
+        <p>
+            4. Pemblokiran
+4.1   minipulpayment dapat melakukan pemblokiran agen yanh menggunakan  QRIS   minipulpayment dalam hal terjadinya pelanggaran Syarat dan Ketentuan Merchant QRIS   minipulpayment.
+
+        </p>
+        <p>
+            4.2 Sehubungan dengan pemblokiran,   minipulpayment berhak untuk memblokir Agen yang memggunakan QRIS   minipulpayment yang dimiliki oleh Pelaku Usaha Mikro dan Retail secara sepihak dengan atau tanpa pemberitahuan terlebih dahulu apabila terjadi satu atau lebih hal sebagaimana berikut:
+Permintaan resmi dari otoritas pemerintah atau otoritas penegak hukum yang berwenang.
+apabila terdapat indikasi terlibat pada kegiatan yang dilarang berdasarkan peraturan perundang-undangan yang berlaku.
+apabila terdapat indikasi Pengguna Qris  dan Retail terlibat dalam kegiatan pencucian uang, tindak pindana terorisme.
+apabila terdapat indikasi Pelaku pengguna Qris /agen  terlibat kegiatan memperdagangkan produk dan menyediakan jasa kegiatan usaha yang dilarang oleh perundang-undangan yang berlaku.
+apabila terdapat indikasi terlibat keglatan penipuan dan kecurangan.
+apabila terdapat indikasi penyalahgunaan Merchant QRIS   minipulpayment sebagaimana yang dilarang oleh ketentuan perundang-undangan yang berlaku.
+apabila terdapat indikasi-indikasi yang merugikan   minipulpayment baik secara langsung maupun tidak langsung.
+apabila terdapat kondisi-kondisi lain yang menurut pendapat terbaik   minipulpayment memiliki potensi dampak bahaya yang lebih besar apabila tidak dilakukan pemblokiran.
+
+        </p>
+        <p>
+            4.3 Terhadap Merchant QRIS   minipulpayment yang diblokir dan/atau ditunda sementara, maka prlanggan atau agen  tidak dapat menggunakan, memanfaatkan, dan mengakses seluruh fitur yang terdapat dalam Merchant QRIS   minipulpayment.
+        </p>
+        <p>
+            4.4 Namun kepada member yang melanggar dan akun nya terblokir dapat memverifikasi akun nya dengan melengkapi formulir yang di berikan oleh tim keamanan minipulpayment seperti kartu tanda penduduk dan file pendukung lainya .
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- POPUP QRIS -->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body" style="padding: 0px;">
+            <center><!--
+                <p style="margin-top: 10px;margin-bottom: 0px;font-size:14px;font-weight:500">Powered by : minipulpayment</p>
+            </center>
+            -->
+            <img class="gambar-qr" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7q3O7Si3hbq8URI3yfUZ1sF3b4JxXscGS3VcysdiPHHL79MiPEw_szavgsgtxZA8nHZPxuGGgevi_jzdI8-8qOlkHDD8g8SH0azzQaOeN2U3QNb4E9VuMHhIa70dEc5pK9zxNcAnFnEH3IgYbQgJEEemjT2_aoOkG_3-1e5qTPCogH0SQOzIOLZhHUA/s3264/IMG_20230430_003506.png" alt="" style="border-radius: 10px 10px 0px 0px;">
+            <center><h5 class="codingasik-name-qr"><b>{{nama_user}}</b></h5></center>
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRpSyA-VtWbyjRPHPJdB5Uy034G8u46vjcZ0gXW23lnxaPqQAIldNg7dHLKtuhu8ooOYdTPcdH8uG6xH1ymp6ywdXGgpTdVDYhI9acQuioIdoxsDBUDCHf9Dd2-TvW9u3oAMpLPMf_T4tqIZxXtbEDEq004Mn70Y_kfLudMYDN9_Fn-N3OYp9LmdmbYw/s2148/IMG_20230430_005653.jpg" alt="" style="width:100%">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"data-bs-dismiss="modal" style="width: 100%;background:#42A5F5 !important;">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<section id="popup__qr" style="z-index:100;">
+    <div class="wrap__popup__qr">
+      <div class="sub__popup__qr">
+        <p class="nama">{{nama_user}}</p>
+       </img>
+      </div>
+      <p class="close__popup__qr">TUTUP</p>
+    </div>
+  </section>
+
+
+</div>
+<!-- JAVASCRIPT ONLINE -->       
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>       
+<script src="https://codingasik.my.id/CodingasikV2.js"></script>
+<script type="text/javascript" src="https://codingasik.my.id/CodingasikV1.js"></script>
+<script type="text/javascript">
+var _0x7d04=["\x33\x30\x70\x78","\x34\x30\x70\x78","\x31\x35\x70\x78","\x73\x6C\x69\x63\x6B","\x2E\x63\x65\x6E\x74\x65\x72","","\x6A\x6F\x69\x6E","\x72\x65\x76\x65\x72\x73\x65","\x73\x70\x6C\x69\x74","\x6D\x61\x74\x63\x68","\x2E","\x69\x6E\x6E\x65\x72\x54\x65\x78\x74","\x73\x61\x6C\x64\x6F\x5F\x75\x73\x65\x72","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74"];$(_0x7d04[4])[_0x7d04[3]]({centerMode:true,centerPadding:_0x7d04[0],autoplay:true,autoplaySpeed:3000,speed:700,slidesToShow:1,responsive:[{breakpoint:768,settings:{arrows:false,centerMode:true,centerPadding:_0x7d04[1],slidesToShow:3}},{breakpoint:480,settings:{arrows:false,centerMode:true,centerPadding:_0x7d04[2]}}]});function rubah(_0x6263x2){var _0x6263x3=_0x6263x2.toString()[_0x7d04[8]](_0x7d04[5])[_0x7d04[7]]()[_0x7d04[6]](_0x7d04[5]),_0x6263x4=_0x6263x3[_0x7d04[9]](/\d{1,3}/g);_0x6263x4=_0x6263x4[_0x7d04[6]](_0x7d04[10])[_0x7d04[8]](_0x7d04[5])[_0x7d04[7]]()[_0x7d04[6]](_0x7d04[5]);return _0x6263x4}document[_0x7d04[13]](_0x7d04[12])[_0x7d04[11]]=rubah(document[_0x7d04[13]](_0x7d04[12])[_0x7d04[14]])
+</script>
+
+<!-- Letakkan script dibagian paling bawah halaman -->
+<script type="text/javascript">
+function rubah(angka){
+var reverse = angka.toString().split('').reverse().join(''),
+ribuan = reverse.match(/\d{1,3}/g);
+ribuan = ribuan.join('.').split('').reverse().join('');
+return "Rp. "+ribuan;
+}
+document.getElementById("saldo_user").innerText=rubah(document.getElementById("saldo_user").textContent);
+</script>       
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>

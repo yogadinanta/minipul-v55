@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kembali</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+		integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+		rel="stylesheet">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	<style type="text/css">
+		@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+		* {
+			font-family: 'Poppins', sans-serif;
+			user-select: none;
+		}
+
+		body {
+			background-color: #fff;
+		}
+
+		p {
+			margin: 0;
+			font-size: 12px
+		}
+
+		input {
+			border: none;
+			-webkit-transition: 0.5s;
+			transition: 0.5s;
+			outline: none;
+			width: 100%;
+			background-color: transparent;
+		}
+
+		a,
+		a:focus,
+		a:hover {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		@-webkit-keyframes fadeEffect {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeEffect {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		.my-bg {
+			background-color: #42a5f5
+		}
+
+		.my-color {
+			color: #42a5f5
+		}
+
+		.borad-5 {
+			border-radius: 5px
+		}
+
+		.borad-10 {
+			border-radius: 10px
+		}
+
+		.borad-15 {
+			border-radius: 15px
+		}
+
+		.my-shadow {
+			box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+		}
+
+		.bg-white {
+			background-color: #fff !important
+		}
+
+		.text-white {
+			color: #fff
+		}
+
+		.f-11 {
+			font-size: 11px !important
+		}
+
+		.f-12 {
+			font-size: 12px !important
+		}
+
+		.f-14 {
+			font-size: 14px !important
+		}
+
+		.f-16 {
+			font-size: 16px !important
+		}
+
+		.f-18 {
+			font-size: 18px !important
+		}
+
+		.f-20 {
+			font-size: 20px !important
+		}
+
+		.f-22 {
+			font-size: 22px !important
+		}
+
+		.f-24 {
+			font-size: 24px !important
+		}
+
+		.f-26 {
+			font-size: 26px !important
+		}
+
+		.f-28 {
+			font-size: 28px !important
+		}
+
+		.fwb-5 {
+			font-weight: 500
+		}
+
+		.fwb-6 {
+			font-weight: 600
+		}
+
+		.op-7 {
+			opacity: 0.7
+		}
+
+		.my-btn {
+			background-color: #42a5f5;
+			border: none;
+			padding: 12px;
+			border-radius: 5px;
+			width: 100%;
+		}
+
+		.my-btn-2 {
+			border: 1px solid #42a5f5;
+			padding: 12px;
+			border-radius: 5px;
+			width: 100%;
+			background-color: transparent;
+		}
+
+		.linked,
+		.linked:hover,
+		.linked:focus {
+			color: #42a5f5;
+			text-decoration: underline;
+		}
+
+		.btn-hov:hover {
+			-webkit-animation: fadeEffect 1s;
+			animation: fadeEffect 1s;
+		}
+
+		.btn-depo {
+			width: 100%;
+			text-align: center;
+			padding: 8px;
+			border-radius: 5px;
+			font-weight: 600;
+			color: #fff;
+		}
+
+		.my-border {
+			border: 1px solid #42a5f5;
+		}
+
+		.my-sec-bg {
+			background-color: #EDF1FC;
+		}
+
+		.depo-active {
+			background-color: #fff;
+			color: #000;
+		}
+
+		.my-sec-border {
+			border: 1px solid #cccccc;
+		}
+
+		.box-app {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1rem;
+			background-color: #fff;
+			border-radius: 10px;
+			padding: 1rem;
+		}
+
+		.btn-app {
+			width: 100%;
+			font-weight: 600;
+			border-radius: 5px;
+			padding: 8px;
+			background-color: #EDF1FC;
+			border: 1px solid #42a5f5;
+			box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+			text-align: center;
+			font-size: 14px;
+		}
+
+		.btn-app:active {
+			background-color: #42a5f5;
+			color: #EDF1FC;
+
+		}
+
+		.btn-app:after {
+			background-color: #EDF1FC;
+			border: 1px solid #42a5f5;
+
+		}
+
+		.loaderz-new {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			z-index: 999999;
+			backdrop-filter: blur(5px);
+
+		}
+
+		.dot-spinner {
+			--uib-size: 5rem;
+			--uib-speed: .9s;
+			--uib-color: #42a5f5;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			height: var(--uib-size);
+			width: var(--uib-size);
+		}
+
+		.dot-spinner__dot {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			height: 100%;
+			width: 100%;
+		}
+
+		.dot-spinner__dot::before {
+			content: '';
+			height: 20%;
+			width: 20%;
+			border-radius: 50%;
+			background-color: var(--uib-color);
+			transform: scale(0);
+			opacity: 0.5;
+			animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+			box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+		}
+
+		.dot-spinner__dot:nth-child(2) {
+			transform: rotate(45deg);
+		}
+
+		.dot-spinner__dot:nth-child(2)::before {
+			animation-delay: calc(var(--uib-speed) * -0.875);
+		}
+
+		.dot-spinner__dot:nth-child(3) {
+			transform: rotate(90deg);
+		}
+
+		.dot-spinner__dot:nth-child(3)::before {
+			animation-delay: calc(var(--uib-speed) * -0.75);
+		}
+
+		.dot-spinner__dot:nth-child(4) {
+			transform: rotate(135deg);
+		}
+
+		.dot-spinner__dot:nth-child(4)::before {
+			animation-delay: calc(var(--uib-speed) * -0.625);
+		}
+
+		.dot-spinner__dot:nth-child(5) {
+			transform: rotate(180deg);
+		}
+
+		.dot-spinner__dot:nth-child(5)::before {
+			animation-delay: calc(var(--uib-speed) * -0.5);
+		}
+
+		.dot-spinner__dot:nth-child(6) {
+			transform: rotate(225deg);
+		}
+
+		.dot-spinner__dot:nth-child(6)::before {
+			animation-delay: calc(var(--uib-speed) * -0.375);
+		}
+
+		.dot-spinner__dot:nth-child(7) {
+			transform: rotate(270deg);
+		}
+
+		.dot-spinner__dot:nth-child(7)::before {
+			animation-delay: calc(var(--uib-speed) * -0.25);
+		}
+
+		.dot-spinner__dot:nth-child(8) {
+			transform: rotate(315deg);
+		}
+
+		.dot-spinner__dot:nth-child(8)::before {
+			animation-delay: calc(var(--uib-speed) * -0.125);
+		}
+
+		@keyframes pulse0112 {
+
+			0%,
+			100% {
+				transform: scale(0);
+				opacity: 0.5;
+			}
+
+			50% {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+
+		.animated {
+			animation-duration: 0.5s;
+		}
+
+		.fadeInUp {
+			animation-name: fadeInUp;
+		}
+
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(100%);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.alert {
+			font-size: 14px;
+			z-index: 99999;
+		}
+
+		.alert-fill-success {
+			background-color: rgb(1, 207, 145);
+			color: #ffffff;
+		}
+
+		.alert-fill-danger {
+			background-color: rgb(207, 1, 53);
+			color: #ffffff;
+		}
+
+		.alert-fill-warning {
+			background-color: rgb(204, 207, 1);
+			color: #ffffff;
+		}
+
+		.fadeInDown {
+			transform: translateY(-50px);
+			opacity: 0;
+			animation: fadeInDown 0.5s ease-out forwards;
+		}
+
+		@keyframes fadeInDown {
+			from {
+				opacity: 0;
+				transform: translateY(-50px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.fadeOutUp {
+			transform: translateY(0);
+			opacity: 1;
+			animation: fadeOutUp 0.5s ease-out forwards;
+		}
+
+		@keyframes fadeOutUp {
+			from {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			to {
+				opacity: 0;
+				transform: translateY(-50px);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<section class="loaderz-new d-none" id="loadz">
+		<div class="dot-spinner">
+			<div class="dot-spinner__dot"></div>
+			<div class="dot-spinner__dot"></div>
+			<div class="dot-spinner__dot"></div>
+			<div class="dot-spinner__dot"></div>
+			<div class="dot-spinner__dot"></div>
+			<div class="dot-spinner__dot"></div>
+			<div class="dot-spinner__dot"></div>
+			<div class="dot-spinner__dot"></div>
+		</div>
+	</section>
+
+	<section class="p-3">
+
+		<section class="d-flex justify-content-beetween align-items-center my-bg borad-5 p-2">
+			<div class="btn-depo" id="btd-1" onclick="getChange(1)">DEPOSIT</div>
+			<div class="btn-depo" id="btd-2" onclick="getChange(2);">RIWAYAT</div>
+		</section>
+
+		<section class="tabcontent mt-3" id="tab-1">
+
+			<div class="p-3 my-bg borad-10">
+				<p class="fwb-6 f-18 text-white">Jumlah Topup</p>
+				<div class="d-flex align-item-center p-2 mt-2 bg-white borad-5">
+					<p class="f-18 fwb-5">Rp</p>
+					<input type="text" id="jumlahTopup" value="0" class="w-100 fwb-5 f-18" readonly>
+				</div>
+				<p class="text-white mt-2">QRIS Gratis Biaya Admin 0℅ Semua Saldo Yang Anda Bayar Akan Masuk Termasuk 3 Digit Terhakir
+				</p>
+			</div>
+
+			<div class="box-app mt-5">
+				<button class="btn-app" onclick="valNum('1')">1</button>
+				<button class="btn-app" onclick="valNum('2')">2</button>
+				<button class="btn-app" onclick="valNum('3')">3</button>
+				<button class="btn-app" onclick="valNum('4')">4</button>
+				<button class="btn-app" onclick="valNum('5')">5</button>
+				<button class="btn-app" onclick="valNum('6')">6</button>
+				<button class="btn-app" onclick="valNum('7')">7</button>
+				<button class="btn-app" onclick="valNum('8')">8</button>
+				<button class="btn-app" onclick="valNum('9')">9</button>
+				<button class="btn-app" onclick="valNum('0')">0</button>
+				<button class="btn-app" onclick="valNum('000')">000</button>
+				<button class="btn-app" onclick="valNum('-1')"><i class="fa-solid fa-delete-left"></i></button>
+			</div>
+			<div class="p-3">
+				<div class="my-bg p-2 borad-5 text-center fwb-6 text-white my-shadow btn-hov" onclick="goTopup()">TOPUP
+				</div>
+			</div>
+		</section>
+
+
+		<section class="tabcontent mt-3" id="tab-2">
+
+		</section>
+
+	</section>
+
+	<section class="offcanvas offcanvas-top h-100" tabindex="-1" id="detailCanv" aria-labelledby="detailCanv">
+		<div class="offcanvas-body p-0" id="bodyCanv">
+
+		</div>
+	</section>
+
+	<script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+		</script>
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+		integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://nielz.my.id/assets/accounting.js"></script>
+	<script type="text/javascript">
+
+		// SETTING
+		const token = 10 // dapatkan saat memebeli aktivasi
+		const email = '{{email_user}}'
+		const userid = '{{id_user}}'
+		const nama = '{{nama_user}}'
+		// const saldo = '{{saldo_user}}'
+		const admin = 0.007
+
+		const aktivasi = "minipul"
+
+		const imgQr = "https://i.ibb.co/G734K0z/Screenshot-20230430-143552.jpg"
+
+		const min = 1000
+		const maxim = 5000000
+
+		var baseUrl = "https://nielz.my.id/ok-minipul"
+
+
+		var baseQris = 'https://nielz.my.id/qris-change'
+
+
+		var loads = `
+        <div class="d-flex justify-content-center py-5 mt-5">
+        <div class="dot-spinner">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        </div>
+        </div>
+        `
+
+		// TIDAK ADA
+		var produkNone = `
+        <div class="text-center container p-3 animate_animated animate_fadeIn">
+        <img src="https://i.ibb.co/VwtjssF/digital-marketing.webp" class="w-100 borad-10 my-shadow">
+        <p class="mt-3 f-18 fwb-6">Belum ada riwayat nih...</p>
+        </div>
+        `
+
+		function goTopup() {
+			var nominal = accounting.unformat($("#jumlahTopup").val())
+			console.log(nominal)
+			if (nominal < min) {
+				presentAlert({
+					text: 'Minimal Topup Rp' + accounting.formatNumber(min),
+					type: 'fill-danger',
+					in: 'fadeInDown',
+					out: 'fadeOutUp',
+					duration: 2000
+				})
+			} else if (nominal > maxim) {
+				presentAlert({
+					text: 'Maximal Topup Rp' + accounting.formatNumber(maxim),
+					type: 'fill-danger',
+					in: 'fadeInDown',
+					out: 'fadeOutUp',
+					duration: 3500
+				})
+			} else {
+				nextTopup(nominal)
+			}
+		}
+
+		function nextTopup(nominal) {
+			$(`#loadz`).removeClass("d-none")
+			$.ajax({
+				type: "POST",
+				url: baseUrl + "/api/create",
+				data: {
+					userid: userid,
+					email: email,
+					nama: nama,
+					amount: nominal,
+					admin: admin,
+					id: token
+				},
+				dataType: "json",
+				success: function (response) {
+					$(`#loadz`).addClass("d-none")
+					getList()
+					var bsOffcanvas = new bootstrap.Offcanvas($("#detailCanv"))
+					bsOffcanvas.show();
+					$("#jumlahTopup").val(0)
+					if (response.status == "Expired") {
+						loopExpired()
+					} else {
+						cekQris(response)
+						// loopData(response)
+						pushStatus(response.ref_id)
+						startCronjob(response.ref_id, 5000)
+					}
+				}
+			})
+		}
+
+		function cekQris(v) {
+			$.ajax({
+				type: "GET",
+				url: baseQris + "/api.php",
+				data: {
+					aktivasi: aktivasi,
+					adm: 'n',
+					jumlah: v.amount
+				},
+				dataType: "json",
+				success: function (response) {
+					loopData(v, response.gambar)
+				}
+			})
+		}
+
+		function loopExpired() {
+			$("#bodyCanv").html(`
+            <div class="my-bg p-3 text-center fwb-6 text-white f-18 position-relative my-shadow" style="z-index: 99;">
+                KONFIRMASI TOPUP</div>
+
+            <div class="p-3 mt-3">
+                <div class="p-3 borad-5 my-sec-bg" style="border: 2.5px solid #dc3545;">
+                    <p class="text-center f-26 text-danger fwb-6">DATA EXPIRED</p>
+                    <p class="text-center f-18 mt-3 fwb-6">Silahkan Melakukan Request Topup Kembali</p>
+                </div>
+
+                <div class="bg-secondary p-2 text-center btn-hov borad-5 my-4 my-shadow text-white fwb-6"
+                    data-bs-dismiss="offcanvas" aria-label="Close">KEMBALI</div>
+            </div>
+            `)
+		}
+
+		function loopData(v, img) {
+
+			let bgSts
+
+			if (v.status == "pending") {
+				bgSts = "bg-warning"
+			} else if (v.status == "selesai") {
+				bgSts = "bg-success"
+			} else {
+				bgSts = "bg-danger"
+
+			}
+
+
+			var dataTgl = v.dates.split(" ")[0]
+			var tgl = dataTgl.split("-")[2]
+			var bln = dataTgl.split("-")[1]
+			var thn = dataTgl.split("-")[0]
+
+
+			var xTan = bln
+			let naBul
+			if (xTan == 1) {
+				naBul = "Januari"
+			} else if (xTan == 2) {
+				naBul = "Februari"
+			} else if (xTan == 3) {
+				naBul = "Maret"
+			} else if (xTan == 4) {
+				naBul = "April"
+			} else if (xTan == 5) {
+				naBul = "Mei"
+			} else if (xTan == 6) {
+				naBul = "Juni"
+			} else if (xTan == 7) {
+				naBul = "Juli"
+			} else if (xTan == 8) {
+				naBul = "Agustus"
+			} else if (xTan == 9) {
+				naBul = "September"
+			} else if (xTan == 10) {
+				naBul = "Oktober"
+			} else if (xTan == 11) {
+				naBul = "November"
+			} else if (xTan == 12) {
+				naBul = "Desember"
+			}
+
+			var tanggalku = tgl + " " + naBul + " " + thn
+
+
+			var dataJam = v.dates.split(" ")[1]
+			var jam = dataJam.split(":")[0]
+			var menit = dataJam.split(":")[1]
+			var waktuKu = jam + ":" + menit
+
+			var times = tanggalku + " " + waktuKu + " WIB"
+
+
+			const sts = v.status.toUpperCase()
+
+			if (v.status == "selesai") {
+				$("#bodyCanv").html(`
+                <div class="my-bg p-3 text-center fwb-6 text-white f-18 position-relative my-shadow" style="z-index: 99;">
+				DETAIL TOPUP</div>
+
+				<div class="p-3">
+					<div class="text-center">
+						<p class="text-success" style="font-size:3.5rem"><i class="fa-solid fa-check"></i></p>
+						<p class="fwb-6 op-7 f-20">Berhasil</p>
+					</div>
+
+					<div class="mt-5">
+						<div class="d-flex justify-content-between py-2" style="border-bottom:2.5px dashed #ededed">
+							<p class="f-14 fwb-6 op-7">ID Topup : </p>
+							<p class="f-14 fwb-6 op-7">#${v.ref_id}</p>
+						</div>
+						<div class="d-flex justify-content-between py-2" style="border-bottom:2.5px dashed #ededed">
+							<p class="f-14 fwb-6 op-7">Jumlah Topup :</p>
+							<p class="f-14 fwb-6 op-7 text-success">Rp${accounting.formatNumber(v.amount)}</p>
+						</div>
+					</div>
+
+					<div class="my-sec-border py-3 px-4 borad-5 mt-3">
+						<div class="d-flex alig-items-center">
+							<p class="fwb-6 f-20 w-100 text-center">Rp${accounting.formatNumber(v.amount)}</p>
+						</div>
+					</div>
+
+					<div class="mt-3">
+						<div class="${bgSts} py-2 px-4 borad-5 text-white text-center fwb-6 text-align-center my-sec-border">
+							${sts}
+						</div>
+					</div>
+
+					<div class="bg-secondary p-2 text-center btn-hov borad-5 mt-5 my-shadow text-white fwb-6"
+						data-bs-dismiss="offcanvas" aria-label="Close" onclick="getList()">KEMBALI</div>
+
+				</div>
+                `)
+			} else {
+
+				$("#bodyCanv").html(`
+				<div class="position-absolute">
+					<input type="text" id="nominalCopy" class="ms-5 mt-3 text-white" style="font-size: 1px; z-index: 1;" value="${v.amount}">
+				</div>
+
+				<div class="my-bg p-3 text-center fwb-6 text-white f-18 position-relative my-shadow" style="z-index: 99;">
+					KONFIRMASI TOPUP</div>
+
+				<div class="p-3">
+					<div class="text-center">
+						<img src="${img}" class="w-50">
+					</div>
+
+					<div class="mt-5">
+						<div class="d-flex justify-content-between py-2" style="border-bottom:2.5px dashed #ededed">
+							<p class="f-14 fwb-6 op-7">ID Topup : </p>
+							<p class="f-14 fwb-6 op-7">#${v.ref_id}</p>
+						</div>
+						<div class="d-flex justify-content-between py-2" style="border-bottom:2.5px dashed #ededed">
+							<p class="f-14 fwb-6 op-7">Jumlah Topup :</p>
+							<p class="f-14 fwb-6 op-7 text-success">Rp${accounting.formatNumber(v.amount)}</p>
+						</div>
+					</div>
+
+					<div class="mt-3">
+						<p class="f-14 fwb-6">Perhatian</p>
+						<p class="fwb-6 op-7 mt-1"><i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>
+							Saldo anda akan masuk ke akun minipul Rp${accounting.formatNumber(v.amount)}
+						</p>
+					</div>
+
+					<div class="my-sec-border py-2 px-4 borad-5 mt-3">
+						<div class="d-flex alig-items-center">
+							<p class="fwb-6 f-18 w-100 text-center">Rp${accounting.formatNumber(v.amount)}</p>
+							<p class="my-color f-18 btn-hov" onclick="copyIn()"><i class="fa-solid fa-copy"></i></p>
+						</div>
+					</div>
+
+					<div class="mt-3">
+						<div class="${bgSts} py-2 px-3 f-14 borad-5 text-center text-white fwb-6 text-align-center my-sec-border">
+						${sts}    
+						</div>
+					</div>
+
+					<div class="text-center mt-4">
+						<p class="f-14 fwb-6 op-7">BAYAR SEBELUM</p>
+						<p class="f-16 fwb-6 mt-1 text-danger">${times}</p>
+					</div>
+						
+					<div class="bg-secondary p-2 text-center btn-hov borad-5 my-4 my-shadow text-white fwb-6"
+						data-bs-dismiss="offcanvas" aria-label="Close" onclick="stopCronJob()">KEMBALI</div>
+
+				</div>
+            `)
+
+			}
+
+
+		}
+
+		getList()
+		function getList() {
+			$(`#tab-2`).html(loads)
+			$.ajax({
+				type: "GET",
+				url: baseUrl + "/api/transaction",
+				data: {
+					usrid: userid,
+					id: token
+				},
+				dataType: "json",
+				success: function (response) {
+					$(`#tab-2`).html(`<div class="animate_animated animate_fadeIn" id="dataRiwayat"></div>`)
+					loopList(response)
+				}
+			})
+		}
+
+		function loopList(data) {
+			$.each(data, function (i, v) {
+				var xTgl = v.trg_trx.replace("(", "").replace(")", "")
+				var tgl = xTgl.split(", ")[1]
+
+				if (v.status == "pending") {
+					bgSts = "bg-warning"
+				} else if (v.status == "selesai") {
+					bgSts = "bg-success"
+				} else {
+					bgSts = "bg-danger"
+				}
+				const sts = v.status.toUpperCase()
+				$("#dataRiwayat").append(`
+                <div class="d-flex justify-content-between align-items-center p-3 borad-5 mb-3" style="border-bottom:1px dashed #cccccc" onclick="cekQris2('${v.status}', '${v.dates}', '${v.ref_id}', '${v.amount}')">
+                    <div class="me-3">
+                        <p class="fwb-6 f-12 my-color">#${v.ref_id}</p>
+                        <p class="fwb-6 f-16">Topup Rp${accounting.formatNumber(v.amount)}</p>
+                        <p class="fwb-6 op-7 fwb-6">${tgl}</p>
+                    </div>
+                    <div class="${bgSts} px-3 py-2 borad-10 text-white fwb-6 my-sec-border f-14">${sts}</div>
+                </div>
+                `)
+			})
+		}
+
+		function cekQris2(status, dates, ref_id, amount) {
+			$("#loadz").removeClass("d-none")
+			$.ajax({
+				type: "GET",
+				url: baseQris + "/api.php",
+				data: {
+					aktivasi: aktivasi,
+					adm: 'n',
+					jumlah: amount
+				},
+				dataType: "json",
+				success: function (response) {
+					$("#loadz").addClass("d-none")
+					loopDataList(status, dates, ref_id, amount, response.gambar)
+				}
+			})
+		}
+
+		function loopDataList(status, dates, ref_id, amount, img) {
+
+			if (status != "selesai") {
+				pushStatus(ref_id)
+				startCronjob(ref_id, 5000)
+			}
+
+			var bsOffcanvas = new bootstrap.Offcanvas($("#detailCanv"))
+			bsOffcanvas.show();
+
+			let bgSts
+
+			if (status == "pending") {
+				bgSts = "bg-warning"
+			} else if (status == "selesai") {
+				bgSts = "bg-success"
+			} else {
+				bgSts = "bg-danger"
+
+			}
+
+
+			var dataTgl = dates.split(" ")[0]
+			var tgl = dataTgl.split("-")[2]
+			var bln = dataTgl.split("-")[1]
+			var thn = dataTgl.split("-")[0]
+
+
+			var xTan = bln
+			let naBul
+			if (xTan == 1) {
+				naBul = "Januari"
+			} else if (xTan == 2) {
+				naBul = "Februari"
+			} else if (xTan == 3) {
+				naBul = "Maret"
+			} else if (xTan == 4) {
+				naBul = "April"
+			} else if (xTan == 5) {
+				naBul = "Mei"
+			} else if (xTan == 6) {
+				naBul = "Juni"
+			} else if (xTan == 7) {
+				naBul = "Juli"
+			} else if (xTan == 8) {
+				naBul = "Agustus"
+			} else if (xTan == 9) {
+				naBul = "September"
+			} else if (xTan == 10) {
+				naBul = "Oktober"
+			} else if (xTan == 11) {
+				naBul = "November"
+			} else if (xTan == 12) {
+				naBul = "Desember"
+			}
+
+			var tanggalku = tgl + " " + naBul + " " + thn
+
+
+			var dataJam = dates.split(" ")[1]
+			var jam = dataJam.split(":")[0]
+			var menit = dataJam.split(":")[1]
+			var waktuKu = jam + ":" + menit
+
+			var times = tanggalku + " " + waktuKu + " WIB"
+
+
+			const sts = status.toUpperCase()
+
+			if (status == "selesai") {
+				$("#bodyCanv").html(`
+                <div class="my-bg p-3 text-center fwb-6 text-white f-18 position-relative my-shadow" style="z-index: 99;">
+				DETAIL TOPUP</div>
+
+				<div class="p-3">
+					<div class="text-center">
+						<p class="text-success" style="font-size:3.5rem"><i class="fa-solid fa-check"></i></p>
+						<p class="fwb-6 op-7 f-20">Berhasil</p>
+					</div>
+
+					<div class="mt-5">
+						<div class="d-flex justify-content-between py-2" style="border-bottom:2.5px dashed #ededed">
+							<p class="f-14 fwb-6 op-7">ID Topup : </p>
+							<p class="f-14 fwb-6 op-7">#${ref_id}</p>
+						</div>
+						<div class="d-flex justify-content-between py-2" style="border-bottom:2.5px dashed #ededed">
+							<p class="f-14 fwb-6 op-7">Jumlah Topup :</p>
+							<p class="f-14 fwb-6 op-7 text-success">Rp${accounting.formatNumber(amount)}</p>
+						</div>
+					</div>
+
+					<div class="my-sec-border py-3 px-4 borad-5 mt-3">
+						<div class="d-flex alig-items-center">
+							<p class="fwb-6 f-20 w-100 text-center">Rp${accounting.formatNumber(amount)}</p>
+						</div>
+					</div>
+
+					<div class="mt-3">
+						<div class="${bgSts} py-2 px-4 borad-5 text-white text-center fwb-6 text-align-center my-sec-border">
+							${sts}
+						</div>
+					</div>
+
+					<div class="bg-secondary p-2 text-center btn-hov borad-5 mt-5 my-shadow text-white fwb-6"
+						data-bs-dismiss="offcanvas" aria-label="Close" onclick="getList()">KEMBALI</div>
+
+				</div>
+                `)
+			} else {
+
+				$("#bodyCanv").html(`
+				<div class="position-absolute">
+					<input type="text" id="nominalCopy" class="ms-5 mt-3 text-white" style="font-size: 1px; z-index: 1;" value="${amount}">
+				</div>
+
+				<div class="my-bg p-3 text-center fwb-6 text-white f-18 position-relative my-shadow" style="z-index: 99;">
+					KONFIRMASI TOPUP</div>
+
+				<div class="p-3">
+					<div class="text-center">
+						<img src="${img}" class="w-50">
+					</div>
+
+					<div class="mt-5">
+						<div class="d-flex justify-content-between py-2" style="border-bottom:2.5px dashed #ededed">
+							<p class="f-14 fwb-6 op-7">ID Topup : </p>
+							<p class="f-14 fwb-6 op-7">#${ref_id}</p>
+						</div>
+						<div class="d-flex justify-content-between py-2" style="border-bottom:2.5px dashed #ededed">
+							<p class="f-14 fwb-6 op-7">Jumlah Topup :</p>
+							<p class="f-14 fwb-6 op-7 text-success">Rp${accounting.formatNumber(jumlah)}</p>
+						</div>
+					</div>
+
+					<div class="mt-3">
+						<p class="f-14 fwb-6">Perhatian</p>
+						<p class="fwb-6 op-7 mt-1"><i class="fa-solid fa-triangle-exclamation text-warning me-2"></i>
+							Harap
+							transfer
+							sesuai nominal berikut berserta biaya adminnya.
+						</p>
+					</div>
+
+					<div class="my-sec-border py-2 px-4 borad-5 mt-3">
+						<div class="d-flex alig-items-center">
+							<p class="fwb-6 f-18 w-100 text-center">Rp${accounting.formatNumber(amount)}</p>
+							<p class="my-color f-18 btn-hov" onclick="copyIn()"><i class="fa-solid fa-copy"></i></p>
+						</div>
+					</div>
+
+					<div class="mt-3">
+						<div class="${bgSts} py-2 px-3 f-14 borad-5 text-center text-white fwb-6 text-align-center my-sec-border">
+						${sts}    
+						</div>
+					</div>
+
+					<div class="text-center mt-4">
+						<p class="f-14 fwb-6 op-7">BAYAR SEBELUM</p>
+						<p class="f-16 fwb-6 mt-1 text-danger">${times}</p>
+					</div>
+						
+					<div class="bg-secondary p-2 text-center btn-hov borad-5 my-4 my-shadow text-white fwb-6"
+						data-bs-dismiss="offcanvas" aria-label="Close" onclick="stopCronJob()">KEMBALI</div>
+
+				</div>
+            `)
+			}
+
+		}
+
+		let interval
+		let trxid = null
+
+		function startCronjob(ref, per) {
+			console.info('cronjob started...')
+			interval = setInterval(function () {
+				pushStatus(ref)
+			}, per);
+		}
+
+		function stopCronJob() {
+			console.info('cronjob stoped => ', interval)
+			clearInterval(interval)
+			getList()
+		}
+
+		function pushStatus(ref) {
+			$.ajax({
+				type: "GET",
+				url: baseUrl + "/api",
+				data: {
+					id: token
+				},
+				dataType: "json",
+				success: function (response) {
+					console.log(response)
+				}
+			})
+			getTrx(ref)
+		}
+
+		function getTrx(ref) {
+			$.ajax({
+				type: "GET",
+				url: baseUrl + "/api/transaction",
+				data: {
+					ref_id: ref,
+					id: token
+				},
+				dataType: "json",
+				success: function (response) {
+					if (response.status == "Expired") {
+						stopCronJob()
+						loopExpired()
+					} else {
+						cekQris(response)
+						if (response.status == "selesai") {
+							stopCronJob()
+						}
+					}
+				}
+			})
+		}
+
+
+		function copyIn() {
+			var id = "nominalCopy"
+			document.getElementById(id).select();
+			document.execCommand("copy");
+			window.getSelection().removeAllRanges();
+			presentAlert({
+				text: 'Berhasil Menyalin Nominal',
+				type: 'fill-success',
+				in: 'fadeInDown',
+				out: 'fadeOutUp',
+				duration: 2000
+			})
+		}
+
+
+
+		function presentAlert(props, targetElement = false) {
+			let alertElement
+			if (targetElement) {
+				alertElement = targetElement
+			} else {
+				alertElement = document.createElement("nielz-alert-" + Math.random())
+			}
+
+			alertElement.innerHTML = `<data-alert class="alert text-center alert-${props.type} fixed-top m-3 ${props.in}">${props.text}</data-alert>`
+			if (targetElement) {
+				setTimeout(() => {
+					$("data-alert").removeClass(props.in)
+					$("data-alert").addClass(props.out)
+					setTimeout(() => {
+						targetElement.remove()
+					}, 500)
+				}, props.duration)
+				targetElement.append(alertElement)
+
+			} else {
+				document.body.append(alertElement)
+			}
+			const timeOut = setTimeout(() => {
+				$("data-alert").removeClass(props.in)
+				$("data-alert").addClass(props.out)
+				setTimeout(() => {
+					alertElement.remove()
+				}, 500)
+			}, props.duration)
+
+			alertElement.addEventListener("click", () => {
+				$("data-alert").removeClass(props.in)
+				$("data-alert").addClass(props.out)
+				setTimeout(() => {
+					alertElement.remove()
+				}, 500)
+				clearTimeout(timeOut)
+			})
+		}
+
+
+		getChange(1)
+		function getChange(no) {
+			$(`.btn-depo`).removeClass("depo-active")
+			$(`#btd-${no}`).addClass("depo-active")
+			$(`.tabcontent`).css("display", "none")
+			$(`#tab-${no}`).css("display", "block")
+		}
+
+		function valNum(id) {
+			if (id == "-1") {
+				var x = $("#jumlahTopup").val()
+				var y = $("#jumlahTopup").val().length + parseInt(id)
+				var z = x.substr(0, y)
+				$("#jumlahTopup").val(accounting.formatNumber(z))
+			} else {
+				if ($("#jumlahTopup").val().length <= 12) {
+					if (id == '000') {
+						if ($("#jumlahTopup").val().length == 10) {
+							id = "00"
+						} else if ($("#jumlahTopup").val().length == 11) {
+							id = "0"
+						}
+					}
+					var x = $("#jumlahTopup").val()
+					var y = x + id
+					var z = accounting.formatNumber(y)
+					$("#jumlahTopup").val(z)
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>

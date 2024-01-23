@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kembali</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <style type="text/css">
+    /*---------- Loader Elz Design ----------*/
+
+    .loadingspinner {
+      --square: 35px;
+      --offset: 40px;
+      --duration: 2.4s;
+      --delay: 0.2s;
+      --timing-function: ease-in-out;
+      --in-duration: 0.4s;
+      --in-delay: 0.1s;
+      --in-timing-function: ease-out;
+      width: calc(3 * var(--offset) + var(--square));
+      height: calc(2 * var(--offset) + var(--square));
+      padding: 0px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .loadingspinner div {
+      display: inline-block;
+      background: #2196f3;
+      border: none;
+      border-radius: 5px;
+      width: var(--square);
+      height: var(--square);
+      position: absolute;
+      padding: 0px;
+      margin: 0px;
+      font-size: 6pt;
+      color: black;
+    }
+
+    .loadingspinner #square1 {
+      left: calc(0 * var(--offset));
+      top: calc(0 * var(--offset));
+      animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
+        squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square2 {
+      left: calc(0 * var(--offset));
+      top: calc(1 * var(--offset));
+      animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
+        squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square3 {
+      left: calc(1 * var(--offset));
+      top: calc(1 * var(--offset));
+      animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
+        squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square4 {
+      left: calc(2 * var(--offset));
+      top: calc(1 * var(--offset));
+      animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
+        squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    .loadingspinner #square5 {
+      left: calc(3 * var(--offset));
+      top: calc(1 * var(--offset));
+      animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
+        squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
+    }
+
+    @keyframes square1 {
+      0% {
+        left: calc(0 * var(--offset));
+        top: calc(0 * var(--offset));
+      }
+
+      8.333% {
+        left: calc(0 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      100% {
+        left: calc(0 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+    }
+
+    @keyframes square2 {
+      0% {
+        left: calc(0 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      8.333% {
+        left: calc(0 * var(--offset));
+        top: calc(2 * var(--offset));
+      }
+
+      16.67% {
+        left: calc(1 * var(--offset));
+        top: calc(2 * var(--offset));
+      }
+
+      25.00% {
+        left: calc(1 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      83.33% {
+        left: calc(1 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      91.67% {
+        left: calc(1 * var(--offset));
+        top: calc(0 * var(--offset));
+      }
+
+      100% {
+        left: calc(0 * var(--offset));
+        top: calc(0 * var(--offset));
+      }
+    }
+
+    @keyframes square3 {
+
+      0%,
+      100% {
+        left: calc(1 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      16.67% {
+        left: calc(1 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      25.00% {
+        left: calc(1 * var(--offset));
+        top: calc(0 * var(--offset));
+      }
+
+      33.33% {
+        left: calc(2 * var(--offset));
+        top: calc(0 * var(--offset));
+      }
+
+      41.67% {
+        left: calc(2 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      66.67% {
+        left: calc(2 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      75.00% {
+        left: calc(2 * var(--offset));
+        top: calc(2 * var(--offset));
+      }
+
+      83.33% {
+        left: calc(1 * var(--offset));
+        top: calc(2 * var(--offset));
+      }
+
+      91.67% {
+        left: calc(1 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+    }
+
+    @keyframes square4 {
+      0% {
+        left: calc(2 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      33.33% {
+        left: calc(2 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      41.67% {
+        left: calc(2 * var(--offset));
+        top: calc(2 * var(--offset));
+      }
+
+      50.00% {
+        left: calc(3 * var(--offset));
+        top: calc(2 * var(--offset));
+      }
+
+      58.33% {
+        left: calc(3 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      100% {
+        left: calc(3 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+    }
+
+    @keyframes square5 {
+      0% {
+        left: calc(3 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      50.00% {
+        left: calc(3 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      58.33% {
+        left: calc(3 * var(--offset));
+        top: calc(0 * var(--offset));
+      }
+
+      66.67% {
+        left: calc(2 * var(--offset));
+        top: calc(0 * var(--offset));
+      }
+
+      75.00% {
+        left: calc(2 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+
+      100% {
+        left: calc(2 * var(--offset));
+        top: calc(1 * var(--offset));
+      }
+    }
+
+    @keyframes squarefadein {
+      0% {
+        transform: scale(0.75);
+        opacity: 0.0;
+      }
+
+      100% {
+        transform: scale(1.0);
+        opacity: 1.0;
+      }
+    }
+
+    /*---------- End Loader ----------*/
+    .loading {
+      margin-top: 5rem
+    }
+
+    .produk-none {
+      margin-top: 1.75rem;
+      padding: 15px;
+    }
+
+    .produk-none img {
+      width: 75%;
+      border-radius: 5px
+    }
+
+    .produk-none p {
+      font-size: 18px;
+      font-weight: 600
+    }
+
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+    * {
+      font-family: 'Poppins', sans-serif;
+      user-select: none;
+    }
+
+    body {
+      background-color: #EDF1FC;
+    }
+
+    p {
+      margin: 0;
+      font-size: 13px
+    }
+
+    input {
+      border: none;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+      outline: none;
+    }
+
+    @-webkit-keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    a,
+    a:focus,
+    a:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .head {
+      background-color: #fff;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .tab button {
+      background-color: transparent;
+      border: none;
+      font-weight: 400;
+      font-size: 16px;
+      padding: 15px;
+      width: 100%;
+    }
+
+    .tab button.active {
+      border-bottom: 1px solid #2196f3;
+      color: #2196f3;
+      -webkit-animation: fadeEffect 1s;
+      animation: fadeEffect 1s;
+    }
+
+    .box-src {
+      padding: 15px;
+    }
+
+    .b-icon {
+      margin-left: 15px
+    }
+
+    .icon-head {
+      font-size: 30px;
+      margin: 0 10px;
+      color: #2196f3
+    }
+
+    .inp-trx {
+      width: 100%;
+    }
+
+    .inp-trx input {
+      padding: 7.5px 10px;
+      border-radius: 5px;
+      border: 1px solid #2196f3;
+      width: 100%;
+      font-size: 13px
+    }
+
+    .data-trx {
+      padding: 15px
+    }
+
+    .card-trx {
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+      border-radius: 5px;
+      background-image: url('https://t3.ftcdn.net/jpg/02/18/26/20/360_F_218262069_OCqHqqKWlwVeZWB8pn32WVFkoZCbWiel.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-bottom: 15px
+    }
+
+    .j-trx {
+      font-weight: 600;
+      font-size: 12px
+    }
+
+    .i-trx {
+      font-weight: 600;
+      font-size: 11px;
+      opacity: 0.85
+    }
+
+    .t-trx {
+      font-size: 10px;
+      font-weight: 600;
+      opacity: 0.7
+    }
+
+    .infoz {
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .mr-l {
+      margin-left: 15px
+    }
+
+    .j-mod {
+      font-size: 16px;
+      font-weight: 600
+    }
+
+    .form-toko {
+      width: 100%;
+      font-size: 13px;
+      padding: 7.5px 10px;
+      border-radius: 5px;
+      border: 1px solid #2196f3;
+    }
+
+    .lab-mod {
+      font-weight: 600;
+      margin-bottom: 2.5px;
+      opacity: 0.7
+    }
+
+    .btn-print {
+      background-color: #2196f3;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      color: #fff
+    }
+
+    .btn-print:hover {
+      -webkit-animation: fadeEffect 1s;
+      animation: fadeEffect 1s;
+    }
+
+    .offcanvas-bottom {
+      height: 100% !important;
+    }
+
+    .offcanvas.offcanvas-bottom {
+      border-top: none;
+    }
+
+    .x-cnv {
+      background-color: transparent;
+      border: none;
+      font-size: 25px
+    }
+
+    .img-cnv {
+      padding: 10px;
+      border-radius: 50%
+    }
+
+    .img-cnv img {
+      width: 50px
+    }
+
+    .box-top-canv p {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 600
+    }
+
+    .box-bot-canv {
+      margin-top: 30px;
+    }
+
+    .list-canv {
+      padding: 10px 0;
+      margin-bottom: 5px;
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.15)
+    }
+
+    .kir-canv {
+      font-weight: 600;
+      opacity: 0.7
+    }
+
+    .kan-canv {
+      margin-left: 10px;
+      text-align: right;
+    }
+
+    .ser-canv {
+      margin-top: 5px;
+      line-height: 17.5px
+    }
+
+    .btn-copy {
+      color: #2196f3;
+      font-size: 20px;
+      margin-left: 10px;
+      background-color: transparent;
+      border: none;
+      margin-left: 10px
+    }
+
+    .btn-copy:hover {
+      -webkit-animation: fadeEffect 1s;
+      animation: fadeEffect 1s;
+    }
+
+    .ter-p p {
+      font-size: 13px;
+      font-weight: 600;
+      opacity: 0.7
+    }
+
+    .bor-bed {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15)
+    }
+
+    .box-input-print p {
+      font-size: 16px;
+      font-weight: 600;
+      opacity: 0.7;
+      margin-bottom: 5px
+    }
+
+    .box-input-print input {
+      border: 1px dotted #2196f3;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+
+    .header {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 99
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <section>
+    <div class="tab d-flex justify-content-between align-items-center bg-white">
+      <button class="tablinks active" onclick="openCity(event, 'tab-1'); srcTrx('batal')">Batal</button>
+      <button class="tablinks" onclick="openCity(event, 'tab-2'); srcTrx('proses')">Proses</button>
+      <button class="tablinks" onclick="openCity(event, 'tab-3'); srcTrx('selesai')" id="defaultOpen">Selesai</button>
+    </div>
+  </section>
+  <section class="header">
+    <div class="head">
+      <div class="box-src">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="inp-trx">
+            <input type="text" id="searching" placeholder="Cari Transaksi...">
+          </div>
+          <div class="d-flex justify-content-between align-items-center b-icon">
+            <div class="icon-head" data-bs-toggle="modal" data-bs-target="#modalSetting"><i
+                class="fa-solid fa-gear"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section>
+    <!-- LOADER -->
+    <section id="boxLoad"></section>
+    <!-- TAB -->
+    <div id="tab-1" class="tabcontent">
+      <section class="data-trx">
+        <div class="animate__animated animate__fadeIn" id="dataBatal"></div>
+      </section>
+    </div>
+    <div id="tab-2" class="tabcontent">
+      <section class="data-trx">
+        <div class="animate__animated animate__fadeIn" id="dataProses"></div>
+      </section>
+    </div>
+    <div id="tab-3" class="tabcontent">
+      <section class="data-trx">
+        <div class="animate__animated animate__fadeIn" id="dataSelesai"></div>
+      </section>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal fade" id="modalSetting" tabindex="-1" aria-labelledby="modalSetting" data-bs-backdrop="static"
+    data-bs-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p class="j-mod">Atur Toko</p>
+          <hr>
+          <div class="mb-2">
+            <p class="lab-mod">Nama Toko</p>
+            <input type="text" class="form-toko" placeholder="Masukan Nama Toko" id="naToko">
+          </div>
+          <div class="mb-2">
+            <p class="lab-mod">Alamat Toko</p>
+            <input type="text" class="form-toko" placeholder="Masukan Alamat Toko" id="alToko">
+          </div>
+          <!--   <div class="mb-2">
+          <p class="lab-mod">RT / RW</p>
+          <input type="text" class="form-toko" placeholder="Masukan RT / RW" id="rwToko">
+        </div> -->
+          <div class="d-block" style="margin-bottom: 30px">
+            <p class="lab-mod">Nomor Hp</p>
+            <input type="tel" class="form-toko" placeholder="Masukan Nomor Hp" id="noToko" oninput="cekNumb()">
+          </div>
+          <div class="d-block">
+            <button class="btn-print" onclick="postAlamat()">Simpan Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- OFFCANVAS -->
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="detailCanvas" aria-labelledby="offcanvasBottomLabel">
+    <div class="d-flex justify-content-end align-items-center pb-0" style="padding: 15px">
+      <button data-bs-dismiss="offcanvas" aria-label="Close" class="x-cnv"><i class="fa-solid fa-x"></i></button>
+    </div>
+
+    <div class="offcanvas-body">
+      <div class="box-top-canv text-center">
+        <div class="d-flex justify-content-center">
+          <div class="img-cnv bg-success">
+            <img src="https://i.postimg.cc/fb0d4xfn/check-1.png">
+          </div>
+        </div>
+        <p>BERHASIL</p>
+      </div>
+
+      <div class="box-bot-canv">
+        <div class="d-flex list-canv justify-content-between align-items-center">
+          <p class="kir-canv">ID Transaksi</p>
+          <p class="kan-canv" id="idNo">...</p>
+        </div>
+        <div class="d-flex list-canv justify-content-between align-items-center">
+          <p class="kir-canv">Tanggal</p>
+          <p class="kan-canv" id="tanggalNo">...</p>
+        </div>
+        <div class="d-flex list-canv justify-content-between align-items-center">
+          <p class="kir-canv">Produk</p>
+          <p class="kan-canv" id="produkNo">...</p>
+        </div>
+        <div class="d-flex list-canv justify-content-between align-items-center">
+          <p class="kir-canv">Tujuan</p>
+          <p class="kan-canv" id="tujuanNo">...</p>
+        </div>
+        <div class="d-flex list-canv justify-content-between align-items-center">
+          <p class="kir-canv">Harga</p>
+          <p class="kan-canv" id="hargaNo">...</p>
+        </div>
+        <div class="d-flex list-canv justify-content-between align-items-center">
+          <p class="kir-canv">Admin</p>
+          <p class="kan-canv" id="adminNo">...</p>
+        </div>
+        <div class="d-flex list-canv justify-content-between align-items-center">
+          <p class="kir-canv">Total</p>
+          <p class="kan-canv kir-canv" id="totalNo">...</p>
+        </div>
+        <div class="list-canv justify-content-between align-items-center">
+          <p class="kir-canv">Serial Number</p>
+          <div class="justify-content-between d-flex align-items-center ser-canv">
+            <p class="lef-ser" id="serialNo">...</p>
+            <button class="btn-copy" onclick="copyIn()"><i class="fa-solid fa-copy"></i></button>
+          </div>
+        </div>
+        <div class="list-canv text-center ter-p" style="border: none; padding: 30px 0;">
+          <p>Terimakasih astas keprcayaan Anda.</p>
+          <p>Struk ini merupakan Bukti pembayaran yang sah.</p>
+        </div>
+      </div>
+      <input type="text" id="seriKu" style="font-size: 1px; color: #fff">
+      <div class="box-input-print" style="margin-top: -20px">
+        <button class="btn-print" data-bs-toggle="modal" data-bs-target="#modalPrint">Print Sekarang</button>
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+
+
+  <style type="text/css">
+    .lef-ser {
+      overflow-wrap: break-word;
+      width: 20rem
+    }
+
+    .j-print {
+      font-size: 18px;
+      font-weight: 600
+    }
+
+    .list-print p {
+      font-size: 16px
+    }
+
+    .inp-print {
+      padding: 10px;
+      border: 1px dotted #2196f3;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .prin-kiri {
+      margin-right: 5px
+    }
+
+    .prin-kanan {
+      margin-left: 5px
+    }
+
+    .linked,
+    .linked:focus,
+    .linked:hover {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .fyiz p {
+      font-size: 20px
+    }
+  </style>
+
+  <div class="modal fade" id="modalHarga" tabindex="-1" aria-labelledby="modalHarga" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p class="j-print">Atur Harga Struk</p>
+          <hr>
+          <div class="list-canv justify-content-between align-items-center list-print" style="border: none;">
+            <p class="kir-canv">Harga</p>
+            <div class="inp-print d-flex align-items-center justify-start">
+              <p>Rp</p>
+              <input type="text" id="inp-harga" onkeyup="cekHarga()" maxlength="15" class="w-100">
+            </div>
+          </div>
+          <div class="list-canv justify-content-between align-items-center list-print"
+            style="margin-bottom: 15px; border: none;">
+            <p class="kir-canv">Admin</p>
+            <div class="inp-print d-flex align-items-center justify-start">
+              <p>Rp</p>
+              <input type="text" id="inp-admin" onkeyup="cekAdmin()" maxlength="15" value="0" class="w-100">
+            </div>
+          </div>
+          <div class="d-flex align-items-center bg-prin justify-content-between">
+            <button class="btn-print bg-danger prin-kiri" data-bs-dismiss="modal">Batal</button>
+            <button class="btn-print prin-kanan" data-bs-dismiss="modal" onclick="cetakStrk()">Cetak</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalPrint" tabindex="-1" aria-labelledby="modalPrint" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center fyiz" style="margin-bottom: 30px">
+            <p>Pastikan Anda Sudah Menginstall RawBT !</p>
+            <p class="mt-1"><a href="https://play.google.com/store/apps/details?id=ru.a402d.rawbtprinter" class="linked">Klik Disini</a> Untuk Menginstall</p>
+          </div>
+          <div class="d-flex align-items-center bg-prin justify-content-between">
+            <button class="btn-print bg-danger prin-kiri" data-bs-dismiss="modal">Batal</button>
+            <button class="btn-print prin-kanan" data-bs-dismiss="modal" onclick="getPrint()">Print</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" id="serialCopy">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://nielz.my.id/assets/accounting.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript">
+    // TEST
+    // let myModals = new bootstrap.Modal($('#modalPrint'), {});
+    // myModals.show()
+
+    // SETTING
+    const aktivate = "minipulpayment"
+    const apikeyBo = "dkZiOUtDUDdFTFdNOFVTZlhuL3Qwa0xzalBWVDRLRFQwdGRnZHNaaHVDcGJXcGVZekNXVGwxemNwNDVTS1Q1NHRySmRISTZXQ3JEMzZNOFlWdFJZWlN3djdEYVFpNmg1VUc2VElPZlJNNCsyck1zekdoeDFJL0Z2a1Zxb0plZklmQld4dThaNHBTSGRGeWNlVDRqUFp0UW5OdFR5M1cxUSt3aG1Demp6OWllcElzK3krSTVUWVg3ZXFJM2IrblJh"
+    const urlToko = "https://minipulpayment.tokowebku.com"
+    const pages = 3 // X 10, Jika ingin load 30 data isi 3 aja
+    const emailUser = "{{email_user}}"
+
+    // LOADER
+    var loads = `<div id="loads-2" class="loading">
+    <div class="loadingspinner">
+    <div id="square1"></div>
+    <div id="square2"></div>
+    <div id="square3"></div>
+    <div id="square4"></div>
+    <div id="square5"></div>
+    </div>
+    </div>`
+
+    var produkNone = `<div class="text-center container produk-none animate__animated animate__fadeIn">
+    <img src="https://i.ibb.co/VwtjssF/digital-marketing.webp">
+    <p class="mt-3">Belum ada riwayat transaksi nih...</p>
+    </div>`
+
+    // SISTEM
+    const baseUrl = "https://nielz.my.id/transaction"
+    const Routes = {
+      riwayat: baseUrl + '/riwayat',
+      riwayatDetails: baseUrl + '/riwayat-detail',
+      printer: baseUrl + '/print',
+      postAlamat: baseUrl + '/post-alamat',
+      alamat: baseUrl + '/alamat',
+    }
+
+
+    // LOAD RIWAYAT
+    loadRiwayat()
+    function loadRiwayat() {
+      $("#boxLoad").html(loads)
+      $.ajax({
+        type: "POST",
+        url: Routes.riwayat,
+        data: {
+          aktivasi: aktivate,
+          apikey_bo: apikeyBo,
+          email: emailUser,
+          page: pages,
+        },
+        dataType: "json",
+        success: function (response) {
+          console.log(response.success)
+          $("#boxLoad").html("")
+          if (response.success == false) {
+            $("#dataSelesai").html(produkNone)
+            $("#dataBatal").html(produkNone)
+            $("#dataProses").html(produkNone)
+            Swal.fire({
+              title: 'Tidak Valid',
+              text: "Cek Aktivasi atau Apikey Anda",
+              icon: 'error',
+            })
+          } else {
+            pilTransaksi(response.data)
+            console.log(response)
+          }
+        }
+      })
+    }
+
+    // PILIH BATAL / SELESAI
+    function pilTransaksi(data) {
+      $.each(data, function (i, v) {
+        var status = v.status_pengiriman
+        if (status == "diterima" || status == "selesai") {
+          $("#dataSelesai").append(`<div class="c-selesai" onclick="getDetail('${v.nomor_pembayaran}', '${v.tanggal}')" data-bs-toggle="modal" data-bs-target="#modalHarga">
+            <div class="card-trx">
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="left-trx">
+            <p class="j-trx">${v.nama_barang}</p>
+            <p class="i-trx">${v.nomor_pembayaran}</p>
+            <p class="t-trx">${v.tanggal}</p>
+            </div>
+            <div class="d-flex mr-l">
+            <div class="infoz bg-success">SELESAI</div>
+            </div>
+            </div>
+            </div>
+            </div>`)
+        } else if (status == "di batalkan") {
+          $("#dataBatal").append(`<div class="c-batal">
+            <div class="card-trx">
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="left-trx">
+            <p class="j-trx">${v.nama_barang}</p>
+            <p class="i-trx">${v.nomor_pembayaran}</p>
+            <p class="t-trx">${v.tanggal}</p>
+            </div>
+            <div class="d-flex mr-l">
+            <div class="infoz bg-danger">DI BATALKAN</div>
+            </div>
+            </div>
+            </div>
+            </div>`)
+        } else {
+          $("#dataProses").append(`<div class="c-proses">
+            <div class="card-trx">
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="left-trx">
+            <p class="j-trx">${v.nama_barang}</p>
+            <p class="i-trx">${v.nomor_pembayaran}</p>
+            <p class="t-trx">${v.tanggal}</p>
+            </div>
+            <div class="d-flex mr-l">
+            <div class="infoz bg-primary">DI PROSES</div>
+            </div>
+            </div>
+            </div>
+            </div>`)
+        }
+
+
+      })
+      cekInfo()
+    }
+
+    function cekInfo() {
+      var a = $("#dataSelesai").html()
+      var b = $("#dataBatal").html()
+      var c = $("#dataProses").html()
+
+      if (a == "") {
+        $("#dataSelesai").html(produkNone)
+      }
+      if (b == "") {
+        $("#dataBatal").html(produkNone)
+      }
+      if (c == "") {
+        $("#dataProses").html(produkNone)
+      }
+    }
+
+
+
+    function hideModal(mod) {
+      $("#" + mod).removeClass("in");
+      $(".modal-backdrop").remove();
+      $('body').removeClass('modal-open');
+      $('body').css('padding-right', '');
+      $("#" + mod).hide();
+    }
+
+    // DETAIL RIWAYAT
+    function getDetail(id, tgl) {
+      $("#inp-admin").val("0")
+
+      $.ajax({
+        type: "POST",
+        url: Routes.riwayatDetails,
+        data: {
+          aktivasi: aktivate,
+          apikey_bo: apikeyBo,
+          id: id
+        },
+        dataType: "json",
+        beforeSend: function () {
+          $("#idNo").html("")
+          $("#tanggalNo").html("")
+          $("#produkNo").html("")
+          $("#tujuanNo").html("")
+          $("#hargaNo").html("")
+          $("#serialNo").html("")
+          $("#serialCopy").val("")
+        },
+        success: function (response) {
+          var v = response.data.data_pesanan[0].data_produk[0]
+          var x = response.data
+          console.log(v.nomor_resi)
+          let resi
+          if (v.nomor_resi == "" || v.nomor_resi == "SN: N/A") {
+            resi = "Tidak Ada"
+          } else {
+            resi = v.nomor_resi.replace("SN: ", "")
+          }
+          $("#idNo").html(id)
+          $("#tanggalNo").html(tgl)
+          $("#produkNo").html(v.nama_barang)
+          $("#tujuanNo").html(v.catatan)
+          $("#inp-harga").val(accounting.formatNumber(x.total_transaksi))
+          $("#serialNo").html(resi)
+          $("#serialCopy").val(resi)
+        }
+      })
+    }
+
+
+    // PRINT
+    function cetakStrk() {
+      var num = $("#inp-harga").val()
+      var adm = $("#inp-admin").val()
+      var tot = accounting.unformat(num) + accounting.unformat(adm)
+      $("#hargaNo").html("Rp" + accounting.formatNumber(num))
+      $("#adminNo").html("Rp" + accounting.formatNumber(adm))
+      $("#totalNo").html("Rp" + accounting.formatNumber(tot))
+
+      var bsOffcanvas = new bootstrap.Offcanvas($("#detailCanvas"))
+      bsOffcanvas.show();
+    }
+
+    function getPrint() {
+      var prodz = $("#produkNo").text()
+      var tujuz = $("#tujuanNo").text()
+      var admz = $("#adminNo").text()
+      var hargz = $("#hargaNo").text()
+      var totz = $("#totalNo").text()
+      var idz = $("#idNo").text()
+      var tangz = $("#tanggalNo").text()
+      var seriz = $("#serialNo").text()
+      var tokoz = $("#naToko").val()
+      var alamz = $("#alToko").val()
+      var nohpz = $("#noToko").val()
+
+      Swal.fire({
+        title: 'Yeay',
+        text: "Print Dimulai",
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1000
+      })
+
+      rawBtPrint({
+        api_key: apikeyBo,
+        items: prodz,
+        tujuan: tujuz,
+        harga: hargz,
+        admin: admz,
+        total: totz,
+        appName: tokoz,
+        alamat1: alamz,
+        idtrx: idz,
+        sn: seriz,
+        nohp: nohpz,
+        dates: tangz,
+      })
+    }
+
+
+    function rawBtPrint(data) {
+      $.ajax({
+        type: "POST",
+        url: Routes.printer,
+        data: data,
+        dataType: "text",
+        success: function (response) {
+          response = response.replace('intent', 'rawbt')
+          window.location.href = response
+        }
+      })
+    }
+
+    // GET TOKO
+    getAlamat()
+    function getAlamat() {
+      let myModal = new bootstrap.Modal($('#modalSetting'), {});
+
+      $.ajax({
+        type: "GET",
+        url: Routes.alamat,
+        data: {
+          email: emailUser,
+          link: urlToko
+        },
+        dataType: "json",
+        success: function (response) {
+          if (response.success == false) {
+            myModal.show();
+          } else {
+            var v = JSON.parse(response.data.user_data)
+            $("#naToko").val(v.nama)
+            $("#alToko").val(v.alamat1)
+            // $("#rwToko").val(v.alamat2)
+            $("#noToko").val(v.phone)
+          }
+        }
+      })
+
+    }
+
+    // POST TOKO
+    function postAlamat() {
+      var a = $("#naToko").val()
+      var b = $("#alToko").val()
+      // var c = $("#rwToko").val()
+      var d = $("#noToko").val()
+
+      if (a == "" || b == "" || d == "") {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Data Tidak Lengkap',
+          text: 'Silahkan Cek Kembali',
+          confirmButtonText: 'Kembali'
+        })
+      } else {
+        $.ajax({
+          type: "POST",
+          url: Routes.postAlamat,
+          data: {
+            aktivasi: aktivate,
+            apikey_bo: apikeyBo,
+            email: emailUser,
+            link: urlToko,
+            nama: a,
+            alamat1: b,
+            // alamat2: c,
+            phone: d,
+          },
+          dataType: "json",
+          success: function (response) {
+            hideModal("modalSetting")
+            getAlamat()
+            Swal.fire({
+              title: 'Yeay',
+              text: "Berhasil Menyimpan Data Toko",
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1000
+            })
+          }
+        });
+      }
+    }
+
+    // CEK HARGA
+    function cekHarga() {
+      $("#inp-harga").val(accounting.formatNumber($("#inp-harga").val()))
+    }
+    // CEK HARGA
+    function cekAdmin() {
+      $("#inp-admin").val(accounting.formatNumber($("#inp-admin").val()))
+    }
+
+
+    // COPY
+    function copyIn() {
+      const text = $("#serialCopy").val()
+      $("#seriKu").val(text)
+      var id = "seriKu"
+      document.getElementById(id).select();
+      document.execCommand("copy");
+      window.getSelection().removeAllRanges();
+      Swal.fire({
+        title: 'Yeay',
+        text: "Berhasil Menyalin",
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1000
+      })
+    }
+
+
+    // CEK NUMB
+    function cekNumb() {
+      var no = $("#noToko").val()
+      var nomor = no.replace(/[^\d]/g, '')
+      var noBaru = cekStr(nomor)
+      $("#noToko").val(noBaru)
+    }
+
+    function cekStr(a) {
+      let b;
+      if (a.substr(0, 2) == "62") {
+        b = "0" + a.substr(2, 20);
+        return b;
+      } else if (a.substr(0, 3) == "+62") {
+        b = "0" + a.substr(3, 20);
+        return b;
+      } else {
+        return a;
+      }
+    }
+
+
+    // SEARCH
+    srcTrx("selesai")
+    function srcTrx(tipe) {
+      $("#searching").val("")
+      $(".c-batal").css("display", "block")
+      $(".c-proses").css("display", "block")
+      $(".c-selesai").css("display", "block")
+
+
+      if (tipe == "batal") {
+        $(document).ready(function () {
+          $("#searching").on("input", function () {
+            var value = $(this).val().toLowerCase();
+            $("section .c-batal").filter(function () {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            })
+          })
+        })
+      } else if (tipe == "selesai") {
+        $(document).ready(function () {
+          $("#searching").on("input", function () {
+            var value = $(this).val().toLowerCase();
+            $("section .c-selesai").filter(function () {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            })
+          })
+        })
+      } else {
+        $(document).ready(function () {
+          $("#searching").on("input", function () {
+            var value = $(this).val().toLowerCase();
+            $("section .c-proses").filter(function () {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            })
+          })
+        })
+      }
+    }
+
+
+    // OPEN CITY
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
+
+
+  </script>
+</body>
+
+</html>

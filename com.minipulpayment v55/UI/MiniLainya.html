@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kembali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style type="text/css">
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            user-select: none;
+        }
+
+        body {
+            background-color: #ffff;
+        }
+
+        p {
+            margin: 0;
+            font-size: 12px
+        }
+
+        input {
+            border: none;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        a,
+        a:focus,
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .my-bg {
+            background-color: #2196f3
+        }
+
+        .my-color {
+            color: #2196f3
+        }
+
+        .borad-5 {
+            border-radius: 5px
+        }
+
+        .borad-10 {
+            border-radius: 10px
+        }
+
+        .borad-15 {
+            border-radius: 15px
+        }
+
+        .my-shadow {
+            box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+        }
+
+        .bg-white {
+            background-color: #fff !important
+        }
+
+        .text-white {
+            color: #fff
+        }
+
+        .f-11 {
+            font-size: 11px !important
+        }
+
+        .f-12 {
+            font-size: 12px !important
+        }
+
+        .f-14 {
+            font-size: 14px !important
+        }
+
+        .f-16 {
+            font-size: 16px !important
+        }
+
+        .f-18 {
+            font-size: 18px !important
+        }
+
+        .f-20 {
+            font-size: 20px !important
+        }
+
+        .f-22 {
+            font-size: 22px !important
+        }
+
+        .f-24 {
+            font-size: 24px !important
+        }
+
+        .f-26 {
+            font-size: 26px !important
+        }
+
+        .f-28 {
+            font-size: 28px !important
+        }
+
+        .fwb-5 {
+            font-weight: 500
+        }
+
+        .fwb-6 {
+            font-weight: 600
+        }
+
+        .op-7 {
+            opacity: 0.7
+        }
+
+        .my-btn {
+            background-color: #2196f3;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .my-btn-2 {
+            border: 1px solid #2196f3;
+            padding: 12px;
+            border-radius: 5px;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        .linked,
+        .linked:hover,
+        .linked:focus {
+            color: #2196f3;
+            text-decoration: underline;
+        }
+
+        .carousel-inner,
+        .carousel-item img {
+            border-radius: 10px;
+        }
+
+        .tab button {
+            background-color: transparent;
+            border: none;
+            font-size: 14px;
+            padding: 8px;
+            width: 100%;
+            font-weight: 500;
+            border-radius: 25px;
+        }
+
+        .tab button.active {
+            color: #fff;
+            background-color: #2196f3;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        .tabcontent {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+
+        .app {
+            background-color: #fff;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .app img {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="header">
+        <div class="my-bg my-shadow" style="height: 100px; border-radius: 0 0 25px 25px;"></div>
+        <div class="px-3" style="margin-top: -75px;">
+            <div class="p-2 bg-white shadow-sm borad-5">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner borad-5">
+                        <div class="carousel-item active">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKY-CRCWsGc2BjSY8C43S33Vzeev-llq_iYpm6KH71DxGCOsPEWAZQ23XieBYXlf-_OBQqVzCjg-gLhtOGkTn5NYmQEbnnjPgjII2JRgUvs5ZHwd117YJ3NnN5wZaHJkXtewoYC9SHKNlDh7ggV-ZvGPm8TI-1LG2vhu0-B5XJ9g1OUPQ4FHcWPIy_PUk/s1280/20230908_171127_0000.png" class="d-block w-100 borad-5">
+                        </div>
+                       
+                <!-- <img src="https://cdn1.codashop.com/S/content/common/images/promos/136/ID_Undawn-launch-visual_codabanner.jpg" class="w-100 borad-10"> -->
+            </div>
+        </div>
+    </section>
+<!-- cari kategori -->
+    <section class="p-3">
+        <div class="d-flex align-items-center shadow-sm bg-white borad-5">
+            <input type="text" class="form-search w-100 py-2 px-3 f-14 fwb-5" id="search"
+                placeholder="Cari Kategori...">
+            <div class="my-bg py-2 px-3" style="border-radius:  0 5px 5px 0; background-color: #2196f3;">
+                <p class="text-white text-center f-16"><i class="fa-solid fa-magnifying-glass"></i></p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="p-3">
+        <!-- TOPUP -->
+        <div class="tabcontent">
+            <div class="list-app">
+                <a href="https://minipulpayment.tokowebku.com/digital/235352">
+                    <div class="app my-shadow p-3">
+                        <img src="https://img.freepik.com/free-vector/illustration-social-media-marketing-app_23-2148425263.jpg" width="50">
+                        <p class="fwb-6 w-100 ms-3 f-16">Kebutuhan Sosmed</p>
+                        <p class="fwb-6 f-14 ms-3"><i class="fa-solid fa-chevron-right"></i></p>
+                    </div>
+                </a> 
+                <a href="https://minipulpayment.tokowebku.com/digital/242748">
+                    <div class="app my-shadow p-3">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDGwTbXZZwOdlZC4R94HYyiiihQVBUQt68Fqhw3_C27hRWK5w67o85BnmOUPPwnA8oqW1zh-i9RdiQPTtclrJ4oNmo3nJ_a_ZtnSslbD5spxFv7krDNwvawXA5yVGe9SVsXt0tBtloipNjQpQujxVM6KpGV0Nei8YdPcM3IL02NPFxxRjDjuUwIJQI7u4/s1563/20231014_221419_0000.png" width="50">
+                        <p class="fwb-6 w-100 ms-3 f-16">Nokos All Apk</p>
+                        <p class="fwb-6 f-14 ms-3"><i class="fa-solid fa-chevron-right"></i></p>
+                    </div>
+                </a> 
+          </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+    </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script>
+      $(document).ready(function () {
+          $("#search").on("input", function () {
+              var value = $(this).val().toLowerCase();
+              $("section .app").filter(function () {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+              });
+          });
+      })
+  </script>
+</body>
+
+</html>

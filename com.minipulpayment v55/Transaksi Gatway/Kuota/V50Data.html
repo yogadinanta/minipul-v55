@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kembali</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+        rel="stylesheet">
+    <style type="text/css">
+        /* ELZ LOAD */
+        .dot-spinner {
+            --uib-size: 5rem;
+            --uib-speed: .9s;
+            --uib-color: #2196f3;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: var(--uib-size);
+            width: var(--uib-size);
+        }
+
+        .dot-spinner__dot {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            width: 100%;
+        }
+
+        .dot-spinner__dot::before {
+            content: '';
+            height: 20%;
+            width: 20%;
+            border-radius: 50%;
+            background-color: var(--uib-color);
+            transform: scale(0);
+            opacity: 0.5;
+            animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
+        }
+
+        .dot-spinner__dot:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .dot-spinner__dot:nth-child(2)::before {
+            animation-delay: calc(var(--uib-speed) * -0.875);
+        }
+
+        .dot-spinner__dot:nth-child(3) {
+            transform: rotate(90deg);
+        }
+
+        .dot-spinner__dot:nth-child(3)::before {
+            animation-delay: calc(var(--uib-speed) * -0.75);
+        }
+
+        .dot-spinner__dot:nth-child(4) {
+            transform: rotate(135deg);
+        }
+
+        .dot-spinner__dot:nth-child(4)::before {
+            animation-delay: calc(var(--uib-speed) * -0.625);
+        }
+
+        .dot-spinner__dot:nth-child(5) {
+            transform: rotate(180deg);
+        }
+
+        .dot-spinner__dot:nth-child(5)::before {
+            animation-delay: calc(var(--uib-speed) * -0.5);
+        }
+
+        .dot-spinner__dot:nth-child(6) {
+            transform: rotate(225deg);
+        }
+
+        .dot-spinner__dot:nth-child(6)::before {
+            animation-delay: calc(var(--uib-speed) * -0.375);
+        }
+
+        .dot-spinner__dot:nth-child(7) {
+            transform: rotate(270deg);
+        }
+
+        .dot-spinner__dot:nth-child(7)::before {
+            animation-delay: calc(var(--uib-speed) * -0.25);
+        }
+
+        .dot-spinner__dot:nth-child(8) {
+            transform: rotate(315deg);
+        }
+
+        .dot-spinner__dot:nth-child(8)::before {
+            animation-delay: calc(var(--uib-speed) * -0.125);
+        }
+
+        @keyframes pulse0112 {
+
+            0%,
+            100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* ELZ BASIC */
+        * {
+            font-family: 'Nunito', sans-serif;
+            user-select: none;
+        }
+
+        body {
+            background-color: #EDF1FC;
+        }
+
+        p {
+            margin: 0;
+            font-size: 12px
+        }
+
+        input {
+            border: none;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        a,
+        a:focus,
+        a:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .my-bg {
+            background-color: #2196f3
+        }
+
+        .my-color {
+            color: #2196f3
+        }
+
+        .my-border {
+            border: 1px solid #2196f3;
+        }
+
+        .my-2-border {
+            border: 2px solid #2196f3;
+        }
+
+        .sec-border {
+            border: 1px solid #cccccc;
+        }
+
+        .sec-2-border {
+            border: 2px solid #cccccc;
+        }
+
+        .borad-5 {
+            border-radius: 5px
+        }
+
+        .borad-10 {
+            border-radius: 10px
+        }
+
+        .borad-15 {
+            border-radius: 15px
+        }
+
+        .my-shadow {
+            box-shadow: rgba(0, 0, 0, 0.15) 0 0 5px 1px;
+        }
+
+        .bg-white {
+            background-color: #fff !important
+        }
+
+        .text-white {
+            color: #fff
+        }
+
+        .f-11 {
+            font-size: 11px !important
+        }
+
+        .f-12 {
+            font-size: 12px !important
+        }
+
+        .f-14 {
+            font-size: 14px !important
+        }
+
+        .f-16 {
+            font-size: 16px !important
+        }
+
+        .f-18 {
+            font-size: 18px !important
+        }
+
+        .f-20 {
+            font-size: 20px !important
+        }
+
+        .f-22 {
+            font-size: 22px !important
+        }
+
+        .f-24 {
+            font-size: 24px !important
+        }
+
+        .f-26 {
+            font-size: 26px !important
+        }
+
+        .f-28 {
+            font-size: 28px !important
+        }
+
+        .fwb-5 {
+            font-weight: 500
+        }
+
+        .fwb-6 {
+            font-weight: 600
+        }
+
+        .fwb-7 {
+            font-weight: 700
+        }
+
+        .fwb-8 {
+            font-weight: 800
+        }
+
+        .op-7 {
+            opacity: 0.7
+        }
+
+        .op-8 {
+            opacity: 0.8
+        }
+
+        .my-input {
+            border: 1px solid #cccccc;
+            outline: none;
+        }
+
+        .my-input:focus {
+            border: 1px solid #2196f3;
+        }
+
+        .btn-pil {
+            font-size: 14px;
+            font-weight: 700;
+            width: 100%;
+            text-align: center;
+        }
+
+        .pil-active {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 4px;
+            border-radius: 5px;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+            border: 1px solid #cccccc;
+            pointer-events: none;
+        }
+
+        .poinz {
+            pointer-events: none;
+        }
+
+        .app-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .bg-card {
+            background-image: url('https://img.freepik.com/free-vector/copy-space-wavy-white-background-layers_23-2148845469.jpg?w=2000');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .bg-sec {
+            background-color: #ededed;
+        }
+
+        .btn-hov:hover {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        .list-border {
+            border-bottom: 3px dotted #cccccc;
+        }
+
+        .btn-add {
+            border: 1px solid #cccccc;
+        }
+
+        .add-active {
+            border: 1px solid #2196f3;
+        }
+
+        .accordion {
+            --bs-accordion-bg: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="header">
+        <div class="my-bg shadow-sm" style="height: 100px;"></div>
+        <div class="px-3" style="margin-top: -80px;">
+            <div class="bg-white borad-5 shadow-sm">
+                <div class="p-3">
+                    <!-- Judul -->
+                    <div class="d-flex align-items-center">
+                        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhKFK4piCq8sIrbXVYsuHycEycK45dAw2ejd_hACobxHit7ipsEonybm0HUNwGNXu9YGrVWLqWt7hcBYv4z0rP3kLneqtiPClBRTmCiLbKDMhycqvhLtEVYOsGcyLDX6b4kW_nAYyi3u-trhSlcHBDexndkwP5oB5EtnX6XuJMsufDh5N3HDaSfb_gNJeI" class="my-bg p-1 borad-5" width="30"
+                            id="imgTop">
+                        <p class="f-16 fwb-7 ms-2">Data <span id="textTop"></span></p>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="d-flex align-items-center mt-3">
+                        <input type="tel" placeholder="Masukan nomor tujuan..."
+                            class="f-16 p-2 my-input borad-5 {{hasil_kontak}}" id="nomoId">
+                        <img src="https://nielz.my.id/assets/images/kontak.png" class="my-bg p-2 borad-5 ms-3"
+                            onclick="getContact()" width="40">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-3 animate__animated animate__fadeIn d-none" id="boxPilihan">
+        <!-- Operator -->
+        <div class="shadow-sm borad-5">
+            <div class="bg-card text-center animate__animated animate__fadeIn p-3 d-none"
+                style="border-bottom: 1px solid #eaeaea; border-radius: 5px 5px 0 0" id="boxOperator">
+                <img src="" class="borad-5" width="40" id="imgOperator">
+                <p class="f-14 fwb-7 mt-1" id="namaOperator"></p>
+            </div>
+            <!-- Pilihan -->
+            <div class="bg-white p-2 shadow-sm" style="border-radius: 5px;">
+                <div class="d-flex align-items-center p-1 my-bg borad-5 sec-border justify-content-center"
+                    data-bs-toggle="modal" data-bs-target="#modalKategori" id="btn-kat">
+                    <p class="f-16 fwb-7 text-white" id="textOperator">Paket Owsem</p>
+                    <p class="f-16 fwb-7 text-white ms-2" id="iconOperator"><i class="fa-solid fa-caret-down"></i></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data -->
+    <section class="p-3" id="dataProduk">
+    </section>
+
+    <!-- Popup -->
+    <section class="offcanvas offcanvas-bottom h-auto" tabindex="-1" id="detailCanv" aria-labelledby="detailCanv">
+        <div class="my-bg p-3 text-white d-flex justify-content-between align-items-center">
+            <p class="fwb-7 f-16">Detail Pembayaran</p>
+            <p class="fwb-7 f-16" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                    class="fa-solid fa-chevron-down"></i></p>
+        </div>
+        <div class="offcanvas-body p-3" id="bodyCanv">
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <section class="modal fade" id="modalKategori" tabindex="-1" aria-labelledby="modalKategori"
+        data-bs-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content" style="max-height: 75% !important;">
+                <div class="my-bg p-3 text-white">
+                    <div class="d-flex justify-content-between align-items-center" style="border-radius: 5px 5px 0 0;">
+                        <p class="fwb-7 f-16">Pilihan Paket</p>
+                        <p class="fwb-7 f-16" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                            aria-expanded="true" aria-controls="flush-collapseOne"><i
+                                class="fa-solid fa-magnifying-glass"></i></p>
+                    </div>
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body p-0 pt-3">
+                                    <input type="search" class="borad-5 f-14 fwb-7 bg-white p-2"
+                                        placeholder="Cari Kategori..." id="search">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body p-3 borad-5" id="isiPilihan">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+
+          // LINK TOKO
+        const urlToko = "https://minipulpayment.tokowebku.com"
+
+        // AKTIVASI
+        const aktivasi = "minipulpayment"
+
+
+        // KATEGORI
+        const urlKategori = [
+            {
+                // Indosat
+                "ISAT":
+                {
+                    "nama": "Indosat",
+                    "gambar": "https://play-lh.googleusercontent.com/5r57kpSo2SoBx0m6t014UPI9-m6mcop34p5z-thY-iVelpsGmct9VsNGn5JYzq376w",
+                    "data": [
+                        {
+                            "nama": "Indosat Yellow",
+                            "view": "list",
+                            "img": "no",
+                            "url": "indosat-yellow-419897",
+                        },
+                        {
+                            "nama": "Indosat Yellow GIFT",
+                            "view": "list",
+                            "img": "no",
+                            "url": "indosat-yellow-gift-425617",
+                        },
+                        {
+                            "nama": "Unlimited Harian",
+                            "view": "list",
+                            "img": "no",
+                            "url": "unlimited-harian-498847",
+                        },
+                        {
+                            "nama": "Freedom U Unlimited",
+                            "view": "list",
+                            "img": "no",
+                            "url": "freedom-u-unlimited-499171",
+                        },
+                        {
+                            "nama": "Freedom New",
+                            "view": "list",
+                            "img": "no",
+                            "url": "freedom-baru-499220",
+                        },
+                        {
+                            "nama": "Freedom Max",
+                            "view": "list",
+                            "img": "no",
+                            "url": "freedom-max-499221",
+                        },
+                        {
+                            "nama": "Freedom Old",
+                            "view": "list",
+                            "img": "no",
+                            "url": "freedom-internet-old-499258",
+                        },
+                        {
+                            "nama": "Data Freedom Non Attack",
+                            "view": "list",
+                            "img": "no",
+                            "url": "combo-non-attack-499257",
+                        },
+                        {
+                            "nama": "Data Freedom Attack",
+                            "view": "list",
+                            "img": "no",
+                            "url": "freedom-combo-attack-499235",
+                        },
+                        {
+                            "nama": "Freedom Mini Data - All Nasional",
+                            "view": "list",
+                            "img": "no",
+                            "url": "fmd-nasional-499260",
+                        },
+                        {
+                            "nama": "Mini Data Pure Indosat",
+                            "view": "list",
+                            "img": "no",
+                            "url": "mini-data-indosat-499263",
+                        },
+                    ]
+                },
+
+                // Telkomsel
+                "TSEL": {
+                    "nama": "Telkomsel",
+                    "gambar": "https://i.postimg.cc/rFZpDSTX/images-2022-10-07-T132212-320.jpg",
+                    "data": [
+                        {
+                            "nama": "Telkomsel Data AS",
+                            "view": "list",
+                            "img": "yes",
+                            "url": "telkomsel-data-as-499485",
+                        },
+                        {
+                            "nama": "Telkomsel Data LOOP",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Telkomsel Data Simpati",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Data Bulanan Telkomsel",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket Data Digipos",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Data Terbaik Telkomsel",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Tsel Data Mini Harian",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Tsel Data Mini Mingguan",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Tsel Data Mini Malam",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+        
+                    ]
+                },
+
+                // Three
+                "THREE": {
+                    "nama": "Three",
+                    "gambar": "https://i.postimg.cc/VkLmW5Y9/images-2022-10-07-T134356-702.jpg",
+                    "data": [
+                        {
+                            "nama": "Paket 1",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 2",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 3",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 4",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                    ]
+                },
+
+                // XL
+                "XL": {
+                    "nama": "XL Axiata",
+                    "gambar": "https://i.postimg.cc/rm2HgY16/download-3.jpg",
+                    "data": [
+                        {
+                            "nama": "XL Data Pure",
+                            "view": "list",
+                            "img": "no",
+                            "url": "xl-data-pure-502454",
+                        },
+                        {
+                            "nama": "XL Hotroad 30 Hari",
+                            "view": "listxl-hotrod-30hari-502455",
+                            "img": "no",
+                            "url": "xl-hotrod-30hari-502455",
+                        },
+                        {
+                            "nama": "XL Combo Flex",
+                            "view": "list",
+                            "img": "no",
+                            "url": "xl-combo-flex-503354",
+                        },
+                        {
+                            "nama": "XL Combo Lite",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "XL Combo X-Tra",
+                            "view": "list",
+                            "img": "no",
+                            "url": "xl-combo-xtra-504030",
+                        },
+                        {
+                            "nama": "XL Combo X-Tra (plus)",
+                            "view": "list",
+                            "img": "no",
+                            "url": "combo-xtra-plus-504032",
+                        },
+                        {
+                            "nama": "XL Combo X-Tra (VIP)",
+                            "view": "list",
+                            "img": "no",
+                            "url": "xl-combo-xtra-vip-504031",
+                        },
+                        {
+                            "nama": "XL Combo Mini",
+                            "view": "list",
+                            "img": "no",
+                            "url": "xl-combo-mini-504034",
+                        },
+                        {
+                            "nama": "XL Hotroad Special",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "XL Hotroad Mini",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "XL X-Tra Kuota",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "XL Data Akrab",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "XL Tahunan Data",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                    ]
+                },
+
+                // Axis
+                "AXIS": {
+                    "nama": "Axis",
+                    "gambar": "https://i.postimg.cc/qRfqknKc/images-2022-10-07-T132537-156.jpg",
+                    "data": [
+                        {
+                            "nama": "Paket 1",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 2",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 3",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 4",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                    ]
+                },
+
+                // Smartfren
+                "SFREN": {
+                    "nama": "Smartfren",
+                    "gambar": "https://play-lh.googleusercontent.com/iaIrBzzbwF7QwwcMSYxtvEL7S9rYLpPlhfoxqmhAtOIn0UISv7eMv4ZAfAA1lTYb1g",
+                    "data": [
+                        {
+                            "nama": "Mini Data Smart",
+                            "view": "list",
+                            "img": "no",
+                            "url": "mini-data-smart-445553",
+                        },
+                        {
+                            "nama": "Paket 2",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 3",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 4",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                    ]
+                },
+
+                // by.U
+                "BYU": {
+                    "nama": "by.U",
+                    "gambar": "https://i.postimg.cc/brHn05dF/download-2.png",
+                    "data": [
+                        {
+                            "nama": "Paket 1",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 2",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 3",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                        {
+                            "nama": "Paket 4",
+                            "view": "list",
+                            "img": "no",
+                            "url": "#",
+                        },
+                    ]
+                },
+            }
+
+        ]
+
+        // Minimal Nomor 
+        var minNomor = 8
+
+        // Maximal Nomor
+        var maxNomor = 15
+
+        //---------- Sistem ----------//
+
+
+        // Kontak
+        function getContact() {
+            window.location.href = urlToko + "/ambil_kontak"
+        }
+
+        // Load Awal
+        const loadAwal = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+        <p class="f-16 fwb-7">Masukan nomor terlebih dahulu...</p>
+        </div>
+        `
+
+        // Loader
+        const loads = `
+        <div class="d-flex justify-content-center py-5 mt-5">
+        <div class="dot-spinner">
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        <div class="dot-spinner__dot"></div>
+        </div>
+        </div>
+        `
+
+        // Nomor Salah
+        const noSalah = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+        <img src="https://i.ibb.co/f8gVVGD/eror.jpg" class="w-100 borad-5 shadow-sm">
+        <p class="mt-3 f-16 fwb-7">Nomor yang dimasukan salah nih...</p>
+        </div>
+        `
+
+        // Produk Kosong
+        const produkNone = `
+        <div class="text-center mt-3 animate__animated animate__fadeIn">
+        <img src="https://i.ibb.co/VwtjssF/digital-marketing.webp" class="w-100 borad-5 shadow-sm">
+        <p class="mt-3 f-16 fwb-7">Sepertinya produk ini belum tersedia...</p>
+        </div>
+        `
+
+        //---------- Sistem Data ----------//
+
+        // Loop Kategori
+        function loopCat(data) {
+            $("#isiPilihan").html("")
+
+            if (data.length == 1) {
+                $("#iconOperator").html("")
+            } else {
+                $("#iconOperator").html(`<i class="fa-solid fa-caret-down"></i>`)
+            }
+            $.each(data, function (i, v) {
+                $("#isiPilihan").append(`
+                <div class="btn-add fwb-6 shadow-sm op-7 p-3 borad-5 mb-3" id="btd-${i}" onclick="getData('${i}', '${v.url}', '${v.view}', '${v.img}', '${v.nama}')" data-bs-dismiss="modal">${v.nama}</div>
+                `)
+            })
+            getData(0, data[0].url, data[0].view, data[0].img, data[0].nama, data.length)
+        }
+
+        // Loop Produk
+        function loopProduk(data, view, img) {
+            $.each(data, function (i, v) {
+
+                let x, y, z, a
+                if (img == "yes") {
+                    x = `<img src="${v.gambar}" width="40" class="borad-5">`
+                    y = "mt-2"
+                    z = "ms-3"
+                    a = "text-center"
+                } else {
+                    x = ""
+                    y = ""
+                    z = ""
+                    a = ""
+                }
+
+                if (view == "grid") {
+                    $("#isiProduk").append(`
+                    <div class="borad-5 shadow-sm bg-card" onclick="getDetail('${v.url}', '${v.nama.trim()}', '${v.harga}', '${v.gambar}')"  data-bs-toggle="offcanvas" data-bs-target="#detailCanv" aria-controls="detailCanv">
+                       
+                        <div class="p-3 ${a}" style="border-radius: 0 0 5px 5px">
+                            ${x}
+                            <div class="${y}">
+                                <p class="f-14 fwb-7">${v.nama.trim()}</p>
+                                <p class="f-16 fwb-7 my-color mt-1">${v.harga}</p>
+                            </div>
+                        </div>
+                    </div
+                    `)
+                } else {
+                    $("#isiProduk").append(`
+                    <div class="borad-5 shadow-sm" onclick="getDetail('${v.url}', '${v.nama.trim()}', '${v.harga}', '${v.gambar}')"  data-bs-toggle="offcanvas" data-bs-target="#detailCanv" aria-controls="detailCanv">
+                       
+                        <div class="bg-card p-3 d-flex align-items-center mb-3" style="border-radius: 0 0 5px 5px">
+                            ${x}
+                            <div class="${z}">
+                                <p class="f-14 fwb-7">${v.nama.trim()}</p>
+                                <p class="f-16 fwb-7 my-color">${v.harga}</p>
+                            </div>
+                        </div>
+                    </div
+
+                    `)
+                }
+
+            })
+        }
+
+
+        // Detail
+
+        function nextDetail(link, nama, harga, gambar, desk) {
+            var no = $("#nomoId").val()
+            let nomor
+            if (no.length < minNomor) {
+                nomor = `<span class="text-danger"> Nomor minimal ${minNomor} angka</span>`
+            } else if (no.length > maxNomor) {
+                nomor = `<span class="text-danger"> Nomor maximal ${maxNomor} angka</span>`
+            } else {
+                nomor = no
+            }
+
+            $("#bodyCanv").html(`
+            <div class="animate__animated animate__fadeIn">
+                <div class="text-center pb-3" style="border-bottom: 3px dashed #2196f3;">
+                    <img src="${gambar}" width="50" class="borad-5">
+                    <p class="f-16 fwb-7 mt-2">${nama}</p>
+                </div>
+
+                <div class="py-3 list-border">
+                    <p class="fwb-7 op-7 f-14">Deskripsi Produk: </p>
+                    <p class="fwb-7 f-14 op-8 mt-1">${desk}</p>
+                </div>
+                <div class="d-flex justify-content-between py-3 list-border">
+                    <p class="fwb-7 op-7 f-14">Tujuan : </p>
+                    <p class="fwb-7 f-14 op-8">${nomor}</p>
+                </div>
+                <div class="d-flex justify-content-between py-3 list-border">
+                    <p class="fwb-7 op-7 f-16">Harga </p>
+                    <p class="fwb-8 f-16 op-8">${harga}</p>
+                </div>
+
+                <div class="mt-5">
+                    <div class="d-flex align-items-center">
+                        <div class="w-100 bg-sec p-2 fwb-7 text-center borad-5 btn-hov" data-bs-dismiss="offcanvas"
+                            aria-label="Close">Kembali</div>
+                        <div class="w-100 my-bg text-white p-2 fwb-7 text-center borad-5 ms-3 btn-hov d-none" id="btnBeli" onclick="getBeli('${link}')">Lanjutkan</div>
+                    </div>
+                </div>
+            </div>    
+            `)
+
+            if (no.length < minNomor || no.length > maxNomor) {
+                $("#btnBeli").addClass("d-none")
+            } else {
+                $("#btnBeli").removeClass("d-none")
+            }
+
+        }
+
+        // Tombol Beli
+        function getBeli(link) {
+            var no = $("#nomoId").val()
+            window.location.href = link + "?catatan=" + no
+        }
+
+        // Seacrh
+        $("#search").on("input", function () {
+            var value = $(this).val().toLowerCase();
+            $("#isiPilihan .btn-add").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+
+        //---------- Sistem Operator ----------//
+
+
+        // Manipulasi Data
+        let noX, noY, noZ
+
+        let opera
+        // Clear Data
+        clearData()
+        function clearData() {
+            var data = $("#dataProduk").html()
+            if (data != loadAwal) {
+                $("#dataProduk").html(loadAwal)
+            }
+            $("#boxPilihan").addClass("d-none")
+            $("#textTop").html("")
+            $("#imgTop").attr("src", "https://blogger.googleusercontent.com/img/a/AVvXsEhKFK4piCq8sIrbXVYsuHycEycK45dAw2ejd_hACobxHit7ipsEonybm0HUNwGNXu9YGrVWLqWt7hcBYv4z0rP3kLneqtiPClBRTmCiLbKDMhycqvhLtEVYOsGcyLDX6b4kW_nAYyi3u-trhSlcHBDexndkwP5oB5EtnX6XuJMsufDh5N3HDaSfb_gNJeI")
+            $("#imgTop").addClass("my-bg p-1")
+            noX = ""
+            noZ = ""
+            opera = ""
+        }
+
+        // Cek String
+        function cekStr(a) {
+            let b;
+            if (a.substr(0, 2) == "62") {
+                b = "0" + a.substr(2, 20);
+                return b;
+            } else if (a.substr(0, 3) == "+62") {
+                b = "0" + a.substr(3, 20);
+                return b;
+            } else {
+                return a;
+            }
+        }
+
+        // Load Operator
+        function loadOperator(nama) {
+            if (opera != nama) {
+                if (nama == "SALAH") {
+                    var dataSalah = $("#dataProduk").html()
+                    $("#textTop").html("")
+
+                    $("#imgTop").attr("src", "https://i.postimg.cc/fyJC4SPB/signal-1.png")
+                    $("#imgTop").addClass("my-bg p-1")
+
+                    $("#boxPilihan").addClass("d-none")
+
+                    if (dataSalah != noSalah) {
+                        $("#dataProduk").html(noSalah)
+                    }
+                } else {
+                    var v = urlKategori[0][nama]
+                    $("#namaOperator").html(v.nama)
+                    $("#imgOperator").attr("src", v.gambar)
+
+                    $("#textTop").html(v.nama)
+                    $("#imgTop").attr("src", v.gambar)
+                    $("#imgTop").removeClass("my-bg p-1")
+
+                    $("#boxPilihan").removeClass("d-none")
+                    loopCat(v.data)
+                }
+                opera = nama
+            }
+
+        }
+
+        // JANGAN DIRUBAH
+        var _0x18b5 = ["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x6E\x69\x65\x6C\x7A\x2E\x6D\x79\x2E\x69\x64\x2F\x61\x70\x69\x2F\x76\x32\x2F\x66\x69\x74\x75\x72\x2F\x62\x6F\x3F"]; var vx0782 = _0x18b5[0]
+        function _0x23cb(_0x69ec02, _0x5856a8) { var _0x565db2 = _0x565d(); return _0x23cb = function (_0x23cbf1, _0x5a64ff) { _0x23cbf1 = _0x23cbf1 - 0xab; var _0x2bdb85 = _0x565db2[_0x23cbf1]; return _0x2bdb85; }, _0x23cb(_0x69ec02, _0x5856a8); } function _0x565d() { var _0x247f53 = ['83705PmsIxk', '8unxngE', '#dataProduk', '70056nZVSNR', '744498sawJGb', 'grid', '6RUMOTX', 'removeClass', '#textOperator', '20NcQaNP', '193906HIccMh', 'detail_produk', '\x22\x20id=\x22isiProduk\x22></div>', 'html', 'json', 'ajax', 'add-active', '1559446uunrxc', 'POST', '.btn-add', '/kategori/', '10ChcLCK', '#bodyCanv', 'poinz', 'data', '6987068iABrzI', 'app-list', '<div\x20class=\x22animate__animated\x20animate__fadeIn\x20', '987198VAUksu', 'app-grid', '#btn-kat', 'addClass']; _0x565d = function () { return _0x247f53; }; return _0x565d(); } (function (_0x20352c, _0x366a89) { var _0x318024 = { _0x537a47: 0xb3, _0x4d0b69: 0xba, _0x26ebbf: 0xb6, _0x334b1c: 0xb9, _0x2f24f9: 0xb0 }, _0xc22ced = _0x23cb, _0x45a3b3 = _0x20352c(); while (!![]) { try { var _0x419286 = parseInt(_0xc22ced(_0x318024._0x537a47)) / 0x1 + parseInt(_0xc22ced(_0x318024._0x4d0b69)) / 0x2 * (-parseInt(_0xc22ced(_0x318024._0x26ebbf)) / 0x3) + parseInt(_0xc22ced(_0x318024._0x334b1c)) / 0x4 * (parseInt(_0xc22ced(_0x318024._0x2f24f9)) / 0x5) + -parseInt(_0xc22ced(0xac)) / 0x6 + -parseInt(_0xc22ced(0xc1)) / 0x7 + -parseInt(_0xc22ced(0xb1)) / 0x8 * (parseInt(_0xc22ced(0xb4)) / 0x9) + -parseInt(_0xc22ced(0xc5)) / 0xa * (-parseInt(_0xc22ced(0xc9)) / 0xb); if (_0x419286 === _0x366a89) break; else _0x45a3b3['push'](_0x45a3b3['shift']()); } catch (_0x4f16f2) { _0x45a3b3['push'](_0x45a3b3['shift']()); } } }(_0x565d, 0x1e852)); var baseUrl = `${vx0782}`; function getData(_0x22deff, _0x14e30b, _0x625b1d, _0xd10dd6, _0x3c9c32, _0x3e4897) { var _0xdcee26 = { _0x97e097: 0xb8, _0x41d87a: 0xc3, _0x4807e3: 0xb7, _0x121f1c: 0xc0, _0x27ee76: 0xae }, _0x3f977d = { _0x2af933: 0xae, _0x677801: 0xb5, _0x331814: 0xad, _0x31ff07: 0xb2, _0x222074: 0xbd, _0xebff10: 0xab, _0x1c8157: 0xbc }, _0x3a337b = _0x23cb; $(_0x3a337b(0xb2))[_0x3a337b(0xbd)](loads), noZ = '200', $(_0x3a337b(_0xdcee26._0x97e097))[_0x3a337b(0xbd)](_0x3c9c32), $(_0x3a337b(_0xdcee26._0x41d87a))[_0x3a337b(_0xdcee26._0x4807e3)](_0x3a337b(_0xdcee26._0x121f1c)), $(_0x3a337b(_0xdcee26._0x27ee76))[_0x3a337b(0xaf)](_0x3a337b(0xc7)), $('#btd-' + _0x22deff)['addClass'](_0x3a337b(0xc0)), $[_0x3a337b(0xbf)]({ 'type': _0x3a337b(0xc2), 'url': baseUrl, 'data': { 'aktivasi': aktivasi, 'param': 'produk', 'url': urlToko + _0x3a337b(0xc4) + _0x14e30b }, 'dataType': _0x3a337b(0xbe), 'success': function (_0x4c8007) { var _0x47659a = _0x3a337b; _0x3e4897 == 0x1 ? $(_0x47659a(_0x3f977d._0x2af933))[_0x47659a(0xaf)](_0x47659a(0xc7)) : $(_0x47659a(0xae))['removeClass'](_0x47659a(0xc7)); if (_0x4c8007[_0x47659a(0xc8)] == null) $('#dataProduk')['html'](produkNone); else { let _0x388616; _0x625b1d == _0x47659a(_0x3f977d._0x677801) ? _0x388616 = _0x47659a(_0x3f977d._0x331814) : _0x388616 = _0x47659a(0xca), $(_0x47659a(_0x3f977d._0x31ff07))[_0x47659a(_0x3f977d._0x222074)](_0x47659a(_0x3f977d._0xebff10) + _0x388616 + _0x47659a(_0x3f977d._0x1c8157)), loopProduk(_0x4c8007[_0x47659a(0xc8)], _0x625b1d, _0xd10dd6); } } }); } function getDetail(_0x5bdbaa, _0x4e7b22, _0x1a19d7, _0x4a2965) { var _0x584b8b = { _0x241720: 0xc6, _0x3676e3: 0xbd, _0x7a1630: 0xbf, _0x1e64af: 0xc2 }, _0x557ca4 = _0x23cb; $(_0x557ca4(_0x584b8b._0x241720))[_0x557ca4(_0x584b8b._0x3676e3)](loads), $[_0x557ca4(_0x584b8b._0x7a1630)]({ 'type': _0x557ca4(_0x584b8b._0x1e64af), 'url': baseUrl, 'data': { 'aktivasi': aktivasi, 'param': _0x557ca4(0xbb), 'url': _0x5bdbaa }, 'dataType': _0x557ca4(0xbe), 'success': function (_0x55bd04) { var _0x2b1ee2 = _0x557ca4; nextDetail(_0x5bdbaa, _0x4e7b22, _0x1a19d7, _0x4a2965, _0x55bd04[_0x2b1ee2(0xc8)]); } }); }
+
+        function _0x2e68(_0xd8c161, _0x24aea0) { var _0x405fff = _0x405f(); return _0x2e68 = function (_0x2e685b, _0x1d91f5) { _0x2e685b = _0x2e685b - 0x11d; var _0x138863 = _0x405fff[_0x2e685b]; return _0x138863; }, _0x2e68(_0xd8c161, _0x24aea0); } var _0x1c7828 = _0x2e68; function _0x405f() { var _0x5263be = ['0877', '085176', '085179', '085171', 'SALAH', '085154', '349754ymQqmv', '9353430hBlGHR', '0814', '0833', '0885', 'BYU', '0859', '0816', '0815', '0858', '1864632HSvGRf', '085180', '085157', 'val', '2TiqLGT', '085158', '0853', '085155', 'replace', '404', '085175', '0813', 'length', '0887', '0884', '0811', '0889', '0897', '0895', '0823', '0878', '085177', '085162', '0821', '0831', 'change', '0819', '126705LVQEGR', '1530wxZtTK', '085178', 'TSEL', 'substr', '0857', '2541DKPirv', '0898', '#nomoId', '0818', '0855', '870728OgQpDV', '0888', '085172', '145110TGdAwQ', '0812']; _0x405f = function () { return _0x5263be; }; return _0x405f(); } (function (_0x16a236, _0x1611bb) { var _0x49fdbe = { _0xdd9abd: 0x13d, _0x3a20db: 0x13a, _0x4bb2e3: 0x146 }, _0x973fb4 = _0x2e68, _0xdaca55 = _0x16a236(); while (!![]) { try { var _0xaa84ad = parseInt(_0x973fb4(0x153)) / 0x1 * (-parseInt(_0x973fb4(0x145)) / 0x2) + -parseInt(_0x973fb4(_0x49fdbe._0xdd9abd)) / 0x3 + -parseInt(_0x973fb4(_0x49fdbe._0x3a20db)) / 0x4 + -parseInt(_0x973fb4(0x12f)) / 0x5 + parseInt(_0x973fb4(0x130)) / 0x6 * (parseInt(_0x973fb4(0x135)) / 0x7) + -parseInt(_0x973fb4(0x14f)) / 0x8 + parseInt(_0x973fb4(_0x49fdbe._0x4bb2e3)) / 0x9; if (_0xaa84ad === _0x1611bb) break; else _0xdaca55['push'](_0xdaca55['shift']()); } catch (_0x4671ae) { _0xdaca55['push'](_0xdaca55['shift']()); } } }(_0x405f, 0x3ee49), $('#nomoId')['on']('input', function () { var _0x5d21d8 = { _0x3ba11d: 0x137, _0xc12eda: 0x11d }, _0x535aca = _0x2e68, _0x124b0f = $(_0x535aca(_0x5d21d8._0x3ba11d))[_0x535aca(0x152)](); _0x124b0f['length'] <= 0x3 ? (clearData(), noX = '', noY = '', noZ = _0x535aca(_0x5d21d8._0xc12eda)) : _0x124b0f['length'] >= 0x6 && cekInputan(0x1); }), $(_0x1c7828(0x137))['on'](_0x1c7828(0x12d), function () { var _0x258591 = { _0x3a9873: 0x137, _0x5b9811: 0x120, _0x295ff0: 0x11d }, _0x4f69fa = _0x1c7828, _0x5b707e = $(_0x4f69fa(_0x258591._0x3a9873))[_0x4f69fa(0x152)](); _0x5b707e[_0x4f69fa(_0x258591._0x5b9811)] <= 0x3 ? (clearData(), noX = '', noY = '', noZ = _0x4f69fa(_0x258591._0x295ff0)) : _0x5b707e[_0x4f69fa(0x120)] >= 0x6 && cekInputan(0x2); })); function cekInputan(_0x9a417) { var _0x4db392 = { _0xd56485: 0x133, _0x56c945: 0x120 }, _0x4814ee = _0x1c7828, _0x1803b8 = $(_0x4814ee(0x137))[_0x4814ee(0x152)](), _0x416a42 = _0x1803b8[_0x4814ee(0x157)](/[^\d]/g, ''), _0x3594e5 = cekStr(_0x416a42); $('#nomoId')['val'](_0x3594e5); var _0x416aaf = cekStr(_0x416a42)[_0x4814ee(_0x4db392._0xd56485)](0x0, 0x4), _0x1e0b08 = cekStr(_0x416a42)[_0x4814ee(0x133)](0x0, 0x6); _0x9a417 == 0x1 ? ((_0x416aaf[_0x4814ee(0x120)] == 0x4 && noX != _0x416aaf || _0x1e0b08[_0x4814ee(0x120)] == 0x6 && noY != _0x1e0b08) && (noX = _0x416aaf, noY = _0x1e0b08), cekNomorUlang(noX, noY)) : (_0x416aaf[_0x4814ee(_0x4db392._0x56c945)] == 0x4 && noX != _0x416aaf || _0x1e0b08[_0x4814ee(0x120)] == 0x6 && noY != _0x1e0b08) && (noX = _0x416aaf, noY = _0x1e0b08, cekNomorUlang(noX, noY)); } function cekNomorUlang(_0xa4ea33, _0x26ef69) { var _0x27fc1f = { _0x1aa8fd: 0x154, _0x45670c: 0x12a, _0x1ea951: 0x13c, _0x1a0ddc: 0x129, _0x3ea784: 0x123, _0xabd7ff: 0x13e, _0x1564dd: 0x11f, _0x5e22bf: 0x155, _0x317647: 0x127, _0x5cf525: 0x147, _0x4543bb: 0x14c, _0xfd5b02: 0x138, _0xa19246: 0x14b, _0x32cf18: 0x126, _0x252921: 0x125, _0xb79d3e: 0x149, _0x229aa7: 0x13b, _0x57d257: 0x143 }, _0x565201 = _0x1c7828; if (_0x26ef69 == _0x565201(0x144) || _0x26ef69 == _0x565201(0x156) || _0x26ef69 == '085156' || _0x26ef69 == _0x565201(0x151) || _0x26ef69 == _0x565201(_0x27fc1f._0x1aa8fd) || _0x26ef69 == '085159' || _0x26ef69 == '085160' || _0x26ef69 == '085161' || _0x26ef69 == _0x565201(_0x27fc1f._0x45670c) || _0x26ef69 == '085163' || _0x26ef69 == _0x565201(0x142) || _0x26ef69 == _0x565201(_0x27fc1f._0x1ea951) || _0x26ef69 == '085173' || _0x26ef69 == '085174' || _0x26ef69 == _0x565201(0x11e) || _0x26ef69 == _0x565201(0x140) || _0x26ef69 == _0x565201(_0x27fc1f._0x1a0ddc) || _0x26ef69 == _0x565201(0x131) || _0x26ef69 == _0x565201(0x141) || _0x26ef69 == _0x565201(0x150)) loadOperator(_0x565201(0x14a)); else { if (_0xa4ea33 === _0x565201(_0x27fc1f._0x3ea784) || _0xa4ea33 === _0x565201(_0x27fc1f._0xabd7ff) || _0xa4ea33 === _0x565201(_0x27fc1f._0x1564dd) || _0xa4ea33 === _0x565201(0x12b) || _0xa4ea33 === '0822' || _0xa4ea33 === '0852' || _0xa4ea33 === _0x565201(_0x27fc1f._0x5e22bf) || _0xa4ea33 === _0x565201(_0x27fc1f._0x317647) || _0xa4ea33 === '0851') loadOperator(_0x565201(0x132)); else { if (_0xa4ea33 === _0x565201(_0x27fc1f._0x5cf525) || _0xa4ea33 === _0x565201(0x14d) || _0xa4ea33 === _0x565201(_0x27fc1f._0x4543bb) || _0xa4ea33 === _0x565201(0x139) || _0xa4ea33 === '0856' || _0xa4ea33 === _0x565201(0x134) || _0xa4ea33 === _0x565201(0x14e)) loadOperator('ISAT'); else { if (_0xa4ea33 === _0x565201(_0x27fc1f._0xfd5b02) || _0xa4ea33 === '0817' || _0xa4ea33 === _0x565201(0x12e) || _0xa4ea33 === _0x565201(_0x27fc1f._0xa19246) || _0xa4ea33 === _0x565201(0x13f) || _0xa4ea33 === _0x565201(0x128)) loadOperator('XL'); else { if (_0xa4ea33 === '0838' || _0xa4ea33 === _0x565201(0x12c) || _0xa4ea33 === '0832' || _0xa4ea33 === _0x565201(0x148)) loadOperator('AXIS'); else { if (_0xa4ea33 === _0x565201(_0x27fc1f._0x32cf18) || _0xa4ea33 === '0896' || _0xa4ea33 === _0x565201(_0x27fc1f._0x252921) || _0xa4ea33 === _0x565201(0x136) || _0xa4ea33 === '0899') loadOperator('THREE'); else _0xa4ea33 === '0881' || _0xa4ea33 === '0882' || _0xa4ea33 === '0883' || _0xa4ea33 === _0x565201(0x122) || _0xa4ea33 === _0x565201(_0x27fc1f._0xb79d3e) || _0xa4ea33 === '0886' || _0xa4ea33 === _0x565201(0x121) || _0xa4ea33 === _0x565201(_0x27fc1f._0x229aa7) || _0xa4ea33 === _0x565201(0x124) ? loadOperator('SFREN') : loadOperator(_0x565201(_0x27fc1f._0x57d257)); } } } } } }
+    </script>
+</body>
+
+</html>
